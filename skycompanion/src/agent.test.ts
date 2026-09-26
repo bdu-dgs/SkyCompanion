@@ -18,8 +18,8 @@ test("only spoken warnings become events, with matching hazard evidence", () => 
   assert.equal(event?.id, "14:5");
   assert.equal(event?.type, "person");
   assert.equal(event?.approaching, "unknown");
-  assert.match(answerQuestion("为什么提醒？", [event!]), /0:00.*行人/u);
-  assert.match(answerQuestion("为什么提醒？", [event!]), /无法确认/u);
+  assert.match(answerQuestion("Why did you warn me?", [event!]), /0:00.*person/u);
+  assert.match(answerQuestion("Why did you warn me?", [event!]), /approach could not be confirmed/u);
 });
 
 test("reads a growing JSONL file and answers reports without inventing a safe direction", async () => {
@@ -33,9 +33,9 @@ test("reads a growing JSONL file and answers reports without inventing a safe di
     ].join("\n"));
     const events = await loadEvents(path);
     assert.equal(events?.length, 1);
-    assert.match(answerQuestion("本次汇报", events!), /1 次提醒/u);
+    assert.match(answerQuestion("Trip summary", events!), /1 warnings recorded/u);
     assert.match(answerQuestion("Why did you warn me?", events!), /no safe avoidance direction was verified/u);
-    assert.match(answerQuestion("汽车提醒有几次？", events!), /没有汽车提醒/u);
+    assert.match(answerQuestion("How many car warnings?", events!), /No car warning was recorded/u);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -49,5 +49,5 @@ test("stair model events remain searchable even with a generic short audio cue",
     warning: { speak: true, text: "Stop. Obstacle ahead.", target_id: "stairs:3", avoid_direction: "unknown" },
   });
   assert.equal(event?.type, "stairs");
-  assert.match(answerQuestion("台阶在哪里？", [event!]), /台阶/u);
+  assert.match(answerQuestion("Where were the stairs?", [event!]), /stairs/u);
 });

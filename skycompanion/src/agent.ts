@@ -72,60 +72,50 @@ function timeLabel(ms: number): string {
   const seconds = Math.floor(ms / 1000);
   return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
 }
-function typeLabel(type: string, zh: boolean): string {
-  return zh ? ({ person: "行人", bicycle: "自行车", car: "汽车", motorcycle: "摩托车", bus: "公交车", truck: "卡车", stairs: "台阶" } as Record<string, string>)[type] ?? "障碍物" : type;
+function typeLabel(type: string): string {
+  return type;
 }
-function directionLabel(direction: string, zh: boolean): string {
-  return zh ? ({ left: "左侧", center: "前方", right: "右侧" } as Record<string, string>)[direction] ?? "位置不确定" : direction === "center" ? "ahead" : direction;
+function directionLabel(direction: string): string {
+  return direction === "center" ? "ahead" : direction;
 }
-function eventLine(event: WarningEvent, zh: boolean): string {
+function eventLine(event: WarningEvent): string {
   const label = event.observedAtMs === undefined
-    ? `${zh ? "视频" : "video"} ${timeLabel(event.videoTimestampMs)} (frame ${event.frameId})`
+    ? `video ${timeLabel(event.videoTimestampMs)} (frame ${event.frameId})`
     : `${new Date(event.observedAtMs).toISOString().replace("T", " ").replace(".000Z", " UTC")} (frame ${event.frameId})`;
-  return zh ? `${label}：${directionLabel(event.direction, true)}${typeLabel(event.type, true)}；提示“${event.text}”` :
-    `${label}: ${typeLabel(event.type, false)} ${directionLabel(event.direction, false)}; "${event.text}"`;
+  return `${label}: ${typeLabel(event.type)} ${directionLabel(event.direction)}; "${event.text}"`;
 }
-function reasonLine(event: WarningEvent, zh: boolean): string {
+function reasonLine(event: WarningEvent): string {
   const facts: string[] = [];
-  if (event.evidence.includes("separate_stairs_model")) facts.push(zh ? "专用台阶模型检出候选" : "a dedicated stair model detected a candidate");
-  if (event.evidence.includes("bbox_footpoint_in_configured_corridor")) facts.push(zh ? "目标落在配置的行走区域内" : "target inside the configured walking corridor");
-  if (event.evidence.some((item) => item.startsWith("relative_image_region_"))) facts.push(zh ? "目标位于画面中的较近区域" : "target in a nearer image region");
-  if (event.evidence.some((item) => item.startsWith("consecutive_track_frames_"))) facts.push(zh ? "连续帧跟踪确认" : "confirmed across tracked frames");
-  if (event.approaching === "unknown") facts.push(zh ? "是否正在接近无法确认" : "approach could not be confirmed");
-  if (event.avoidDirection === "unknown") facts.push(zh ? "没有证据确认可安全绕行的方向" : "no safe avoidance direction was verified");
-  if (event.evidence.includes("step_height_and_ascent_direction_unknown")) facts.push(zh ? "台阶高度及上下方向无法确认" : "step height and ascent direction are unknown");
-  return zh ? `依据：${facts.join("；") || "记录中没有更详细的判断依据"}。` :
-    `Evidence: ${facts.join("; ") || "no further evidence in the record"}.`;
+  if (event.evidence.includes("separate_stairs_model")) facts.push("a dedicated stair model detected a candidate");
+  if (event.evidence.includes("bbox_footpoint_in_configured_corridor")) facts.push("target inside the configured walking corridor");
+  if (event.evidence.some((item) => item.startsWith("relative_image_region_"))) facts.push("target in a nearer image region");
+  if (event.evidence.some((item) => item.startsWith("consecutive_track_frames_"))) facts.push("confirmed across tracked frames");
+  if (event.approaching === "unknown") facts.push("approach could not be confirmed");
+  if (event.avoidDirection === "unknown") facts.push("no safe avoidance direction was verified");
+  if (event.evidence.includes("step_height_and_ascent_direction_unknown")) facts.push("step height and ascent direction are unknown");
+  return `Evidence: ${facts.join("; ") || "no further evidence in the record"}.`;
 }
 
 export function answerQuestion(question: string, events: WarningEvent[] | null): string {
   const q = question.trim().toLowerCase();
-  const zh = /[\u3400-\u9fff]/u.test(question);
-  if (/^(help|帮助|菜单|功能|commands?)$/u.test(q)) return zh ?
-    "可问：刚才发生了什么？为什么提醒？本次汇报？也可问行人或汽车提醒。" :
-    "Ask: What happened? Why did you warn me? Trip summary? You can also ask about pedestrian or car warnings.";
-  if (!events) return zh ? "尚未收到手机上传的事件。" : "No phone events have been synchronized yet.";
-  if (!events.length) return zh ? "本次记录中没有触发语音提醒的事件。" :
-    "No spoken warning events were recorded in this session.";
+  if (/^(help|menu|commands?)$/u.test(q)) return "Ask: What happened? Why did you warn me? Trip summary? You can also ask about pedestrian or car warnings.";
+  if (!events) return "No phone events have been synchronized yet.";
+  if (!events.length) return "No spoken warning events were recorded in this session.";
 
-  const filter = /台阶|楼梯|stairs?|steps?/u.test(q) ? "stairs" : /行人|pedestrian|person/u.test(q) ? "person" :
-    /自行车|bicycle|bike/u.test(q) ? "bicycle" : /汽车|car/u.test(q) ? "car" : null;
+  const filter = /stairs?|steps?/u.test(q) ? "stairs" : /pedestrian|person/u.test(q) ? "person" :
+    /bicycle|bike/u.test(q) ? "bicycle" : /car/u.test(q) ? "car" : null;
   const matches = filter ? events.filter((event) => event.type === filter) : events;
-  if (!matches.length) return zh ? `本次记录中没有${typeLabel(filter ?? "unknown", true)}提醒。` :
-    `No ${filter} warning was recorded in this session.`;
+  if (!matches.length) return `No ${filter} warning was recorded in this session.`;
   const last = matches.at(-1)!;
-  if (/为什么|原因|依据|why|reason|evidence/u.test(q)) return `${eventLine(last, zh)}\n${reasonLine(last, zh)}`;
-  if (/汇报|总结|统计|summary|report|how many|多少|几次|count/u.test(q)) {
+  if (/why|reason|evidence/u.test(q)) return `${eventLine(last)}\n${reasonLine(last)}`;
+  if (/summary|report|how many|count/u.test(q)) {
     const counts = new Map<string, number>();
     for (const event of matches) counts.set(event.type, (counts.get(event.type) ?? 0) + 1);
-    const detail = [...counts].map(([kind, count]) => `${typeLabel(kind, zh)} ${count}`).join(zh ? "，" : ", ");
-    return zh ? `本次记录有 ${matches.length} 次提醒（${detail}）。最近一次：${eventLine(last, true)}。计数是播报次数，不代表独立目标数。` :
-      `${matches.length} warnings recorded (${detail}). Latest: ${eventLine(last, false)}. These count spoken warnings, not distinct objects.`;
+    const detail = [...counts].map(([kind, count]) => `${typeLabel(kind)} ${count}`).join(", ");
+    return `${matches.length} warnings recorded (${detail}). Latest: ${eventLine(last)}. These count spoken warnings, not distinct objects.`;
   }
-  if (/刚才|最近|发生|什么|哪|last|recent|happen|what|when/u.test(q)) return zh ?
-    `最近一次提醒：${eventLine(last, true)}。` : `Latest warning: ${eventLine(last, false)}.`;
-  return zh ? "我只能根据已记录的提醒回答。可问：刚才发生了什么？为什么提醒？本次汇报？" :
-    "I can answer from recorded warnings. Ask: What happened? Why did you warn me? Trip summary?";
+  if (/last|recent|happen|what|where|when/u.test(q)) return `Latest warning: ${eventLine(last)}.`;
+  return "I can answer from recorded warnings. Ask: What happened? Why did you warn me? Trip summary?";
 }
 
 export function answerSynchronizedQuestion(question: string, events: WarningEvent[], now = Date.now()): string {
@@ -134,7 +124,5 @@ export function answerSynchronizedQuestion(question: string, events: WarningEven
   if (!latest?.observedAtMs) return answer;
   const age = now - latest.observedAtMs;
   if (age <= 15_000 && age >= -5_000) return answer;
-  const zh = /[\u3400-\u9fff]/u.test(question);
-  return zh ? `当前没有实时事件更新；以下仅依据已同步记录。\n${answer}` :
-    `No current live update; this answer uses synchronized history only.\n${answer}`;
+  return `No current live update; this answer uses synchronized history only.\n${answer}`;
 }

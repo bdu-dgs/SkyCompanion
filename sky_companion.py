@@ -23,9 +23,13 @@ sys.path.insert(0, str(ROOT / ".deps"))
 sys.path.insert(0, str(ROOT / ".deps_overlay"))
 os.environ.setdefault("YOLO_CONFIG_DIR", str(ROOT))
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
 OBSTACLES = {"person", "bicycle", "car", "motorcycle", "bus", "truck", "dog", "chair", "bench", "suitcase", "backpack", "skateboard", "streetlight", "railing", "bus_stop_shelter", "tree", "utility_pole"}
 MOTOR_VEHICLES = {"car", "motorcycle", "bus", "truck"}
+MODEL_CLASSES = ["person", "bicycle", "streetlight", "railing", "bus stop shelter", "tree",
+                 "traffic light red", "traffic light green", "utility pole", "car", "motorcycle", "bus", "truck"]
+CLASS_ALIASES = {"bus stop shelter": "bus_stop_shelter", "utility pole": "utility_pole",
+                 "traffic light red": "traffic_light_red", "traffic light green": "traffic_light_green"}
 WARNING_NOUNS = {"person": "Pedestrian", "bicycle": "Bicycle", "car": "Car", "vehicle": "Vehicle", "obstacle": "Obstacle"}
 POSITION_WORDS = {"left": "left", "right": "right", "center": "ahead"}
 STAIR_CLASSES = {"stair", "stairs", "step", "steps", "staircase"}
@@ -333,11 +337,6 @@ class LocalSpeechSink(WarningSink):
         self.event_file.close()
 
 
-def polygon(width: int, height: int, values: list[float]) -> np.ndarray:
-    return np.array([(round(values[i] * width), round(values[i + 1] * height))
-                     for i in range(0, 8, 2)], np.int32)
-
-
 def relative_distance(y_bottom: float, height: int) -> str:
     ratio = y_bottom / height
     return "near" if ratio >= 0.82 else "medium" if ratio >= 0.62 else "far"
@@ -366,7 +365,6 @@ def signal_color(image: np.ndarray, bbox: list[int]) -> str:
 
 class SceneRules:
     def __init__(self, corridor: list[float], confidence: float, cooldown_s: float, fixed_camera: bool = False):
-        self.corridor_values = corridor
         self.confidence = confidence
         self.cooldown_ms = cooldown_s * 1000
         self.fixed_camera = fixed_camera
@@ -376,6 +374,80 @@ class SceneRules:
         self.last_global_priority = 0
         self.previous_small: np.ndarray | None = None
         self.road_line_streak = 0
+        self.protagonist_track_id: int | None = None
+        self.protagonist_box: list[int] | None = None
+        self.protagonist_last_seen_ms = -1e12
+
+    @staticmethod
+    def _canonical_class(label: str) -> str:
+        value = label.lower().strip()
+        return CLASS_ALIASES.get(value, value.replace(" ", "_"))
+
+    def _select_protagonist(self, result, frame: Frame, width: int, height: int) -> dict:
+        boxes = result.boxes
+        ids = boxes.id.int().cpu().tolist() if boxes.id is not None else [None] * len(boxes)
+        candidates = []
+        for box, cls, conf, track_id in zip(boxes.xyxy.cpu().tolist(), boxes.cls.int().cpu().tolist(),
+                                             boxes.conf.cpu().tolist(), ids):
+            if self._canonical_class(result.names[cls]) != "person" or track_id is None:
+                continue
+            x1, y1, x2, y2 = [int(round(v)) for v in box]
+            center_x, center_y = (x1 + x2) / 2, (y1 + y2) / 2
+            candidates.append({"track_id": int(track_id), "box": [x1, y1, x2, y2], "confidence": float(conf),
+                               "center": (center_x, center_y), "area": max(0, x2 - x1) * max(0, y2 - y1)})
+
+        selected = next((item for item in candidates if item["track_id"] == self.protagonist_track_id), None)
+        if selected is None and candidates and frame.video_timestamp_ms - self.protagonist_last_seen_ms <= 1200:
+            # If ByteTrack briefly changes the ID, relock only to a nearby, similarly sized person.
+            old = self.protagonist_box
+            if old is not None:
+                old_center = ((old[0] + old[2]) / 2, (old[1] + old[3]) / 2)
+                old_height = max(1, old[3] - old[1])
+                nearby = [item for item in candidates
+                          if math.hypot((item["center"][0] - old_center[0]) / width,
+                                        (item["center"][1] - old_center[1]) / height) < 0.14
+                          and 0.55 <= (item["box"][3] - item["box"][1]) / old_height <= 1.8]
+                if nearby:
+                    selected = min(nearby, key=lambda item: math.hypot(
+                        (item["center"][0] - old_center[0]) / width,
+                        (item["center"][1] - old_center[1]) / height))
+        if selected is None and candidates and frame.video_timestamp_ms - self.protagonist_last_seen_ms > 1200:
+            # First lock: prefer the largest person nearest the horizontal camera center.
+            selected = min(candidates, key=lambda item:
+                2.5 * abs(item["center"][0] / width - 0.5)
+                + 0.35 * abs(item["box"][3] / height - 0.78)
+                - 0.18 * math.sqrt(item["area"] / (width * height)))
+        if selected is not None:
+            self.protagonist_track_id = selected["track_id"]
+            self.protagonist_box = selected["box"]
+            self.protagonist_last_seen_ms = frame.video_timestamp_ms
+            status = "locked"
+        elif frame.video_timestamp_ms - self.protagonist_last_seen_ms <= 1200:
+            status = "temporarily_lost"
+        else:
+            self.protagonist_track_id = None
+            self.protagonist_box = None
+            status = "not_found"
+        return {"status": status, "track_id": self.protagonist_track_id,
+                "bbox_xyxy": self.protagonist_box if status == "locked" else None,
+                "direction_basis": "assumed_upper_image_is_forward_for_rear_follow_view"}
+
+    @staticmethod
+    def _front_scan(width: int, height: int, protagonist_box: list[int] | None) -> np.ndarray | None:
+        if protagonist_box is None:
+            return None
+        x1, y1, x2, _ = protagonist_box
+        body_width = max(1, x2 - x1)
+        body_height = max(1, protagonist_box[3] - y1)
+        center_x = (x1 + x2) / 2
+        half_width = min(width * 0.28, max(width * 0.10, body_width * 1.25))
+        top = max(0, round(y1 - body_height * 0.9))
+        bottom = max(0, min(height - 1, y1))
+        left = max(0, round(center_x - half_width))
+        right = min(width - 1, round(center_x + half_width))
+        if right <= left or bottom <= top:
+            return None
+        return np.array([[left, top], [right, top], [right, bottom], [left, bottom]], dtype=np.int32)
 
     def _camera_motion(self, frame: np.ndarray) -> str:
         small = cv2.resize(frame, (320, 180))
@@ -414,32 +486,40 @@ class SceneRules:
     def evaluate(self, frame: Frame, result, stair_result=None) -> tuple[list[dict], dict, list[dict], dict]:
         image = frame.image
         height, width = image.shape[:2]
-        area = polygon(width, height, self.corridor_values)
         camera = self._camera_motion(image)
         road = self._road_boundary(image)
+        protagonist = self._select_protagonist(result, frame, width, height)
+        protagonist_box = protagonist["bbox_xyxy"]
+        area = self._front_scan(width, height, protagonist_box)
+        protagonist_center_x = ((protagonist_box[0] + protagonist_box[2]) / 2) if protagonist_box else width / 2
+        area_points = area.tolist() if area is not None else []
         detections = []
         hazards = []
         light_colors = []
         boxes = result.boxes
         ids = boxes.id.int().cpu().tolist() if boxes.id is not None else [None] * len(boxes)
         for box, cls, conf, track_id in zip(boxes.xyxy.cpu().tolist(), boxes.cls.int().cpu().tolist(), boxes.conf.cpu().tolist(), ids):
-            label = result.names[cls]
+            label = self._canonical_class(result.names[cls])
             xyxy = [int(round(v)) for v in box]
             x1, y1, x2, y2 = xyxy
             foot_x = (x1 + x2) / 2
             foot_y = y2
-            in_path = cv2.pointPolygonTest(area, (foot_x, foot_y), False) >= 0
-            direction = "left" if foot_x < width / 3 else "right" if foot_x > 2 * width / 3 else "center"
+            in_path = area is not None and cv2.pointPolygonTest(area, (foot_x, foot_y), False) >= 0
+            side_delta = foot_x - protagonist_center_x
+            direction = "left" if side_delta < -width * 0.035 else "right" if side_delta > width * 0.035 else "center"
             distance = relative_distance(y2, height)
+            is_protagonist = (protagonist["status"] == "locked" and track_id is not None
+                              and int(track_id) == protagonist["track_id"])
             det = {"class": label, "confidence": round(conf, 4), "bbox_xyxy": xyxy,
                    "track_id": track_id if track_id is not None else "unknown", "direction": direction,
-                   "relative_distance": distance, "in_walking_corridor": in_path}
+                   "relative_distance": distance, "in_walking_corridor": in_path,
+                   "role": "protagonist" if is_protagonist else "object"}
             if label in {"traffic light", "traffic_light_red", "traffic_light_green"}:
                 det["visual_signal_color"] = ("red" if label == "traffic_light_red" else
                                                "green" if label == "traffic_light_green" else signal_color(image, xyxy))
                 light_colors.append(det["visual_signal_color"])
             detections.append(det)
-            if label not in OBSTACLES or conf < self.confidence:
+            if is_protagonist or label not in OBSTACLES or conf < self.confidence:
                 continue
             history = self.history.setdefault(track_id, []) if track_id is not None else []
             if history and frame.video_timestamp_ms - history[-1][0] > 500:
@@ -469,8 +549,9 @@ class SceneRules:
                 xyxy = [int(round(v)) for v in box]
                 x1, y1, x2, y2 = xyxy
                 foot_x, foot_y = (x1 + x2) / 2, y2
-                in_path = cv2.pointPolygonTest(area, (foot_x, foot_y), False) >= 0
-                direction = "left" if foot_x < width / 3 else "right" if foot_x > 2 * width / 3 else "center"
+                in_path = area is not None and cv2.pointPolygonTest(area, (foot_x, foot_y), False) >= 0
+                side_delta = foot_x - protagonist_center_x
+                direction = "left" if side_delta < -width * 0.035 else "right" if side_delta > width * 0.035 else "center"
                 distance = relative_distance(foot_y, height)
                 target = f"stairs:{raw_id}" if raw_id is not None else "unknown"
                 detections.append({"class": "stairs", "confidence": round(conf, 4), "bbox_xyxy": xyxy,
@@ -496,17 +577,24 @@ class SceneRules:
         for key in list(self.history):
             if key not in live_ids and self.history[key][-1][0] < frame.video_timestamp_ms - 1000:
                 del self.history[key]
-        scene = {"walking_corridor": {"status": "configured_not_semantically_verified", "polygon_xy": area.tolist()},
+        scan_status = "person_anchored_front_scan" if area is not None else "awaiting_protagonist_lock"
+        scene = {"walking_corridor": {"status": scan_status, "polygon_xy": area_points},
+                 "protagonist": protagonist,
+                 "front_scan": {"status": scan_status, "rectangle_xyxy":
+                                [int(area[0, 0]), int(area[0, 1]), int(area[2, 0]), int(area[2, 1])] if area is not None else None,
+                                "forward_direction": "toward_upper_image" if area is not None else "unknown"},
                  "roadway_proximity": "unknown", "road_boundary": road,
                  "traffic_light_state": "unknown", "visual_signal_colors": light_colors,
                  "traffic_light_relevance": "unknown", "about_to_turn_red": "unknown", "camera_motion": camera,
                  "stairs": {"status": "model_detection" if any(d["class"] == "stairs" for d in detections) else "unknown",
                             "reason": "model_detected_candidate" if any(d["class"] == "stairs" for d in detections) else
                                       "no_stairs_model" if stair_result is None else "no_stairs_detection"}}
-        eligible = [h for h in hazards if h["in_path"] and h["risk_level"] in {"medium", "high"}]
+        eligible = [h for h in hazards if protagonist["status"] == "locked" and h["in_path"]
+                    and h["risk_level"] in {"medium", "high"}]
         eligible.sort(key=lambda h: (h["risk_level"] == "high", h["type"] == "stairs", h["type"] in MOTOR_VEHICLES), reverse=True)
         warning = {"speak": False, "text": "", "priority": 0, "target_id": "unknown",
-                   "avoid_direction": "unknown", "reason": "no_confirmed_in_path_hazard"}
+                   "avoid_direction": "unknown", "reason": "no_confirmed_in_path_hazard"
+                   if protagonist["status"] == "locked" else "protagonist_not_locked"}
         if eligible:
             hazard = eligible[0]
             target = hazard["target_id"]
@@ -537,13 +625,19 @@ def debug_font(size: int):
 
 def draw(frame: Frame, detections: list[dict], scene: dict, warning: dict, scale: float = 0.5) -> np.ndarray:
     image = cv2.resize(frame.image, None, fx=scale, fy=scale)
-    area = (np.array(scene["walking_corridor"]["polygon_xy"]) * scale).astype(np.int32)
-    cv2.polylines(image, [area], True, (0, 255, 255), 2)
+    area_points = scene["walking_corridor"]["polygon_xy"]
+    if area_points:
+        area = (np.array(area_points) * scale).astype(np.int32)
+        cv2.polylines(image, [area], True, (0, 255, 255), 2)
+    protagonist = scene.get("protagonist", {})
+    if protagonist.get("status") != "locked":
+        cv2.putText(image, "Protagonist not locked", (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 180, 255), 2)
     for det in detections:
         x1, y1, x2, y2 = [round(v * scale) for v in det["bbox_xyxy"]]
-        color = (0, 0, 255) if det["in_walking_corridor"] else (100, 210, 80)
+        color = (255, 180, 0) if det.get("role") == "protagonist" else (0, 0, 255) if det["in_walking_corridor"] else (100, 210, 80)
         cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
-        cv2.putText(image, f'{det["class"]} {det["confidence"]:.2f} #{det["track_id"]}', (x1, max(20, y1 - 5)),
+        role = " MAIN" if det.get("role") == "protagonist" else ""
+        cv2.putText(image, f'{det["class"]}{role} {det["confidence"]:.2f} #{det["track_id"]}', (x1, max(20, y1 - 5)),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
     label = "No active warning"
     if warning["text"]:
@@ -568,7 +662,11 @@ def percentile(values: list[float], pct: float) -> float | None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--video", type=Path, default=ROOT / "walking video.mp4")
+    fallback_video = ROOT / "videos" / "walking video.mp4"
+    dated_videos = sorted((ROOT / "videos").glob("*.mp4"))
+    preferred_video = next((path for path in dated_videos if path.name != fallback_video.name), fallback_video)
+    default_video = preferred_video if preferred_video.is_file() else fallback_video
+    parser.add_argument("--video", type=Path, default=default_video)
     parser.add_argument("--model", type=Path, default=ROOT / "yolov8s-worldv2.pt")
     parser.add_argument("--stairs-model", type=Path, help="optional YOLO weights trained with a stair/steps class")
     parser.add_argument("--output", type=Path, default=ROOT / "run" / "frames.jsonl")
@@ -577,8 +675,6 @@ def main() -> None:
     parser.add_argument("--speed", type=float, default=1.0)
     parser.add_argument("--conf", type=float, default=0.35)
     parser.add_argument("--cooldown", type=float, default=5.0)
-    parser.add_argument("--corridor", type=float, nargs=8, default=[0.49, 0.50, 0.62, 0.50, 0.79, 0.99, 0.17, 0.99],
-                        metavar=("TLX", "TLY", "TRX", "TRY", "BRX", "BRY", "BLX", "BLY"), help="normalized trapezoid vertices")
     parser.add_argument("--display", action="store_true")
     parser.add_argument("--stdout", action="store_true", help="publish each JSON line live to stdout")
     parser.add_argument("--no-audio", action="store_true", help="run rules without speech")
@@ -586,8 +682,8 @@ def main() -> None:
     parser.add_argument("--limit-video-seconds", type=float, help="diagnostic: stop after this many source seconds")
     parser.add_argument("--simulate-inference-ms", type=float, default=0, help="diagnostic: model an overloaded CPU")
     args = parser.parse_args()
-    if args.fps <= 0 or args.speed <= 0 or args.imgsz < 32 or not all(0 <= v <= 1 for v in args.corridor):
-        parser.error("fps/speed must be positive; imgsz >= 32; corridor coordinates in [0,1]")
+    if args.fps <= 0 or args.speed <= 0 or args.imgsz < 32:
+        parser.error("fps/speed must be positive; imgsz >= 32")
     if not args.video.is_file() or not args.model.is_file():
         parser.error("video or model does not exist")
     if args.stairs_model is not None and not args.stairs_model.is_file():
@@ -598,10 +694,7 @@ def main() -> None:
     from ultralytics import YOLO, YOLOWorld
     torch.set_num_threads(min(4, torch.get_num_threads()))
     model = YOLOWorld(str(args.model))
-    training_classes = {"bicycle", "streetlight", "railing", "bus_stop_shelter", "tree",
-                        "traffic_light_red", "traffic_light_green", "utility_pole"}
-    if not training_classes.issubset({str(name).lower().strip() for name in model.names.values()}):
-        model.set_classes(sorted(training_classes))
+    model.set_classes(MODEL_CLASSES)
     stairs_model = YOLO(str(args.stairs_model)) if args.stairs_model else None
     if stairs_model is not None and not any(str(name).lower().strip() in STAIR_CLASSES for name in stairs_model.names.values()):
         parser.error("stairs model must have a stair, stairs, step, steps, or staircase class")
@@ -612,7 +705,7 @@ def main() -> None:
                            imgsz=args.imgsz, conf=args.conf, verbose=False, device="cpu")
     mailbox = LatestFrame()
     source = VideoSource(args.video, args.fps, args.speed, mailbox, args.limit_video_seconds)
-    rules = SceneRules(args.corridor, args.conf, args.cooldown, args.fixed_camera)
+    rules = SceneRules([], args.conf, args.cooldown, args.fixed_camera)
     sink: WarningSink = NullSink() if args.no_audio else LocalSpeechSink(ROOT / "assets" / "tts" / "en_short", args.output.parent / "audio_events.jsonl")
     times = {name: [] for name in ["yolo", "stairs_yolo", "rules", "json", "latency"]}
     started = mono_ms()
