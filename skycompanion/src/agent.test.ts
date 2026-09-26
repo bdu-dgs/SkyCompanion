@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { test } from "node:test";
+import { answerQuestion, eventFromFrame, loadEvents } from "./agent.ts";
+
+const warningFrame = {
+  schema_version: "1.0", frame_id: 14, video_timestamp_ms: 700,
+  hazards: [{ target_id: 5, type: "person", direction: "center", approaching: "unknown" as const,
+    evidence: ["bbox_footpoint_in_configured_corridor", "relative_image_region_medium", "consecutive_track_frames_2"] }],
+  warning: { speak: true, text: "Stop. Pedestrian ahead.", target_id: 5, avoid_direction: "unknown" },
+};
+
+test("only spoken warnings become events, with matching hazard evidence", () => {
+  assert.equal(eventFromFrame({ ...warningFrame, warning: { ...warningFrame.warning, speak: false } }), null);
+  const event = eventFromFrame(warningFrame);
+  assert.equal(event?.id, "14:5");
+  assert.equal(event?.type, "person");
+  assert.equal(event?.approaching, "unknown");
+  assert.match(answerQuestion("为什么提醒？", [event!]), /0:00.*行人/u);
+  assert.match(answerQuestion("为什么提醒？", [event!]), /无法确认/u);
+});
+
+test("reads a growing JSONL file and answers reports without inventing a safe direction", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "sky-agent-"));
+  const path = join(dir, "frames.jsonl");
+  try {
+    await writeFile(path, [
+      JSON.stringify({ ...warningFrame, warning: { ...warningFrame.warning, speak: false } }),
+      JSON.stringify(warningFrame),
+      '{"incomplete":',
+    ].join("\n"));
+    const events = await loadEvents(path);
+    assert.equal(events?.length, 1);
+    assert.match(answerQuestion("本次汇报", events!), /1 次提醒/u);
+    assert.match(answerQuestion("Why did you warn me?", events!), /no safe avoidance direction was verified/u);
+    assert.match(answerQuestion("汽车提醒有几次？", events!), /没有汽车提醒/u);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
