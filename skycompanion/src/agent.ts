@@ -22,6 +22,9 @@ export type WarningEvent = {
   evidence: string[];
   approaching: boolean | "unknown";
   avoidDirection: string;
+  sessionId?: string;
+  observedAtMs?: number;
+  receivedAtMs?: number;
 };
 
 export const defaultFramesPath = fileURLToPath(new URL("../../run/frames.jsonl", import.meta.url));
@@ -70,23 +73,27 @@ function timeLabel(ms: number): string {
   return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
 }
 function typeLabel(type: string, zh: boolean): string {
-  return zh ? ({ person: "行人", bicycle: "自行车", car: "汽车", motorcycle: "摩托车", bus: "公交车", truck: "卡车" } as Record<string, string>)[type] ?? "障碍物" : type;
+  return zh ? ({ person: "行人", bicycle: "自行车", car: "汽车", motorcycle: "摩托车", bus: "公交车", truck: "卡车", stairs: "台阶" } as Record<string, string>)[type] ?? "障碍物" : type;
 }
 function directionLabel(direction: string, zh: boolean): string {
   return zh ? ({ left: "左侧", center: "前方", right: "右侧" } as Record<string, string>)[direction] ?? "位置不确定" : direction === "center" ? "ahead" : direction;
 }
 function eventLine(event: WarningEvent, zh: boolean): string {
-  const label = `${zh ? "视频" : "video"} ${timeLabel(event.videoTimestampMs)} (frame ${event.frameId})`;
+  const label = event.observedAtMs === undefined
+    ? `${zh ? "视频" : "video"} ${timeLabel(event.videoTimestampMs)} (frame ${event.frameId})`
+    : `${new Date(event.observedAtMs).toISOString().replace("T", " ").replace(".000Z", " UTC")} (frame ${event.frameId})`;
   return zh ? `${label}：${directionLabel(event.direction, true)}${typeLabel(event.type, true)}；提示“${event.text}”` :
     `${label}: ${typeLabel(event.type, false)} ${directionLabel(event.direction, false)}; "${event.text}"`;
 }
 function reasonLine(event: WarningEvent, zh: boolean): string {
   const facts: string[] = [];
+  if (event.evidence.includes("separate_stairs_model")) facts.push(zh ? "专用台阶模型检出候选" : "a dedicated stair model detected a candidate");
   if (event.evidence.includes("bbox_footpoint_in_configured_corridor")) facts.push(zh ? "目标落在配置的行走区域内" : "target inside the configured walking corridor");
   if (event.evidence.some((item) => item.startsWith("relative_image_region_"))) facts.push(zh ? "目标位于画面中的较近区域" : "target in a nearer image region");
   if (event.evidence.some((item) => item.startsWith("consecutive_track_frames_"))) facts.push(zh ? "连续帧跟踪确认" : "confirmed across tracked frames");
   if (event.approaching === "unknown") facts.push(zh ? "是否正在接近无法确认" : "approach could not be confirmed");
   if (event.avoidDirection === "unknown") facts.push(zh ? "没有证据确认可安全绕行的方向" : "no safe avoidance direction was verified");
+  if (event.evidence.includes("step_height_and_ascent_direction_unknown")) facts.push(zh ? "台阶高度及上下方向无法确认" : "step height and ascent direction are unknown");
   return zh ? `依据：${facts.join("；") || "记录中没有更详细的判断依据"}。` :
     `Evidence: ${facts.join("; ") || "no further evidence in the record"}.`;
 }
@@ -97,12 +104,12 @@ export function answerQuestion(question: string, events: WarningEvent[] | null):
   if (/^(help|帮助|菜单|功能|commands?)$/u.test(q)) return zh ?
     "可问：刚才发生了什么？为什么提醒？本次汇报？也可问行人或汽车提醒。" :
     "Ask: What happened? Why did you warn me? Trip summary? You can also ask about pedestrian or car warnings.";
-  if (!events) return zh ? "还没有找到本次运行的事件记录。请先运行 SkyCompanion 视频分析。" :
-    "No current session log found. Run SkyCompanion video analysis first.";
+  if (!events) return zh ? "尚未收到手机上传的事件。" : "No phone events have been synchronized yet.";
   if (!events.length) return zh ? "本次记录中没有触发语音提醒的事件。" :
     "No spoken warning events were recorded in this session.";
 
-  const filter = /行人|pedestrian|person/u.test(q) ? "person" : /自行车|bicycle|bike/u.test(q) ? "bicycle" : /汽车|car/u.test(q) ? "car" : null;
+  const filter = /台阶|楼梯|stairs?|steps?/u.test(q) ? "stairs" : /行人|pedestrian|person/u.test(q) ? "person" :
+    /自行车|bicycle|bike/u.test(q) ? "bicycle" : /汽车|car/u.test(q) ? "car" : null;
   const matches = filter ? events.filter((event) => event.type === filter) : events;
   if (!matches.length) return zh ? `本次记录中没有${typeLabel(filter ?? "unknown", true)}提醒。` :
     `No ${filter} warning was recorded in this session.`;
@@ -119,4 +126,15 @@ export function answerQuestion(question: string, events: WarningEvent[] | null):
     `最近一次提醒：${eventLine(last, true)}。` : `Latest warning: ${eventLine(last, false)}.`;
   return zh ? "我只能根据已记录的提醒回答。可问：刚才发生了什么？为什么提醒？本次汇报？" :
     "I can answer from recorded warnings. Ask: What happened? Why did you warn me? Trip summary?";
+}
+
+export function answerSynchronizedQuestion(question: string, events: WarningEvent[], now = Date.now()): string {
+  const answer = answerQuestion(question, events.length ? events : null);
+  const latest = events.at(-1);
+  if (!latest?.observedAtMs) return answer;
+  const age = now - latest.observedAtMs;
+  if (age <= 15_000 && age >= -5_000) return answer;
+  const zh = /[\u3400-\u9fff]/u.test(question);
+  return zh ? `当前没有实时事件更新；以下仅依据已同步记录。\n${answer}` :
+    `No current live update; this answer uses synchronized history only.\n${answer}`;
 }

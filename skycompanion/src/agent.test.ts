@@ -40,3 +40,14 @@ test("reads a growing JSONL file and answers reports without inventing a safe di
     await rm(dir, { recursive: true, force: true });
   }
 });
+
+test("stair model events remain searchable even with a generic short audio cue", () => {
+  const event = eventFromFrame({
+    schema_version: "1.0", frame_id: 21, video_timestamp_ms: 2100,
+    hazards: [{ target_id: "stairs:3", type: "stairs", direction: "center", approaching: "unknown",
+      evidence: ["separate_stairs_model", "bbox_footpoint_in_configured_corridor", "consecutive_track_frames_2"] }],
+    warning: { speak: true, text: "Stop. Obstacle ahead.", target_id: "stairs:3", avoid_direction: "unknown" },
+  });
+  assert.equal(event?.type, "stairs");
+  assert.match(answerQuestion("台阶在哪里？", [event!]), /台阶/u);
+});

@@ -1,5 +1,9 @@
 # SkyCompanion 本地原型
 
+## 手机事件接入（下一阶段接口已实现）
+
+当前 Python 视频检测与本地语音仍是 Windows 原型。Photon agent 已改为从 `POST /v1/events` 接收手机上传的**播报事件**，按手机观察时间记录，并另记电脑接收时间；离线补传事件可用于汇报，但不会被当作实时 iMessage 提醒。iPhone 检测和语音程序尚未实现，因此不能把目前的 Windows 运行结果视为手机端验收。接口契约和启动方式见 [skycompanion/README.md](skycompanion/README.md)。
+
 从 `walking video.mp4` 按原视频时间播放与抽帧，使用项目里的 `yolo11n.pt` 做 COCO 目标检测和 ByteTrack 跟踪。每个实际处理的帧写一条 JSONL；程序可同时显示调试画面并播放本机离线英文提示。原视频与模型都只读。项目依赖已安装在 `.deps`，预生成语音在 `assets/tts/en_short`。
 
 在此文件夹打开 PowerShell，启动完整视频：
@@ -28,6 +32,16 @@ python sky_companion.py --fps 10 --imgsz 416 --speed 1 --conf 0.35 --cooldown 5 
 - `warning`：`speak`、`text`、`priority`、`target_id`、`avoid_direction`、`reason`。文本来自固定模板。连续 2 帧确认、置信度达到阈值、目标在梯形内且不属于 far 才能触发。相同目标及全局都有 5 秒 cooldown，防止 ID 改变后连续播报。没有可靠可通行区域验证时，`avoid_direction=unknown`，提示停下。
 
 `unknown` 是明确的不确定结果，不表示否定。此视频来自移动摄像头，默认行人 `approaching=unknown`；只有在固定摄像头场景显式传入 `--fixed-camera`，且背景光流稳定、同一行人的框连续明显放大与下移时，才可能写 `true`。YOLO11n 是 COCO 80 类检测器，不能依赖它识别树、杆、坑洞或道路边界。程序不会建议跨入车道，也不会生成“可以过马路”。
+
+## 台阶检测接口
+
+原有 `yolo11n.pt` 没有台阶类别，当前文件夹也没有台阶专用权重。因此默认每帧 `scene.stairs.status=unknown`、`reason=no_stairs_model`，不会声称已识别台阶。拿到包含 `stair`、`stairs`、`step`、`steps` 或 `staircase` 类别的 YOLO 检测权重后，可运行：
+
+```powershell
+python sky_companion.py --stairs-model path\to\stairs.pt --display
+```
+
+专用模型的检测框会进入原有 `detections`，`source=stairs_model`；对应 `hazards` 的 `type=stairs`、`track_id=stairs:<id>`。仅在目标落入行走梯形、连续两帧跟踪确认且相对位置不是 `far` 时才提醒，`avoid_direction` 保持 `unknown`。台阶高度、上下方向和真实距离无法由检测框可靠推断。为保持离线语音可用，现阶段复用已缓存的 `Stop. Obstacle ahead.`，JSON 仍明确写 `stairs`。没有真实台阶视频和专用权重，尚不能宣称台阶识别准确率或实测延迟；启用第二个 YOLO 后请查看 `stage_ms.stairs_yolo` 并在 1× 视频上重新验收。
 
 ## 音频与延迟
 

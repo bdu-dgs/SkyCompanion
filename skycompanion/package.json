@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsx src/index.ts",
     "dev": "tsx watch src/index.ts",
-    "test": "node src/agent.test.ts",
+    "test": "node src/agent.test.ts && node src/events.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

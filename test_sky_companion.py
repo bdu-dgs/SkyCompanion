@@ -20,8 +20,10 @@ class FakeBoxes:
 class FakeResult:
     names = {0: "person", 9: "traffic light"}
 
-    def __init__(self, rows):
+    def __init__(self, rows, names=None):
         self.boxes = FakeBoxes(rows)
+        if names is not None:
+            self.names = names
 
 
 class PrototypeChecks(unittest.TestCase):
@@ -80,6 +82,30 @@ class PrototypeChecks(unittest.TestCase):
             _, _, hazards, _ = rules.evaluate(self.frame(n), FakeResult([row]))
             approaches.append(hazards[0]["approaching"])
         self.assertEqual(approaches, ["unknown"] * 4)
+
+    def test_stairs_require_a_separate_model_two_tracked_frames_and_corridor(self):
+        rules = SceneRules([.4, .3, .6, .3, .7, 1, .3, 1], .35, 5)
+        rules._camera_motion = lambda _: "moving"
+        rules._road_boundary = lambda _: {"candidate_visible": False}
+        empty = FakeResult([])
+        _, scene, _, warning = rules.evaluate(self.frame(0), empty)
+        self.assertEqual(scene["stairs"]["status"], "unknown")
+        self.assertFalse(warning["speak"])
+        outside = FakeResult([[0, 55, 20, 75, 0, .9, 2]], {0: "stairs"})
+        _, _, hazards, warning = rules.evaluate(self.frame(1), empty, outside)
+        self.assertFalse(hazards[0]["in_path"])
+        self.assertFalse(warning["speak"])
+        inside = FakeResult([[40, 55, 60, 75, 0, .9, 3]], {0: "stairs"})
+        _, scene, hazards, warning = rules.evaluate(self.frame(2), empty, inside)
+        self.assertEqual(scene["stairs"]["status"], "model_detection")
+        self.assertEqual(hazards[0]["type"], "stairs")
+        self.assertFalse(warning["speak"])
+        _, _, hazards, warning = rules.evaluate(self.frame(3), empty, inside)
+        self.assertTrue(warning["speak"])
+        self.assertEqual(warning["text"], "Stop. Obstacle ahead.")
+        self.assertEqual(warning["priority"], 3)
+        self.assertEqual(warning["avoid_direction"], "unknown")
+        self.assertEqual(hazards[0]["approaching"], "unknown")
 
 
 if __name__ == "__main__":

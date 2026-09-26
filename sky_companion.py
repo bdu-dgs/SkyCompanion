@@ -27,9 +27,12 @@ OBSTACLES = {"person", "bicycle", "car", "motorcycle", "bus", "truck", "dog", "c
 MOTOR_VEHICLES = {"car", "motorcycle", "bus", "truck"}
 WARNING_NOUNS = {"person": "Pedestrian", "bicycle": "Bicycle", "car": "Car", "vehicle": "Vehicle", "obstacle": "Obstacle"}
 POSITION_WORDS = {"left": "left", "right": "right", "center": "ahead"}
+STAIR_CLASSES = {"stair", "stairs", "step", "steps", "staircase"}
 
 
 def warning_text(kind: str, direction: str) -> str:
+    if kind == "stairs":
+        return "Stop. Obstacle ahead."  # Existing offline cue; the JSON still identifies stairs.
     return f"Stop. {WARNING_NOUNS[kind]} {POSITION_WORDS.get(direction, 'ahead')}."
 
 
@@ -366,8 +369,8 @@ class SceneRules:
         self.confidence = confidence
         self.cooldown_ms = cooldown_s * 1000
         self.fixed_camera = fixed_camera
-        self.history: dict[int, list[tuple[int, float, float, float]]] = {}
-        self.last_spoken: dict[int, float] = {}
+        self.history: dict[int | str, list[tuple[int, float, float, float]]] = {}
+        self.last_spoken: dict[int | str, float] = {}
         self.last_global_spoken = -1e12
         self.last_global_priority = 0
         self.previous_small: np.ndarray | None = None
@@ -407,7 +410,7 @@ class SceneRules:
         return {"candidate_visible": bool(candidates), "candidate_streak": self.road_line_streak,
                 "evidence": "edge_lines_only_unverified_as_road_boundary" if candidates else "no_reliable_edge_line"}
 
-    def evaluate(self, frame: Frame, result) -> tuple[list[dict], dict, list[dict], dict]:
+    def evaluate(self, frame: Frame, result, stair_result=None) -> tuple[list[dict], dict, list[dict], dict]:
         image = frame.image
         height, width = image.shape[:2]
         area = polygon(width, height, self.corridor_values)
@@ -454,25 +457,63 @@ class SceneRules:
                             "evidence": ["bbox_footpoint_in_configured_corridor" if in_path else "outside_configured_corridor",
                                          f"relative_image_region_{distance}", f"consecutive_track_frames_{len(history)}",
                                          f"camera_motion_{camera}"]})
+        if stair_result is not None:
+            boxes = stair_result.boxes
+            stair_ids = boxes.id.int().cpu().tolist() if boxes.id is not None else [None] * len(boxes)
+            for box, cls, conf, raw_id in zip(boxes.xyxy.cpu().tolist(), boxes.cls.int().cpu().tolist(), boxes.conf.cpu().tolist(), stair_ids):
+                label = stair_result.names[cls].lower().strip()
+                if label not in STAIR_CLASSES:
+                    continue
+                xyxy = [int(round(v)) for v in box]
+                x1, y1, x2, y2 = xyxy
+                foot_x, foot_y = (x1 + x2) / 2, y2
+                in_path = cv2.pointPolygonTest(area, (foot_x, foot_y), False) >= 0
+                direction = "left" if foot_x < width / 3 else "right" if foot_x > 2 * width / 3 else "center"
+                distance = relative_distance(foot_y, height)
+                target = f"stairs:{raw_id}" if raw_id is not None else "unknown"
+                detections.append({"class": "stairs", "confidence": round(conf, 4), "bbox_xyxy": xyxy,
+                                   "track_id": target, "direction": direction, "relative_distance": distance,
+                                   "in_walking_corridor": in_path, "source": "stairs_model"})
+                if conf < self.confidence:
+                    continue
+                history = self.history.setdefault(target, []) if raw_id is not None else []
+                if history and frame.video_timestamp_ms - history[-1][0] > 500:
+                    history.clear()
+                history.append((frame.video_timestamp_ms, 0.0, foot_y / height, float(in_path)))
+                if len(history) > 5:
+                    del history[:-5]
+                confirmed = raw_id is not None and len(history) >= 2 and all(v[3] for v in history[-2:])
+                risk = "high" if confirmed and distance == "near" else "medium" if confirmed and distance == "medium" else "unknown"
+                hazards.append({"target_id": target, "type": "stairs", "in_path": in_path, "direction": direction,
+                                "approaching": "unknown", "risk_level": risk,
+                                "evidence": ["separate_stairs_model", "bbox_footpoint_in_configured_corridor" if in_path else "outside_configured_corridor",
+                                             f"relative_image_region_{distance}", f"consecutive_track_frames_{len(history)}",
+                                             "step_height_and_ascent_direction_unknown"]})
         # Keep bounded state, because long videos can otherwise retain old tracks indefinitely.
-        live_ids = {d["track_id"] for d in detections if isinstance(d["track_id"], int)}
+        live_ids = {d["track_id"] for d in detections if d["track_id"] != "unknown"}
         for key in list(self.history):
             if key not in live_ids and self.history[key][-1][0] < frame.video_timestamp_ms - 1000:
                 del self.history[key]
         scene = {"walking_corridor": {"status": "configured_not_semantically_verified", "polygon_xy": area.tolist()},
                  "roadway_proximity": "unknown", "road_boundary": road,
                  "traffic_light_state": "unknown", "visual_signal_colors": light_colors,
-                 "traffic_light_relevance": "unknown", "about_to_turn_red": "unknown", "camera_motion": camera}
+                 "traffic_light_relevance": "unknown", "about_to_turn_red": "unknown", "camera_motion": camera,
+                 "stairs": {"status": "model_detection" if any(d["class"] == "stairs" for d in detections) else "unknown",
+                            "reason": "model_detected_candidate" if any(d["class"] == "stairs" for d in detections) else
+                                      "no_stairs_model" if stair_result is None else "no_stairs_detection"}}
         eligible = [h for h in hazards if h["in_path"] and h["risk_level"] in {"medium", "high"}]
-        eligible.sort(key=lambda h: (h["risk_level"] == "high", h["type"] in MOTOR_VEHICLES), reverse=True)
+        eligible.sort(key=lambda h: (h["risk_level"] == "high", h["type"] == "stairs", h["type"] in MOTOR_VEHICLES), reverse=True)
         warning = {"speak": False, "text": "", "priority": 0, "target_id": "unknown",
                    "avoid_direction": "unknown", "reason": "no_confirmed_in_path_hazard"}
         if eligible:
             hazard = eligible[0]
             target = hazard["target_id"]
-            kind = "person" if hazard["type"] == "person" else "bicycle" if hazard["type"] == "bicycle" else "car" if hazard["type"] == "car" else "vehicle" if hazard["type"] in MOTOR_VEHICLES else "obstacle"
-            warning.update({"text": warning_text(kind, hazard["direction"]), "priority": 2 if hazard["risk_level"] == "high" else 1,
-                            "target_id": target, "reason": "confirmed_in_corridor;_no_verified_safe_avoidance_side"})
+            kind = "stairs" if hazard["type"] == "stairs" else "person" if hazard["type"] == "person" else "bicycle" if hazard["type"] == "bicycle" else "car" if hazard["type"] == "car" else "vehicle" if hazard["type"] in MOTOR_VEHICLES else "obstacle"
+            warning.update({"text": warning_text(kind, hazard["direction"]),
+                            "priority": 3 if kind == "stairs" else 2 if hazard["risk_level"] == "high" else 1,
+                            "target_id": target,
+                            "reason": ("stairs_model_track_confirmed;" if kind == "stairs" else "confirmed_in_corridor;") +
+                                      "no_verified_safe_avoidance_side"})
             now = frame.entered_mono_ms
             target_ready = now - self.last_spoken.get(target, -1e12) >= self.cooldown_ms
             global_ready = now - self.last_global_spoken >= self.cooldown_ms or warning["priority"] > self.last_global_priority
@@ -527,6 +568,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--video", type=Path, default=ROOT / "walking video.mp4")
     parser.add_argument("--model", type=Path, default=ROOT / "yolo11n.pt")
+    parser.add_argument("--stairs-model", type=Path, help="optional YOLO weights trained with a stair/steps class")
     parser.add_argument("--output", type=Path, default=ROOT / "run" / "frames.jsonl")
     parser.add_argument("--fps", type=float, default=10.0, help="sampled processing FPS")
     parser.add_argument("--imgsz", type=int, default=416, help="inference size; 416 is the CPU-friendly default")
@@ -546,19 +588,27 @@ def main() -> None:
         parser.error("fps/speed must be positive; imgsz >= 32; corridor coordinates in [0,1]")
     if not args.video.is_file() or not args.model.is_file():
         parser.error("video or model does not exist")
+    if args.stairs_model is not None and not args.stairs_model.is_file():
+        parser.error("stairs model does not exist")
     if args.stdout and hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     from ultralytics import YOLO
     torch.set_num_threads(min(4, torch.get_num_threads()))
     model = YOLO(str(args.model))
+    stairs_model = YOLO(str(args.stairs_model)) if args.stairs_model else None
+    if stairs_model is not None and not any(str(name).lower().strip() in STAIR_CLASSES for name in stairs_model.names.values()):
+        parser.error("stairs model must have a stair, stairs, step, steps, or staircase class")
     model.track(np.zeros((640, 640, 3), dtype=np.uint8), persist=True, tracker="bytetrack.yaml",
                 imgsz=args.imgsz, conf=args.conf, verbose=False, device="cpu")
+    if stairs_model is not None:
+        stairs_model.track(np.zeros((640, 640, 3), dtype=np.uint8), persist=True, tracker="bytetrack.yaml",
+                           imgsz=args.imgsz, conf=args.conf, verbose=False, device="cpu")
     mailbox = LatestFrame()
     source = VideoSource(args.video, args.fps, args.speed, mailbox, args.limit_video_seconds)
     rules = SceneRules(args.corridor, args.conf, args.cooldown, args.fixed_camera)
     sink: WarningSink = NullSink() if args.no_audio else LocalSpeechSink(ROOT / "assets" / "tts" / "en_short", args.output.parent / "audio_events.jsonl")
-    times = {name: [] for name in ["yolo", "rules", "json", "latency"]}
+    times = {name: [] for name in ["yolo", "stairs_yolo", "rules", "json", "latency"]}
     started = mono_ms()
     producer = threading.Thread(target=source.run, name="video", daemon=True)
     producer.start()
@@ -573,18 +623,23 @@ def main() -> None:
                 t0 = mono_ms()
                 result = model.track(frame.image, persist=True, tracker="bytetrack.yaml", imgsz=args.imgsz,
                                      conf=args.conf, verbose=False, device="cpu")[0]
+                t_stairs_start = mono_ms()
+                stair_result = stairs_model.track(frame.image, persist=True, tracker="bytetrack.yaml", imgsz=args.imgsz,
+                                                  conf=args.conf, verbose=False, device="cpu")[0] if stairs_model is not None else None
+                t_stairs_end = mono_ms()
                 if args.simulate_inference_ms:
                     time.sleep(args.simulate_inference_ms / 1000)
                 inference_done = wall_ms()
                 t1 = mono_ms()
-                detections, scene, hazards, warning = rules.evaluate(frame, result)
+                detections, scene, hazards, warning = rules.evaluate(frame, result, stair_result)
                 t2 = mono_ms()
                 record = {"schema_version": SCHEMA_VERSION, "frame_id": frame.frame_id,
                           "video_timestamp_ms": frame.video_timestamp_ms, "entered_at_ms": frame.entered_at_ms,
                           "inference_completed_at_ms": inference_done, "processed_at_ms": wall_ms(),
                           "detections": detections, "scene": scene, "hazards": hazards, "warning": warning,
                           "latency_ms": round(mono_ms() - frame.entered_mono_ms, 2),
-                          "stage_ms": {"yolo": round(t1 - t0, 2), "rules": round(t2 - t1, 2),
+                          "stage_ms": {"yolo": round(t_stairs_start - t0, 2), "stairs_yolo": round(t_stairs_end - t_stairs_start, 2),
+                                       "rules": round(t2 - t1, 2),
                                        "video_intake_lag": round(frame.entered_mono_ms - frame.scheduled_mono_ms, 2)}}
                 line = json.dumps(record, ensure_ascii=False, separators=(",", ":"))
                 write_start = mono_ms()
@@ -592,7 +647,8 @@ def main() -> None:
                 if args.stdout:
                     print(line, flush=True)
                 times["json"].append(mono_ms() - write_start)
-                times["yolo"].append(t1 - t0)
+                times["yolo"].append(t_stairs_start - t0)
+                times["stairs_yolo"].append(t_stairs_end - t_stairs_start)
                 times["rules"].append(t2 - t1)
                 times["latency"].append(record["latency_ms"])
                 sink.publish(warning, frame)
@@ -608,7 +664,8 @@ def main() -> None:
         sink.close()
         if args.display:
             cv2.destroyAllWindows()
-    report = {"video": str(args.video), "model": str(args.model), "imgsz": args.imgsz, "metadata": source.metadata,
+    report = {"video": str(args.video), "model": str(args.model), "stairs_model": str(args.stairs_model) if args.stairs_model else None,
+              "imgsz": args.imgsz, "metadata": source.metadata,
               "speed": args.speed, "target_fps": args.fps, "selected_frames": source.selected,
               "simulated_inference_ms": args.simulate_inference_ms,
               "fixed_camera": args.fixed_camera,

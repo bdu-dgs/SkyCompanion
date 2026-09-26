@@ -3,4 +3,5 @@ node_modules
 .env.local
 dist
 *.log
+data/
 .DS_Store
