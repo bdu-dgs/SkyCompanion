@@ -1,0 +1,34 @@
+{
+  "video": "D:\\WUSTL\\Project\\SkyCompanion\\walking video.mp4",
+  "model": "D:\\WUSTL\\Project\\SkyCompanion\\yolo11n.pt",
+  "metadata": {
+    "width": 2560,
+    "height": 1440,
+    "fps": 20.0,
+    "frames": 2669
+  },
+  "speed": 1.0,
+  "target_fps": 10.0,
+  "selected_frames": 51,
+  "simulated_inference_ms": 180.0,
+  "processed_frames": 17,
+  "overwritten_frames": 34,
+  "warning_events": 1,
+  "wall_runtime_s": 5.45,
+  "stage_ms": {
+    "read_p50": 14.92,
+    "read_p95": 17.51,
+    "intake_lag_p50": 0.37,
+    "intake_lag_p95": 1.01,
+    "yolo_p50": 288.28,
+    "rules_p50": 19.57,
+    "json_p50": 0.1,
+    "latency_p50": 349.69,
+    "yolo_p95": 314.1,
+    "rules_p95": 24.09,
+    "json_p95": 0.21,
+    "latency_p95": 400.89
+  },
+  "audio_onset_measurement": "audio_disabled",
+  "source_error": null
+}
