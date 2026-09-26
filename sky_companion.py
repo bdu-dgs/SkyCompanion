@@ -1,4 +1,4 @@
-"""Local video -> YOLO11n -> JSONL -> replaceable warning sink prototype."""
+"""Local video -> YOLO-World -> JSONL -> replaceable warning sink prototype."""
 from __future__ import annotations
 
 import argparse
@@ -20,10 +20,11 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / ".deps"))
+sys.path.insert(0, str(ROOT / ".deps_overlay"))
 os.environ.setdefault("YOLO_CONFIG_DIR", str(ROOT))
 
 SCHEMA_VERSION = "1.0"
-OBSTACLES = {"person", "bicycle", "car", "motorcycle", "bus", "truck", "dog", "chair", "bench", "suitcase", "backpack", "skateboard"}
+OBSTACLES = {"person", "bicycle", "car", "motorcycle", "bus", "truck", "dog", "chair", "bench", "suitcase", "backpack", "skateboard", "streetlight", "railing", "bus_stop_shelter", "tree", "utility_pole"}
 MOTOR_VEHICLES = {"car", "motorcycle", "bus", "truck"}
 WARNING_NOUNS = {"person": "Pedestrian", "bicycle": "Bicycle", "car": "Car", "vehicle": "Vehicle", "obstacle": "Obstacle"}
 POSITION_WORDS = {"left": "left", "right": "right", "center": "ahead"}
@@ -433,8 +434,9 @@ class SceneRules:
             det = {"class": label, "confidence": round(conf, 4), "bbox_xyxy": xyxy,
                    "track_id": track_id if track_id is not None else "unknown", "direction": direction,
                    "relative_distance": distance, "in_walking_corridor": in_path}
-            if label == "traffic light":
-                det["visual_signal_color"] = signal_color(image, xyxy)
+            if label in {"traffic light", "traffic_light_red", "traffic_light_green"}:
+                det["visual_signal_color"] = ("red" if label == "traffic_light_red" else
+                                               "green" if label == "traffic_light_green" else signal_color(image, xyxy))
                 light_colors.append(det["visual_signal_color"])
             detections.append(det)
             if label not in OBSTACLES or conf < self.confidence:
@@ -567,7 +569,7 @@ def percentile(values: list[float], pct: float) -> float | None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--video", type=Path, default=ROOT / "walking video.mp4")
-    parser.add_argument("--model", type=Path, default=ROOT / "yolo11n.pt")
+    parser.add_argument("--model", type=Path, default=ROOT / "yolov8s-worldv2.pt")
     parser.add_argument("--stairs-model", type=Path, help="optional YOLO weights trained with a stair/steps class")
     parser.add_argument("--output", type=Path, default=ROOT / "run" / "frames.jsonl")
     parser.add_argument("--fps", type=float, default=10.0, help="sampled processing FPS")
@@ -593,9 +595,13 @@ def main() -> None:
     if args.stdout and hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    from ultralytics import YOLO
+    from ultralytics import YOLO, YOLOWorld
     torch.set_num_threads(min(4, torch.get_num_threads()))
-    model = YOLO(str(args.model))
+    model = YOLOWorld(str(args.model))
+    training_classes = {"bicycle", "streetlight", "railing", "bus_stop_shelter", "tree",
+                        "traffic_light_red", "traffic_light_green", "utility_pole"}
+    if not training_classes.issubset({str(name).lower().strip() for name in model.names.values()}):
+        model.set_classes(sorted(training_classes))
     stairs_model = YOLO(str(args.stairs_model)) if args.stairs_model else None
     if stairs_model is not None and not any(str(name).lower().strip() in STAIR_CLASSES for name in stairs_model.names.values()):
         parser.error("stairs model must have a stair, stairs, step, steps, or staircase class")
@@ -698,3 +704,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

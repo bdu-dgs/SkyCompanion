@@ -1,0 +1,8 @@
+bicycle
+streetlight
+railing
+bus_stop_shelter
+tree
+traffic_light_red
+traffic_light_green
+utility_pole

@@ -1,3 +1,11 @@
 /walking video.mp4
 /Hack WashU x Photon (2).pptx
 /Hackathon 2026_09_25-27.pdf
+/.deps_overlay/
+/.pip_temp/
+/.tmp_pip/
+/.deps/
+/weights/clip/
+/datasets/yolo_world_sidewalk/images/
+/datasets/yolo_world_sidewalk/labels/
+/datasets/yolo_world_sidewalk/lanes/
