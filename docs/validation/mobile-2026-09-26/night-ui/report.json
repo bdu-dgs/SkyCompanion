@@ -1,0 +1,26 @@
+{
+  "scope": "Native opening and night theme; not inference/field validation",
+  "sourceSHA256": {
+    "ios/OnDevice/SkyAppearance.swift": "df652eb29902aa9b06f22a32061ee10da7fec7ad5a703675a9d20be6ae7de865",
+    "ios/OnDevice/LocalContentView.swift": "16395f670c7840a431b3a6692bf67593a07b196c260eef4dbd24735e1af99090",
+    "ios/OnDevice/ExperimentalScreens.swift": "4e8ab30fff6eb197cefc3cc6b3da1cb98593c65caa7710df5c31b38cca4945d1",
+    "ios/SkyCompanionCapture/SkyCompanionCaptureApp.swift": "e043fd4edbde6eacd0fd3800c9eb740bc3660bf449617577182220c060671305",
+    "ios/SkyCompanionCapture/Info.plist": "0a9efad5f71242beccbb3eef5b5183cb84031ec5ff7846a904697f843413184d",
+    "scripts/prepare_mobile_app.py": "50771e9f25c55fafd8f615626bc65f82de6aa20697e01c4d86fbacf482c91b45",
+    "ios/SkyCompanionCapture/Assets.xcassets/MoonFlight.imageset/MoonFlight.jpg": "89dfa322cb89b7782fac39e4fa48a374d075cfb73a91fa3f6dfb42af341eafaa"
+  },
+  "simulatorBuild": "passed",
+  "signedDeviceBuild": "passed",
+  "installation": "success",
+  "screenshots": [
+    "opening.png",
+    "home.png",
+    "home-light.png",
+    "home-largest-text.png",
+    "drone.png",
+    "settings.png",
+    "onboarding.png"
+  ],
+  "manualDeviceAccessibility": "pending",
+  "deviceRemoteLaunch": "20-second timeout; user must open manually"
+}

@@ -1,0 +1,18 @@
+{
+  "buildPassed": true,
+  "directMixedAudioDecoded": true,
+  "duplicateSourcesSuppressed": true,
+  "offlineSpeechPlaybackPassed": true,
+  "transportTestsPassed": 12,
+  "phoneConversationAudioVerified": false,
+  "requiresBroadcastMicrophoneToggle": false,
+  "requiresVoiceAssistance": true,
+  "audioTrackCount": 1,
+  "mixWindowSeconds": 0.5,
+  "retainedPCMSeconds": 2,
+  "audioRelayPacketLimit": 8,
+  "priorPhoneFailure": "Video saved; microphone signal absent in two recording outcomes.",
+  "remaining": "Physical iPhone conversation and caution playback, command continuity and interruption checks.",
+  "installed": true,
+  "launched": true
+}

@@ -1,0 +1,30 @@
+{
+  "audioTrackCount" : 1,
+  "decodedFrames" : 24,
+  "deviceInputChannels" : 2,
+  "deviceToneAmplitude" : 0.18295436994660255,
+  "directAudio" : true,
+  "duplicateFinish" : true,
+  "duplicateSourcesSuppressed" : true,
+  "durationSeconds" : 2,
+  "emptyRecording" : true,
+  "height" : 180,
+  "invalidCropRejected" : true,
+  "liveCrop" : true,
+  "microphoneSampleRates" : [
+    16000,
+    44100
+  ],
+  "microphoneToneAmplitude" : 0.18318253162355208,
+  "orientationChange" : true,
+  "passed" : true,
+  "pauseGapRemoved" : true,
+  "preselectedCrop" : true,
+  "scope" : "Synthetic macOS writer check; not iPhone ReplayKit or Photos validation",
+  "staticScreen" : false,
+  "systemMix" : false,
+  "systemSpeechToneAmplitude" : 0,
+  "uncroppedIntroRejected" : true,
+  "width" : 640,
+  "writeFailure" : true
+}

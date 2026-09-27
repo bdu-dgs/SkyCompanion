@@ -1,0 +1,15 @@
+{
+  "buildPassed": true,
+  "installed": true,
+  "launched": true,
+  "writerSyntheticTestsPassed": true,
+  "phonePhotosSaveVerified": true,
+  "destination": "Photos",
+  "audioRecorded": false,
+  "maxLongEdge": 1280,
+  "submissionFPSCap": 15,
+  "trigger": "App Stop recording and save; system broadcast stop also finalizes",
+  "requiresComputer": false,
+  "phoneVerificationEvidence": "User confirmed app stop saved a playable video to Photos on the installed iPhone build.",
+  "longDurationRecordingWithDroneInferenceVerified": false
+}

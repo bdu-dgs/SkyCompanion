@@ -1,0 +1,15 @@
+--- .skycompanion-live/area-button-fix-20260927/LocalSessionModel.before.swift	2026-09-27 10:01:16
++++ ios/OnDevice/LocalSessionModel.swift	2026-09-27 10:03:44
+@@ -351,6 +351,12 @@
+         areaSelection.reopen()
+         regionConfirmed = source == .drone && lastRegion != nil
+             && settings.region == lastRegion && settings.recordingRegion == lastRegion
++        appendLog("Video area editor restored: \(region.summary).")
++    }
++
++    func resetVideoAreaDraft() {
++        region = CaptureRegion(); regionConfirmed = false
++        appendLog("Video area draft reset by Use full image; not yet applied.")
+     }
+ 
+     func confirmRegion() {

@@ -1,0 +1,20 @@
+{
+  "installed": true,
+  "buildPassed": true,
+  "syntheticMixedAudioVerified": true,
+  "phoneConversationAudioVerified": false,
+  "sources": [
+    "ReplayKit audioApp",
+    "ReplayKit audioMic"
+  ],
+  "requiresMicrophoneOnInSystemBroadcastControl": true,
+  "audioTrackCount": 1,
+  "encoding": "48 kHz mono AAC 96 kbps",
+  "sourcesGain": 0.5,
+  "audioQueueLimit": 40,
+  "mixWindowSeconds": 0.25,
+  "retainedPCMSeconds": 1,
+  "stereoDeviceAndMonoMicrophoneVerified": true,
+  "iPhoneInterruptionAndVoiceRecognitionVerified": false,
+  "launched": true
+}

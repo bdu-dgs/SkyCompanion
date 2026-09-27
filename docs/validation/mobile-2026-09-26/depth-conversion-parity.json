@@ -1,0 +1,47 @@
+{
+  "scope": "Conversion parity only. Shared PIL input; not Swift preprocessing, phone performance or real distance validation.",
+  "cases": [
+    {
+      "image": "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+      "rotation": 0,
+      "relativeErrorMedian": 2.9491317832253117e-07,
+      "relativeErrorP99": 1.6250339740508934e-06,
+      "maxAbsoluteDeltaMeters": 0.000240325927734375,
+      "macCPUInferenceMS": 87.85495900519891,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "image": "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+      "rotation": 90,
+      "relativeErrorMedian": 6.528613312184461e-07,
+      "relativeErrorP99": 1.8662012735148892e-06,
+      "maxAbsoluteDeltaMeters": 4.100799560546875e-05,
+      "macCPUInferenceMS": 55.76870799995959,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "image": "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png",
+      "rotation": 0,
+      "relativeErrorMedian": 4.7449253770537325e-07,
+      "relativeErrorP99": 1.8055048940368579e-06,
+      "maxAbsoluteDeltaMeters": 5.054473876953125e-05,
+      "macCPUInferenceMS": 56.53362500015646,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "image": "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png",
+      "rotation": 90,
+      "relativeErrorMedian": 5.987491249470622e-07,
+      "relativeErrorP99": 1.6628812318231212e-06,
+      "maxAbsoluteDeltaMeters": 2.384185791015625e-05,
+      "macCPUInferenceMS": 55.87637500138953,
+      "finite": true,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "selectedModel": "SkyMetricDepthSmall_392_FP32"
+}

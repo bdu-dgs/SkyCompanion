@@ -1,0 +1,17 @@
+{
+  "model": "SkyWorld72_epoch15_640_FP32",
+  "targets": [
+    {
+      "target": ".",
+      "manifestMatches": true,
+      "weightMatches": true,
+      "weightSHA256": "17fde744d78018fc8ec63cce50a5d0725b8e45fe1e06e7d6bf453d48ffe2853f"
+    },
+    {
+      "target": "PlugIns/SkyCompanionBroadcast.appex",
+      "manifestMatches": true,
+      "weightMatches": true,
+      "weightSHA256": "17fde744d78018fc8ec63cce50a5d0725b8e45fe1e06e7d6bf453d48ffe2853f"
+    }
+  ]
+}

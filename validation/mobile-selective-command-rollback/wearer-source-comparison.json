@@ -1,0 +1,46 @@
+{
+  "ios/CaptureCore/Sources/CaptureCore/LocalRiskEngine.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/LocalRiskEngine.swift",
+    "exact_match": false
+  },
+  "ios/CaptureCore/Sources/CaptureCore/LocalSceneDescriber.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/LocalSceneDescriber.swift",
+    "exact_match": true
+  },
+  "ios/CaptureCore/Sources/CaptureCore/LocalVisionTypes.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/LocalVisionTypes.swift",
+    "exact_match": true
+  },
+  "ios/CaptureCore/Sources/CaptureCore/MobileWearer.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/MobileWearer.swift",
+    "exact_match": false
+  },
+  "ios/OnDevice/LocalVisionPipeline.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/LocalVisionPipeline.swift",
+    "exact_match": false
+  },
+  "ios/OnDevice/WearerTracker.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/WearerTracker.swift",
+    "exact_match": false
+  },
+  "ios/OnDevice/CompanionScreen.swift": {
+    "reference": ".skycompanion-live/caution-consistency-before/CompanionScreen.swift",
+    "exact_match": true
+  },
+  "ios/CaptureCore/Sources/CaptureCore/AlertPreferences.swift": {
+    "reference": ".skycompanion-live/named-caution-backup/AlertPreferences.swift",
+    "exact_match": true
+  },
+  "ios/CaptureCore/Sources/CaptureCore/MobileWalkingPlanner.swift": {
+    "reference": ".skycompanion-live/named-caution-backup/MobileWalkingPlanner.swift",
+    "exact_match": false
+  },
+  "ios/CaptureCore/Sources/CaptureCore/MobileAlertSpeech.swift": {
+    "reference": ".skycompanion-live/named-caution-backup/MobileAlertSpeech.swift",
+    "exact_match": true
+  },
+  "ios/OnDevice/LocalSessionModel.swift": {
+    "reference": ".skycompanion-live/named-caution-backup/LocalSessionModel.swift",
+    "exact_match": false
+  }
+}

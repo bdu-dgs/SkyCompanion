@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-26",
+  "feature": "voice assistance status",
+  "tests": {
+    "passed": 90,
+    "failed": 0,
+    "log": "/tmp/sky-status-tests.log"
+  },
+  "releaseBuild": "passed",
+  "bundleVerification": {
+    "app": "/private/tmp/skycompanion-device/Build/Products/Release-iphoneos/SkyCompanion.app",
+    "bundleIdentifier": "com.stanley.skycompanion.capture",
+    "minimumOSVersion": "18.0",
+    "model": "SkyCompanionYOLOE_v7_960_FP16",
+    "classes": 115,
+    "depthModel": "SkyMetricDepthSmall_392_FP32",
+    "depthValidation": "unvalidated",
+    "matchingModelAndPairingInBothTargets": true,
+    "desktopConfigurationAbsent": true,
+    "appIconAndLicenseBundled": true,
+    "englishResourcesInBothTargets": true,
+    "compiledModelContractsMatch": true,
+    "signedProfilePresent": true,
+    "scope": "Static checks of actual built bundles; not device execution or precision validation"
+  },
+  "phoneInstallation": "passed",
+  "phoneLaunch": "Timed out after 20 seconds; automatic launch not confirmed. Installation succeeded.",
+  "acousticAndMandarinRecognitionVerification": "pending on device",
+  "ui": "No new home/setup control. Existing voice picker now selects English or Mandarin commands.",
+  "sourceHashes": {
+    "ios/CaptureCore/Sources/CaptureCore/MobileAssistanceStatus.swift": "322883b6382f0a63701c603fae6de180815b1832c356946019d3e06d1b7b8ace",
+    "ios/CaptureCore/Sources/CaptureCore/MobileVoiceCommand.swift": "bde0271d2fa028dd963f38034b65d913f81a042eedc8d06b5ba0f53771cbdf2c",
+    "ios/OnDevice/LocalCommandListener.swift": "25e1e5f0399bff9af5890c25d534e7bb72b4a76bb0c91239f3a5716b42d28990",
+    "ios/OnDevice/LocalVoiceController.swift": "237e2101bf3b8c14aaca4b26730ab51899ea5fab91113eb530dfa341efbbeff6",
+    "ios/OnDevice/LocalSessionModel.swift": "cb8d9a50eefaea7948c999b2bf31b5da522f1199b3214c891e8b9e57dd91bde1"
+  }
+}

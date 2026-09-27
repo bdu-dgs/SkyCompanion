@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skycompanion:public-obstacles:v1",
+  "title": "SkyCompanion public obstacle research manifest v1",
+  "type": "object",
+  "required": ["classes", "images"],
+  "properties": {
+    "schema_version": {"const": "public-obstacles-v1"},
+    "classes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"}},
+    "images": {"type": "array", "items": {"$ref": "#/$defs/image"}},
+    "split_provenance": {"type": "object"},
+    "source_datasets": {"type": "array", "items": {"type": "object"}}
+  },
+  "$defs": {
+    "coverage": {"enum": ["complete", "partial", "unknown"]},
+    "box": {
+      "type": "object",
+      "required": ["x", "y", "w", "h"],
+      "properties": {
+        "x": {"type": "number", "minimum": 0, "exclusiveMaximum": 1},
+        "y": {"type": "number", "minimum": 0, "exclusiveMaximum": 1},
+        "w": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "h": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "annotation": {
+      "allOf": [{"$ref": "#/$defs/box"}],
+      "required": ["label"],
+      "properties": {
+        "label": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "source_label": {"type": "string"},
+        "track_id": {"type": ["string", "null"]},
+        "ignore": {"type": "boolean"},
+        "geometry_scope": {"enum": ["visible_instance_bbox", "visible_component_bbox", "publisher_bbox_unverified"]},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "near_in_image": {"type": ["boolean", "null"]},
+            "truncated": {"type": ["boolean", "null"]},
+            "occluded": {"type": ["boolean", "null"]},
+            "bottom_visible": {"type": ["boolean", "null"]},
+            "low_in_image": {"type": ["boolean", "null"]},
+            "distance_m": {"type": ["number", "null"], "exclusiveMinimum": 0}
+          }
+        },
+        "path_occupancy": {"enum": ["unknown", "image_corridor_overlap", "validated_user_path_conflict", "validated_no_user_path_conflict"]}
+      }
+    },
+    "ignore_region": {
+      "allOf": [{"$ref": "#/$defs/box"}],
+      "required": ["reason"],
+      "properties": {
+        "labels": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "image": {
+      "type": "object",
+      "required": ["id", "path", "sha256", "split", "annotations", "review_status", "reviewed_classes"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "split": {"enum": ["train", "val", "test", "unassigned"]},
+        "source_split": {"type": ["string", "null"]},
+        "source_dataset": {"type": "string"},
+        "source_revision": {"type": "string"},
+        "source_url": {"type": "string"},
+        "license": {"type": "string"},
+        "usage_status": {"type": "string"},
+        "video_group": {"type": ["string", "null"]},
+        "route_group": {"type": ["string", "null"]},
+        "location_group": {"type": ["string", "null"]},
+        "time_s": {"type": ["number", "null"], "minimum": 0},
+        "review_status": {"enum": ["published_annotations", "assistant_draft", "assistant_reviewed", "human_verified", "unreviewed"]},
+        "reviewed_classes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "annotation_coverage": {"type": "object", "additionalProperties": {"$ref": "#/$defs/coverage"}},
+        "annotations": {"type": "array", "items": {"$ref": "#/$defs/annotation"}},
+        "ignore_regions": {"type": "array", "items": {"$ref": "#/$defs/ignore_region"}},
+        "review_passes": {"type": "array", "items": {"type": "object"}}
+      }
+    }
+  },
+  "x-taxonomy": {
+    "pole": {"definition": "Visible shaft of a slender freestanding utility, lamp, sign or scaffolding pole; exclude sign face, lamp head and cross-arm.", "exclude": ["building column", "tree trunk", "tower", "bollard without explicit source-scope review"]},
+    "column": {"definition": "Visible body and attached base of a building or canopy structural column; exclude overhead beams and adjoining walls."},
+    "tree_trunk": {"definition": "Visible main woody trunk, including its visible base; exclude crown, shrub and distant branches. Whole-tree annotations cannot be renamed to trunk."},
+    "fence": {"definition": "Visible instance or consistently bounded connected section of a boundary fence, retaining posts and mesh together.", "exclude": ["road guardrail without explicit source-scope review", "temporary construction barrier"]},
+    "construction_barrier": {"definition": "Visible temporary rigid construction barricade or work-zone fence as an object.", "exclude": ["traffic cone", "construction barrel", "caution tape", "generic permanent concrete wall"]},
+    "rock": {"definition": "Visible natural stone or boulder protruding from its surroundings; low height is a separate attribute, not inferred metric distance.", "exclude": ["pavement texture", "manhole", "manufactured concrete block", "stone wall"]}
+  },
+  "x-reserved-classes": ["table", "chair", "kiosk", "bollard", "traffic_cone", "construction_barrel"],
+  "x-evaluation-aliases": {
+    "pole": "pole", "light pole": "pole", "signpost": "pole", "scaffolding pole": "pole", "utility_pole": "pole", "utility pole": "pole", "lamp post": "pole",
+    "column": "column", "pillar": "column", "tree_trunk": "tree_trunk", "tree trunk": "tree_trunk", "fence": "fence",
+    "construction_barrier": "construction_barrier", "construction barrier": "construction_barrier", "rock": "rock", "boulder": "rock",
+    "traffic cone": "traffic_cone", "construction barrel": "construction_barrel"
+  }
+}

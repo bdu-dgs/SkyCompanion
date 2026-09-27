@@ -1,0 +1,74 @@
+{
+  "note": "Qualitative route relevance from independent visual review, not measured danger ground truth. Labels are detector vocabulary; potted plant denotes the round tree planter in this clip. Time windows are evaluation data, never App rules.",
+  "events": [
+    {
+      "id": "blue_pedestrian",
+      "window": [
+        3,
+        8
+      ],
+      "labels": [
+        "person"
+      ],
+      "directions": [
+        "left"
+      ]
+    },
+    {
+      "id": "right_column",
+      "window": [
+        7,
+        12
+      ],
+      "labels": [
+        "pole"
+      ],
+      "directions": [
+        "right"
+      ]
+    },
+    {
+      "id": "green_pedestrian",
+      "window": [
+        14,
+        19.5
+      ],
+      "labels": [
+        "person"
+      ],
+      "directions": [
+        "left"
+      ]
+    },
+    {
+      "id": "planter_before_gap",
+      "window": [
+        23,
+        30
+      ],
+      "labels": [
+        "potted plant",
+        "potted plant and traffic cone"
+      ],
+      "directions": [
+        "left",
+        "ahead"
+      ]
+    },
+    {
+      "id": "cone_before_passing",
+      "window": [
+        26,
+        30
+      ],
+      "labels": [
+        "traffic cone",
+        "potted plant and traffic cone"
+      ],
+      "directions": [
+        "right",
+        "ahead"
+      ]
+    }
+  ]
+}

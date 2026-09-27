@@ -1,0 +1,2828 @@
+{
+  "source": "diagnostic_video",
+  "description": "Mac local video to real YOLO to actual browser render acknowledgements; NOT iPhone capture",
+  "duration_seconds": 60.007,
+  "analysis_enabled_throughout": true,
+  "stable_session": true,
+  "received_fps": 4.999,
+  "processed_fps": 4.983,
+  "last_metrics": {
+    "received_fps": 5.0,
+    "processed_fps": 4.9,
+    "dropped_frames": 0,
+    "received_frames": 637,
+    "processed_frames": 455,
+    "queue_ms": 0.56,
+    "inference_ms": 42.6,
+    "roundtrip_p50_ms": 57.1,
+    "roundtrip_p95_ms": 296.73
+  },
+  "samples": [
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 337,
+        "processed_frames": 156,
+        "queue_ms": 0.36,
+        "inference_ms": 36.65,
+        "roundtrip_p50_ms": 46.95,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:45.168162+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 342,
+        "processed_frames": 160,
+        "queue_ms": 0.43,
+        "inference_ms": 32.4,
+        "roundtrip_p50_ms": 47.22,
+        "roundtrip_p95_ms": 259.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:46.152863+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.8,
+        "processed_fps": 4.8,
+        "dropped_frames": 0,
+        "received_frames": 345,
+        "processed_frames": 164,
+        "queue_ms": 0.59,
+        "inference_ms": 31.67,
+        "roundtrip_p50_ms": 47.94,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:47.154722+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.1,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 353,
+        "processed_frames": 171,
+        "queue_ms": 0.3,
+        "inference_ms": 23.84,
+        "roundtrip_p50_ms": 48.11,
+        "roundtrip_p95_ms": 269.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:48.154836+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.1,
+        "processed_fps": 5.1,
+        "dropped_frames": 0,
+        "received_frames": 358,
+        "processed_frames": 176,
+        "queue_ms": 0.33,
+        "inference_ms": 23.93,
+        "roundtrip_p50_ms": 47.22,
+        "roundtrip_p95_ms": 269.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:49.155605+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 362,
+        "processed_frames": 181,
+        "queue_ms": 0.34,
+        "inference_ms": 22.48,
+        "roundtrip_p50_ms": 47.09,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:50.155208+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 367,
+        "processed_frames": 186,
+        "queue_ms": 0.46,
+        "inference_ms": 22.88,
+        "roundtrip_p50_ms": 46.75,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:51.155145+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 372,
+        "processed_frames": 191,
+        "queue_ms": 0.35,
+        "inference_ms": 23.45,
+        "roundtrip_p50_ms": 46.63,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:52.154999+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 377,
+        "processed_frames": 196,
+        "queue_ms": 0.33,
+        "inference_ms": 27.94,
+        "roundtrip_p50_ms": 46.67,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:53.154271+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 382,
+        "processed_frames": 201,
+        "queue_ms": 0.33,
+        "inference_ms": 33.63,
+        "roundtrip_p50_ms": 46.95,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:54.155051+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 386,
+        "processed_frames": 205,
+        "queue_ms": 0.32,
+        "inference_ms": 27.91,
+        "roundtrip_p50_ms": 47.22,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:55.153149+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.1,
+        "processed_fps": 5.2,
+        "dropped_frames": 0,
+        "received_frames": 393,
+        "processed_frames": 212,
+        "queue_ms": 0.31,
+        "inference_ms": 22.86,
+        "roundtrip_p50_ms": 47.61,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:56.155018+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.3,
+        "processed_fps": 5.3,
+        "dropped_frames": 0,
+        "received_frames": 398,
+        "processed_frames": 217,
+        "queue_ms": 0.29,
+        "inference_ms": 23.49,
+        "roundtrip_p50_ms": 47.22,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:57.155015+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 403,
+        "processed_frames": 221,
+        "queue_ms": 0.28,
+        "inference_ms": 22.4,
+        "roundtrip_p50_ms": 46.95,
+        "roundtrip_p95_ms": 265.31
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:58.154946+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 408,
+        "processed_frames": 226,
+        "queue_ms": 0.32,
+        "inference_ms": 23.9,
+        "roundtrip_p50_ms": 46.67,
+        "roundtrip_p95_ms": 265.31
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:24:59.155090+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 412,
+        "processed_frames": 231,
+        "queue_ms": 0.31,
+        "inference_ms": 25.55,
+        "roundtrip_p50_ms": 46.52,
+        "roundtrip_p95_ms": 265.31
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:00.152789+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 417,
+        "processed_frames": 236,
+        "queue_ms": 0.32,
+        "inference_ms": 24.21,
+        "roundtrip_p50_ms": 46.42,
+        "roundtrip_p95_ms": 265.31
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:01.155224+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 422,
+        "processed_frames": 241,
+        "queue_ms": 0.33,
+        "inference_ms": 25.32,
+        "roundtrip_p50_ms": 46.42,
+        "roundtrip_p95_ms": 261.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:02.155079+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 427,
+        "processed_frames": 246,
+        "queue_ms": 0.33,
+        "inference_ms": 28.04,
+        "roundtrip_p50_ms": 46.49,
+        "roundtrip_p95_ms": 261.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:03.155237+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 432,
+        "processed_frames": 251,
+        "queue_ms": 0.54,
+        "inference_ms": 33.03,
+        "roundtrip_p50_ms": 46.63,
+        "roundtrip_p95_ms": 261.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:04.155144+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 436,
+        "processed_frames": 255,
+        "queue_ms": 0.44,
+        "inference_ms": 33.44,
+        "roundtrip_p50_ms": 46.75,
+        "roundtrip_p95_ms": 261.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:05.155248+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 443,
+        "processed_frames": 261,
+        "queue_ms": 0.31,
+        "inference_ms": 23.75,
+        "roundtrip_p50_ms": 46.95,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:06.150580+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 447,
+        "processed_frames": 266,
+        "queue_ms": 0.36,
+        "inference_ms": 26.75,
+        "roundtrip_p50_ms": 46.67,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:07.154958+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 452,
+        "processed_frames": 271,
+        "queue_ms": 0.31,
+        "inference_ms": 24.52,
+        "roundtrip_p50_ms": 46.67,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:08.155285+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 457,
+        "processed_frames": 276,
+        "queue_ms": 0.48,
+        "inference_ms": 26.65,
+        "roundtrip_p50_ms": 46.63,
+        "roundtrip_p95_ms": 261.04
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:09.155302+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 462,
+        "processed_frames": 281,
+        "queue_ms": 0.33,
+        "inference_ms": 25.91,
+        "roundtrip_p50_ms": 46.63,
+        "roundtrip_p95_ms": 259.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:10.155286+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 467,
+        "processed_frames": 286,
+        "queue_ms": 0.4,
+        "inference_ms": 32.91,
+        "roundtrip_p50_ms": 46.67,
+        "roundtrip_p95_ms": 259.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:11.155344+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 471,
+        "processed_frames": 290,
+        "queue_ms": 0.44,
+        "inference_ms": 35.36,
+        "roundtrip_p50_ms": 46.95,
+        "roundtrip_p95_ms": 259.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:12.155332+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.8,
+        "processed_fps": 4.8,
+        "dropped_frames": 0,
+        "received_frames": 475,
+        "processed_frames": 294,
+        "queue_ms": 0.58,
+        "inference_ms": 31.99,
+        "roundtrip_p50_ms": 47.09,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:13.155410+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.1,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 483,
+        "processed_frames": 301,
+        "queue_ms": 0.45,
+        "inference_ms": 42.25,
+        "roundtrip_p50_ms": 47.49,
+        "roundtrip_p95_ms": 269.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:14.150684+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.2,
+        "processed_fps": 5.1,
+        "dropped_frames": 0,
+        "received_frames": 488,
+        "processed_frames": 306,
+        "queue_ms": 0.39,
+        "inference_ms": 24.75,
+        "roundtrip_p50_ms": 47.88,
+        "roundtrip_p95_ms": 269.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:15.153454+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 492,
+        "processed_frames": 311,
+        "queue_ms": 0.33,
+        "inference_ms": 24.88,
+        "roundtrip_p50_ms": 47.49,
+        "roundtrip_p95_ms": 269.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:16.150960+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 497,
+        "processed_frames": 316,
+        "queue_ms": 0.63,
+        "inference_ms": 24.47,
+        "roundtrip_p50_ms": 47.22,
+        "roundtrip_p95_ms": 269.5
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:17.153448+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 502,
+        "processed_frames": 321,
+        "queue_ms": 0.37,
+        "inference_ms": 25.18,
+        "roundtrip_p50_ms": 47.22,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:18.151858+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 507,
+        "processed_frames": 326,
+        "queue_ms": 0.48,
+        "inference_ms": 36.68,
+        "roundtrip_p50_ms": 47.49,
+        "roundtrip_p95_ms": 266.16
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:19.156274+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 4.8,
+        "dropped_frames": 0,
+        "received_frames": 511,
+        "processed_frames": 329,
+        "queue_ms": 0.45,
+        "inference_ms": 48.26,
+        "roundtrip_p50_ms": 47.61,
+        "roundtrip_p95_ms": 270.64
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:20.155779+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.7,
+        "processed_fps": 4.7,
+        "dropped_frames": 0,
+        "received_frames": 514,
+        "processed_frames": 333,
+        "queue_ms": 1.2,
+        "inference_ms": 46.55,
+        "roundtrip_p50_ms": 47.88,
+        "roundtrip_p95_ms": 275.42
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:21.155956+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.7,
+        "processed_fps": 4.6,
+        "dropped_frames": 0,
+        "received_frames": 518,
+        "processed_frames": 336,
+        "queue_ms": 0.47,
+        "inference_ms": 46.03,
+        "roundtrip_p50_ms": 48.01,
+        "roundtrip_p95_ms": 278.93
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:22.155886+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.3,
+        "processed_fps": 5.3,
+        "dropped_frames": 0,
+        "received_frames": 528,
+        "processed_frames": 347,
+        "queue_ms": 0.5,
+        "inference_ms": 28.76,
+        "roundtrip_p50_ms": 48.29,
+        "roundtrip_p95_ms": 278.93
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:23.154316+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.1,
+        "dropped_frames": 0,
+        "received_frames": 533,
+        "processed_frames": 352,
+        "queue_ms": 0.29,
+        "inference_ms": 23.41,
+        "roundtrip_p50_ms": 48.23,
+        "roundtrip_p95_ms": 278.93
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:24.155134+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 538,
+        "processed_frames": 356,
+        "queue_ms": 0.41,
+        "inference_ms": 25.61,
+        "roundtrip_p50_ms": 48.21,
+        "roundtrip_p95_ms": 278.93
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:25.153689+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 542,
+        "processed_frames": 361,
+        "queue_ms": 0.39,
+        "inference_ms": 23.65,
+        "roundtrip_p50_ms": 48.01,
+        "roundtrip_p95_ms": 277.45
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:26.155569+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 547,
+        "processed_frames": 366,
+        "queue_ms": 0.36,
+        "inference_ms": 28.4,
+        "roundtrip_p50_ms": 47.94,
+        "roundtrip_p95_ms": 277.45
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:27.155851+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 552,
+        "processed_frames": 371,
+        "queue_ms": 0.46,
+        "inference_ms": 34.6,
+        "roundtrip_p50_ms": 48.11,
+        "roundtrip_p95_ms": 277.45
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:28.153653+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 557,
+        "processed_frames": 375,
+        "queue_ms": 0.46,
+        "inference_ms": 43.71,
+        "roundtrip_p50_ms": 48.28,
+        "roundtrip_p95_ms": 277.45
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:29.155825+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 560,
+        "processed_frames": 379,
+        "queue_ms": 0.91,
+        "inference_ms": 74.74,
+        "roundtrip_p50_ms": 48.29,
+        "roundtrip_p95_ms": 278.93
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:30.155845+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 564,
+        "processed_frames": 382,
+        "queue_ms": 0.63,
+        "inference_ms": 44.99,
+        "roundtrip_p50_ms": 48.43,
+        "roundtrip_p95_ms": 279.94
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:31.151516+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.1,
+        "processed_fps": 5.2,
+        "dropped_frames": 0,
+        "received_frames": 569,
+        "processed_frames": 388,
+        "queue_ms": 0.85,
+        "inference_ms": 44.35,
+        "roundtrip_p50_ms": 48.53,
+        "roundtrip_p95_ms": 281.86
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:32.155898+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 577,
+        "processed_frames": 396,
+        "queue_ms": 0.4,
+        "inference_ms": 32.33,
+        "roundtrip_p50_ms": 48.68,
+        "roundtrip_p95_ms": 281.86
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:33.155620+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 582,
+        "processed_frames": 401,
+        "queue_ms": 0.35,
+        "inference_ms": 24.33,
+        "roundtrip_p50_ms": 48.89,
+        "roundtrip_p95_ms": 279.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:34.153667+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.9,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 587,
+        "processed_frames": 406,
+        "queue_ms": 0.73,
+        "inference_ms": 49.58,
+        "roundtrip_p50_ms": 49.02,
+        "roundtrip_p95_ms": 279.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:35.153701+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 592,
+        "processed_frames": 410,
+        "queue_ms": 0.58,
+        "inference_ms": 49.96,
+        "roundtrip_p50_ms": 49.52,
+        "roundtrip_p95_ms": 279.97
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:36.153342+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.8,
+        "processed_fps": 4.8,
+        "dropped_frames": 0,
+        "received_frames": 595,
+        "processed_frames": 414,
+        "queue_ms": 0.6,
+        "inference_ms": 45.53,
+        "roundtrip_p50_ms": 49.83,
+        "roundtrip_p95_ms": 281.86
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:37.155993+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.7,
+        "processed_fps": 4.7,
+        "dropped_frames": 0,
+        "received_frames": 599,
+        "processed_frames": 418,
+        "queue_ms": 0.56,
+        "inference_ms": 45.34,
+        "roundtrip_p50_ms": 49.89,
+        "roundtrip_p95_ms": 286.24
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:38.155871+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.5,
+        "processed_fps": 4.6,
+        "dropped_frames": 0,
+        "received_frames": 602,
+        "processed_frames": 421,
+        "queue_ms": 0.66,
+        "inference_ms": 55.19,
+        "roundtrip_p50_ms": 49.91,
+        "roundtrip_p95_ms": 289.22
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:39.166961+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 4.5,
+        "processed_fps": 4.4,
+        "dropped_frames": 0,
+        "received_frames": 605,
+        "processed_frames": 423,
+        "queue_ms": 0.48,
+        "inference_ms": 44.36,
+        "roundtrip_p50_ms": 50.19,
+        "roundtrip_p95_ms": 297.87
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:40.156297+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.1,
+        "processed_fps": 5.2,
+        "dropped_frames": 0,
+        "received_frames": 615,
+        "processed_frames": 434,
+        "queue_ms": 0.52,
+        "inference_ms": 43.19,
+        "roundtrip_p50_ms": 51.42,
+        "roundtrip_p95_ms": 297.87
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:41.155940+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.3,
+        "processed_fps": 5.3,
+        "dropped_frames": 0,
+        "received_frames": 622,
+        "processed_frames": 441,
+        "queue_ms": 0.56,
+        "inference_ms": 37.42,
+        "roundtrip_p50_ms": 52.7,
+        "roundtrip_p95_ms": 296.73
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:42.156198+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 627,
+        "processed_frames": 446,
+        "queue_ms": 0.47,
+        "inference_ms": 31.91,
+        "roundtrip_p50_ms": 56.06,
+        "roundtrip_p95_ms": 296.73
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:43.155802+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 5.0,
+        "dropped_frames": 0,
+        "received_frames": 632,
+        "processed_frames": 451,
+        "queue_ms": 0.47,
+        "inference_ms": 38.36,
+        "roundtrip_p50_ms": 56.29,
+        "roundtrip_p95_ms": 296.73
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:44.155856+00:00"
+    },
+    {
+      "protocol_version": 1,
+      "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+      "target": {
+        "capture_fps": 5,
+        "processed_fps": 3,
+        "roundtrip_p95_ms": 1000
+      },
+      "type": "state",
+      "session_id": "54af255f-1fe9-4136-8a11-d122e4444a0a",
+      "revision": 3,
+      "connection": "connected",
+      "capture": "receiving",
+      "source": "diagnostic_video",
+      "analysis_enabled": true,
+      "roi": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "roi_version": 2,
+      "dimensions": [
+        960,
+        540
+      ],
+      "model": {
+        "state": "ready",
+        "name": "yolo11n",
+        "device": "cpu",
+        "error": null
+      },
+      "metrics": {
+        "received_fps": 5.0,
+        "processed_fps": 4.9,
+        "dropped_frames": 0,
+        "received_frames": 637,
+        "processed_frames": 455,
+        "queue_ms": 0.56,
+        "inference_ms": 42.6,
+        "roundtrip_p50_ms": 57.1,
+        "roundtrip_p95_ms": 296.73
+      },
+      "message": "Analyzing the current video.",
+      "observed_at": "2026-09-25T22:25:45.155897+00:00"
+    }
+  ]
+}

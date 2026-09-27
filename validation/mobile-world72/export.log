@@ -1,0 +1,29 @@
+scikit-learn version 1.7.2 is not supported. Minimum required version: 0.17. Maximum required version: 1.5.1. Disabling scikit-learn conversion API.
+Torch version 2.11.0 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+Ultralytics 8.4.37 🚀 Python-3.12.6 torch-2.11.0 CPU (Apple M5 Pro)
+WARNING ⚠️ YOLOWorld (original version) export is not supported to any format. YOLOWorldv2 models (i.e. 'yolov8s-worldv2.pt') only support export to (torchscript, onnx, openvino, engine, coreml) formats. See https://docs.ultralytics.com/models/yolo-world for details.
+YOLOv8s-worldv2 summary (fused): 88 layers, 12,749,288 parameters, 0 gradients, 48.9 GFLOPs
+
+[34m[1mPyTorch:[0m starting from '/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.skycompanion-live/mobile-export/SkyWorld72_epoch15_640_FP32/SkyWorld72_epoch15_640_FP32.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 76, 8400) (24.7 MB)
+
+[34m[1mCoreML:[0m starting export with coremltools 9.0...
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/800 [00:00<?, ? ops/s]/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.venv-mobile-export/lib/python3.12/site-packages/coremltools/converters/mil/mil/ops/defs/iOS15/linear.py:91: RuntimeWarning: divide by zero encountered in matmul
+  res = np.matmul(self.x.val, np.transpose(self.weight.val))
+/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.venv-mobile-export/lib/python3.12/site-packages/coremltools/converters/mil/mil/ops/defs/iOS15/linear.py:91: RuntimeWarning: overflow encountered in matmul
+  res = np.matmul(self.x.val, np.transpose(self.weight.val))
+/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.venv-mobile-export/lib/python3.12/site-packages/coremltools/converters/mil/mil/ops/defs/iOS15/linear.py:91: RuntimeWarning: invalid value encountered in matmul
+  res = np.matmul(self.x.val, np.transpose(self.weight.val))
+Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 799/800 [00:00<00:00, 10384.32 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 199.27 passes/s]
+Running MIL default pipeline:   0%|          | 0/92 [00:00<?, ? passes/s]/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.venv-mobile-export/lib/python3.12/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '1186', of the source model, has been renamed to 'var_1186' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline:  22%|██▏       | 20/92 [00:00<00:00, 195.36 passes/s]Running MIL default pipeline:  43%|████▎     | 40/92 [00:00<00:00, 188.62 passes/s]Running MIL default pipeline:  64%|██████▍   | 59/92 [00:00<00:00, 185.56 passes/s]Running MIL default pipeline:  97%|█████████▋| 89/92 [00:00<00:00, 222.51 passes/s]Running MIL default pipeline: 100%|██████████| 92/92 [00:00<00:00, 212.18 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 344.74 passes/s]
+[34m[1mCoreML:[0m export success ✅ 1.7s, saved as '/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.skycompanion-live/mobile-export/SkyWorld72_epoch15_640_FP32/SkyWorld72_epoch15_640_FP32.mlpackage' (48.0 MB)
+
+Export complete (2.0s)
+Results saved to [1m/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.skycompanion-live/mobile-export/SkyWorld72_epoch15_640_FP32[0m
+Predict:         yolo predict task=detect model=/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.skycompanion-live/mobile-export/SkyWorld72_epoch15_640_FP32/SkyWorld72_epoch15_640_FP32.mlpackage imgsz=640 
+Validate:        yolo val task=detect model=/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/.skycompanion-live/mobile-export/SkyWorld72_epoch15_640_FP32/SkyWorld72_epoch15_640_FP32.mlpackage imgsz=640 data=/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/local_training/collection_20260926/reviewed72_v2/data.yaml  
+Visualize:       https://netron.app
+{"resource": "SkyWorld72_epoch15_640_FP32", "outputs": [{"name": "var_1186", "shape": [1, 76, 8400]}], "bytes": 50360185}

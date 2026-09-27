@@ -9,10 +9,79 @@
 /datasets/yolo_world_sidewalk/images/
 /datasets/yolo_world_sidewalk/labels/
 /datasets/yolo_world_sidewalk/lanes/
-/9月26日.mp4
+/raw-training-20260926.mp4
 /cfd92899d3d6b3d7bd90114e30ef3de0.mp4
 /.temp_view/
 /Ultralytics/
 /__pycache__/
 /videos/
 /run/
+/local_training/
+/settings.json
+
+# Integrated application and local-only resources
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Local data & secrets
+backend/data/*
+!backend/data/.gitkeep
+backend/secrets/*
+!backend/secrets/.gitkeep
+!backend/secrets/README.txt
+runs/
+*.pt
+.DS_Store
+**/.DS_Store
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*-credentials.json
+service-account*.json
+# Ad-hoc GCP keys in backend root — use backend/secrets/ instead
+backend/skycompanion-ai-demo-*.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Live capture development configuration and generated media
+.skycompanion-live/
+ios/Shared/LocalCaptureConfig.json
+ios/**/xcuserdata/
+ios/**/build/
+samples/local/
+output/
+references/SkyCompanion/
+
+.venv-mobile-export/
+ios/Shared/DevicePairing.json
+ios/Models/*.mlpackage/
+ios/Models/*.mlmodelc/
+
+# Raw training footage stays local
+*.mp4
+*.mov
+*.MOV
+*.m4v
+*.avi
+*.mkv
+*.webm
+*.MP4
+**/.build/
+*.xcuserstate
+
+# Intermediate predictions and original-language renderings stay local.
+/local_predictions/

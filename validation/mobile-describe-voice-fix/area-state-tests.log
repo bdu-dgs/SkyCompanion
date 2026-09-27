@@ -1,0 +1,1 @@
+PASS: 10 same-session reopens, unapplied draft discarded, explicit full-image apply, invalid apply rejected, saved crop reload, recording rectangle, invalid save, corrupt data, invalid stored data

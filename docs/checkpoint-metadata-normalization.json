@@ -1,0 +1,115 @@
+{
+  "scope": "Local desktop checkpoint archive names and serialized source paths only; tensor storage bytes are unchanged. Current mobile Core ML packages are unchanged.",
+  "artifacts": [
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11l-v3-candidate.pt",
+      "original_sha256": "e4951f9cbc53bb1f4ecfe7ead0c2a4fe2c58e2070ad858ce3106a855cb4632a8",
+      "sha256": "b2e11acc90e839653fa285add2cc03f78c3e02de82a2d0a0fe052523854a9025",
+      "tensor_storage_entries": 1175,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 32
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11l-v4-candidate.pt",
+      "original_sha256": "6b7f29744fa7f6770e9d3efe58e9ab3dcf6c125b09498399424f9230c1529a54",
+      "sha256": "09c21acd968d3e13bbc09e6082c95eab569f0d1231f6c6d57de10a6d2a5a67ac",
+      "tensor_storage_entries": 1175,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 40
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v1.pt",
+      "original_sha256": "44f64dd09326a868023d759d832ee5e9652dbe5b827f83f27a34682ef17092ea",
+      "sha256": "b3c2693ab2f6ccc013deb4b8f5121a34985c7c9fe04c2ed891af08f22a40823c",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 24
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v2.pt",
+      "original_sha256": "4a8f4efb7d6701781e9fd0101d0a6188dea7ced0616fab437d63fd0a95137191",
+      "sha256": "dd70b348d75385482eab2786b3005e7c4f66c5110e6dea236b3db8f29efe18ab",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 28
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v3-candidate.pt",
+      "original_sha256": "adcfc4e9c31eb19a0b305ba221d24a9049fcf67f40366c0333b6c648a228ca98",
+      "sha256": "47d7ecda87fb3d18c23c86067530e2f2678d4c2b274ced6ad6d0cf0603f0e0e8",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 32
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v4-candidate.pt",
+      "original_sha256": "f60ce470d005037b9149b107269ccdb6f257783ca8be28984ead8e5215017827",
+      "sha256": "6a1ac1ed88b26582e8475661737511892b6af9f8660820a08221179a7c5ac322",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 40
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v5-candidate.pt",
+      "original_sha256": "c11857577f534ad2d44965a656378378b6109f6097c0dc725d8ef1a8b217d025",
+      "sha256": "84d487d117e36efa7d128d5bb1c7f0df3047d10b6ba333765300d03851e5a7f6",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 43
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v6-candidate.pt",
+      "original_sha256": "096ab449619929cda86e2fc0a8371f20e00f3f414ca6db0a7fe60f6d2b64f4ec",
+      "sha256": "415b08f0fc7198af5f246da9b924891d796a9e3dea51c7890bf0ba0fb97af9a5",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 112
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v6.pt",
+      "original_sha256": "096ab449619929cda86e2fc0a8371f20e00f3f414ca6db0a7fe60f6d2b64f4ec",
+      "sha256": "415b08f0fc7198af5f246da9b924891d796a9e3dea51c7890bf0ba0fb97af9a5",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 112
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v7-candidate.pt",
+      "original_sha256": "b089b9d0d5793814e9690ebfec83e1c02a75712cd213139db676581b5ce69bb8",
+      "sha256": "5ae9beeb8cdf5a5762a8bacf13ca5647428b1cbb108cfa467900e2fb09c33b91",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 115
+    },
+    {
+      "file": "backend/data/models/skycompanion-yoloe-11s-v7.pt",
+      "original_sha256": "b089b9d0d5793814e9690ebfec83e1c02a75712cd213139db676581b5ce69bb8",
+      "sha256": "5ae9beeb8cdf5a5762a8bacf13ca5647428b1cbb108cfa467900e2fb09c33b91",
+      "tensor_storage_entries": 659,
+      "tensor_storage_bytes_unchanged": true,
+      "deserialization_verified": true,
+      "model_class": "YOLOESegModel",
+      "class_count": 115
+    }
+  ]
+}

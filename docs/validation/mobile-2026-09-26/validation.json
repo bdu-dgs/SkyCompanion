@@ -1,0 +1,62 @@
+{
+  "product": "SkyCompanion",
+  "generatedUTC": "2026-09-26T08:39:43.069099+00:00",
+  "xcode": "27.0 (27A266a)",
+  "minimumIOS": "18.0",
+  "releaseDeviceBuild": "passed, signing disabled",
+  "debugSimulatorBuild": "passed, arm64 iOS 27 simulator",
+  "swiftTests": {
+    "passed": 49,
+    "failed": 0
+  },
+  "realMacLoopbackTests": {
+    "passed": 10,
+    "failed": 0
+  },
+  "physicalDeviceValidation": "deferred by user; no new phone install",
+  "modelSourceSHA256": "b089b9d0d5793814e9690ebfec83e1c02a75712cd213139db676581b5ce69bb8",
+  "notVerified": [
+    "iPhone 15 Plus model/broadcast memory budget",
+    "30 minute sustained cross-app operation",
+    "10 fps iPhone performance",
+    "P95 acoustic onset <=750ms",
+    "10 minute Neo 2 recording session",
+    "offline phone/drone closure",
+    "complete VoiceOver and interruption flows",
+    "115-class precision/recall acceptance"
+  ],
+  "sourceSHA256": {
+    "ios/CaptureCore/Sources/CaptureCore/FrameWindow.swift": "4f767164d60ef1a0acef5220bf28171d76f218b48876807cdad40800fa1f54fe",
+    "ios/CaptureCore/Sources/CaptureCore/LocalRiskEngine.swift": "cff09857345d81a8af53cc87170779a9362d2a7581a510ca0565070dfdfdb746",
+    "ios/CaptureCore/Sources/CaptureCore/LocalSceneDescriber.swift": "7667fcc850034b1e3e93ccb529ca6604f46083860f28b35bae9fb86a97b6000c",
+    "ios/CaptureCore/Sources/CaptureCore/LocalVisionTypes.swift": "babec123386012aeb76cd9e255527ddd749271a419e70b74c245c60329d70382",
+    "ios/CaptureCore/Sources/CaptureCore/MobileCopy.swift": "08a8a102772f0b0622453c6ed2f22898f45a07b836da00ba9bfd7a364fa0e6ea",
+    "ios/CaptureCore/Sources/CaptureCore/MobileVoiceCommand.swift": "fff70877cbfe2dd9dd601b78bb8693c0ce80d6f5f24ff960fd92f5b646592600",
+    "ios/CaptureCore/Sources/CaptureCore/VoiceCommand.swift": "6911a7d441737750332cb995c6f02a3d6e9db1defc94c47936d40324f7b1d7d6",
+    "ios/CaptureCore/Sources/CaptureCore/VoiceEvent.swift": "b983a91925ddf7a81f38a27e2a871a5723c09a60a1fcd56676cdf7e84a1717b9",
+    "ios/CaptureCore/Tests/CaptureCoreTests/CaptureCadenceTests.swift": "6879cba59bb0e7861e9c69e28ceb044cf4da4f78b35b0f04bf90f6a51d8926e7",
+    "ios/CaptureCore/Tests/CaptureCoreTests/FrameWindowTests.swift": "fde7ca12e93475be0021eee2f5ca714282fa3057900e949d271f9fa445c0bc80",
+    "ios/CaptureCore/Tests/CaptureCoreTests/LocalRiskEngineTests.swift": "754b2867751c43fa698220492e69e9dc8849b2481409cc7c0faa2ad1225ea35e",
+    "ios/CaptureCore/Tests/CaptureCoreTests/LocalSceneDescriberTests.swift": "2185f6949dd153bbbd0f9f24e9c430904fd14b126189a7be9b3acdf4a582243d",
+    "ios/CaptureCore/Tests/CaptureCoreTests/MobileVoiceCommandTests.swift": "ae8b5b1788ed0ecc64644eb38ac8d5a8fe14b100ae6e3c0c8275e26bf3041270",
+    "ios/CaptureCore/Tests/CaptureCoreTests/VoiceCommandTests.swift": "ca98726775d62661498157b4ab157aa8aab1a13f871431dbaec32a308a5287d6",
+    "ios/CaptureCore/Tests/CaptureCoreTests/VoiceEventTests.swift": "fd63850629af55dabc4f3729e2d9ddbe6f0839fa350261745a5debbdd294a5a1",
+    "ios/SkyCompanionBroadcast/Info.plist": "84b69eafa9ec1295c1f2256c37ac52949733a309239e241c25c68654c24195f7",
+    "ios/SkyCompanionCapture/Info.plist": "c87d293a9c19c076143751ccdda6b38989885e26a7d0d3de6d906c398b81dd30",
+    "ios/SkyCompanionCapture.xcodeproj/project.pbxproj": "5da8e469eef1474207586a6544880171b7d4eea16533fb4c66581a1f180cfe0a",
+    "ios/SkyCompanionCapture.xcodeproj/xcshareddata/xcschemes/SkyCompanion.xcscheme": "5582630230d9b2df17eaca9952477766c2ba4689a63b546c478c107c80d9c12d",
+    "ios/Models/selectedModel.json": "d90d1a0aeec06326ec91ad8ea210572ddb32ad06b296b9beec79c43f379ad329",
+    "ios/OnDevice/LocalCommandListener.swift": "b4a469ad3213db95f83d87f0e818eb6bd3ae9dc9b42d1558a341ae460118765e",
+    "ios/OnDevice/LocalContentView.swift": "27755bbf72b0137f0943869f83f08a3802c3984b516271f86710f5b7a0800e2d",
+    "ios/OnDevice/LocalProtocol.swift": "276aa542bb688aec82d445ff17806f4ceb70af38462ec6a2eaee29569767da09",
+    "ios/OnDevice/LocalSampleHandler.swift": "2a6c5f1dbae6f21be52f494b63c2605a33383a852782ad48b22ac422ce6c4b7e",
+    "ios/OnDevice/LocalSessionModel.swift": "24ee1790f1b0817806d8676bd347322eae44c10a4ee6269de95a9ee41735db53",
+    "ios/OnDevice/LocalVisionPipeline.swift": "765fff2314efbbb2593f3cf3bb1e277597eb8f4f67bdb4a08c9ccfb1b2b00759",
+    "ios/OnDevice/LocalVoiceController.swift": "899c57f1c5a4ce8b48ca91004943675e2ef27dcf883f33b104a3496715bd4e99",
+    "ios/OnDevice/Localizable.xcstrings": "1c72a79b5984a959edd9df7edb12feeff554d93e6beb3260952b2e266393b76d",
+    "ios/OnDevice/LoopbackChannel.swift": "5bf4ab911154e343453bccfe61302c8d63a8c521495e0c0fc98b45ec581f23d3",
+    "ios/OnDevice/VisionEngine.swift": "d99598c319be3ab9bf60a747305837c7a8a96e0b80f82ce63f479c5ca3ca550c",
+    "scripts/prepare_mobile_app.py": "269eae5943aec09d26aab1d939e306e87cb0693773f92181b0d170031c72cf94",
+    "scripts/verify_mobile_bundle.py": "799ddacd43c08f4fd7ce7ebe474e55a7d80782863e1698e1857318841a9dd8a9"
+  }
+}

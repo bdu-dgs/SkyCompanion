@@ -1,0 +1,11 @@
+{
+  "ui_before": "actual test failed: tapping Precise adjustment invoked Apply and collapsed the editor",
+  "ui_after": "actual test case passed: resize, apply, reopen three times, resize again, apply, relaunch",
+  "ui_runner": "interrupted after assertions completed because result finalization stalled",
+  "state_regression": "passed",
+  "device_release_build": "passed",
+  "installation": "success",
+  "launch": "success",
+  "locked_model_files_unchanged": 42,
+  "physical_post_update_crop_test": "pending user interaction"
+}

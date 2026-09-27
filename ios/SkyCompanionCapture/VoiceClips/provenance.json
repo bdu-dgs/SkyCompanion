@@ -1,0 +1,43 @@
+{
+  "repository": "https://github.com/bdu-dgs/SkyCompanion",
+  "commit": "e8c763f7de8f8b46ee749e3f66a704edbb141187",
+  "license_status": "No project-level license found at this revision; local evaluation only.",
+  "clips": [
+    {
+      "id": "en-obstacle-ahead",
+      "direction": "ahead",
+      "text": "Stop. Obstacle ahead.",
+      "source_path": "assets/tts/en_short/stop_obstacle_ahead.wav",
+      "sha256": "c1f14bed369aaeb010498a005faf8df2767c6efe13018e27baf454510ca6d92a",
+      "duration_ms": 1473.33,
+      "sample_rate": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "bytes": 65018
+    },
+    {
+      "id": "en-obstacle-left",
+      "direction": "left",
+      "text": "Stop. Obstacle left.",
+      "source_path": "assets/tts/en_short/stop_obstacle_left.wav",
+      "sha256": "a3a6bccc7531630dc27c1a56f01c7e5e5710009a937229b557f86c7d54317c6b",
+      "duration_ms": 1467.71,
+      "sample_rate": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "bytes": 64770
+    },
+    {
+      "id": "en-obstacle-right",
+      "direction": "right",
+      "text": "Stop. Obstacle right.",
+      "source_path": "assets/tts/en_short/stop_obstacle_right.wav",
+      "sha256": "b0fcee4fecabeee10fa058700d756c8f408371d4339e5f55c0f30d3814514c93",
+      "duration_ms": 1473.33,
+      "sample_rate": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "bytes": 65018
+    }
+  ]
+}

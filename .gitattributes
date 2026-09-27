@@ -1,0 +1,3 @@
+# Preserve whitespace in archived build logs and historical patch evidence.
+*.log -whitespace
+validation/**/*.diff -whitespace

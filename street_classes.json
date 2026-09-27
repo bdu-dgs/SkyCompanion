@@ -1,0 +1,387 @@
+{
+  "version": 1,
+  "original_ids_preserved": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "classes": [
+    {
+      "name": "bicycle",
+      "zh": "bicycle",
+      "prompt": "bicycle"
+    },
+    {
+      "name": "streetlight",
+      "zh": "streetlight (pole and lamp head)",
+      "prompt": "street light pole"
+    },
+    {
+      "name": "railing",
+      "zh": "railing",
+      "prompt": "railing"
+    },
+    {
+      "name": "bus_stop_shelter",
+      "zh": "bus stop shelter",
+      "prompt": "bus stop shelter"
+    },
+    {
+      "name": "tree",
+      "zh": "tree (entire visible portion)",
+      "prompt": "tree"
+    },
+    {
+      "name": "traffic_light_red",
+      "zh": "red traffic light head",
+      "prompt": null
+    },
+    {
+      "name": "traffic_light_green",
+      "zh": "green traffic light head",
+      "prompt": null
+    },
+    {
+      "name": "utility_pole",
+      "zh": "utility / communication pole",
+      "prompt": "utility pole"
+    },
+    {
+      "name": "person",
+      "zh": "pedestrian",
+      "prompt": "person"
+    },
+    {
+      "name": "car",
+      "zh": "car",
+      "prompt": "car"
+    },
+    {
+      "name": "motorcycle",
+      "zh": "motorcycle",
+      "prompt": "motorcycle"
+    },
+    {
+      "name": "bus",
+      "zh": "bus",
+      "prompt": "bus"
+    },
+    {
+      "name": "truck",
+      "zh": "truck",
+      "prompt": "truck"
+    },
+    {
+      "name": "bollard",
+      "zh": "low bollard / protective post",
+      "prompt": "bollard"
+    },
+    {
+      "name": "planter",
+      "zh": "flower pot / planter box",
+      "prompt": "potted plant"
+    },
+    {
+      "name": "bench",
+      "zh": "bench",
+      "prompt": "bench"
+    },
+    {
+      "name": "traffic_light_pole",
+      "zh": "traffic signal pole shaft",
+      "prompt": "traffic light pole"
+    },
+    {
+      "name": "tree_trunk",
+      "zh": "tree trunk",
+      "prompt": "tree trunk"
+    },
+    {
+      "name": "signpost",
+      "zh": "signpost (visible shaft)",
+      "prompt": "sign post"
+    },
+    {
+      "name": "pole",
+      "zh": "pole shaft of unknown purpose",
+      "prompt": "pole"
+    },
+    {
+      "name": "column",
+      "zh": "building column",
+      "prompt": "building column"
+    },
+    {
+      "name": "fence",
+      "zh": "fence",
+      "prompt": "fence"
+    },
+    {
+      "name": "construction_barrier",
+      "zh": "construction barrier / separator",
+      "prompt": "construction barrier"
+    },
+    {
+      "name": "traffic_cone",
+      "zh": "traffic cone",
+      "prompt": "traffic cone"
+    },
+    {
+      "name": "construction_barrel",
+      "zh": "construction barrel",
+      "prompt": "construction barrel"
+    },
+    {
+      "name": "rock",
+      "zh": "protruding rock",
+      "prompt": "rock"
+    },
+    {
+      "name": "concrete_block",
+      "zh": "concrete bollard / block",
+      "prompt": "concrete block"
+    },
+    {
+      "name": "fire_hydrant",
+      "zh": "fire hydrant",
+      "prompt": "fire hydrant"
+    },
+    {
+      "name": "trash_can",
+      "zh": "trash can",
+      "prompt": "trash can"
+    },
+    {
+      "name": "chair",
+      "zh": "chair",
+      "prompt": "chair"
+    },
+    {
+      "name": "table",
+      "zh": "table",
+      "prompt": "table"
+    },
+    {
+      "name": "stairs",
+      "zh": "steps / stairs",
+      "prompt": "stairs"
+    },
+    {
+      "name": "curb",
+      "zh": "curb",
+      "prompt": "curb"
+    },
+    {
+      "name": "pothole",
+      "zh": "pothole",
+      "prompt": "pothole"
+    },
+    {
+      "name": "street_kiosk",
+      "zh": "street kiosk / information equipment",
+      "prompt": "street kiosk"
+    },
+    {
+      "name": "dog",
+      "zh": "dog",
+      "prompt": "dog"
+    },
+    {
+      "name": "stroller",
+      "zh": "stroller",
+      "prompt": "baby stroller"
+    },
+    {
+      "name": "scooter",
+      "zh": "scooter",
+      "prompt": "scooter"
+    },
+    {
+      "name": "traffic_light_unknown",
+      "zh": "traffic light head (color unconfirmed)",
+      "prompt": "traffic light"
+    },
+    {
+      "name": "barrier_gate",
+      "zh": "barrier gate arm",
+      "prompt": "barrier gate"
+    },
+    {
+      "name": "hanging_obstacle",
+      "zh": "hanging obstacle",
+      "prompt": "low hanging obstacle"
+    },
+    {
+      "name": "bicycle_rack",
+      "zh": "bicycle rack",
+      "prompt": "bicycle rack"
+    },
+    {
+      "name": "parking_meter",
+      "zh": "parking meter",
+      "prompt": "parking meter"
+    },
+    {
+      "name": "mailbox",
+      "zh": "mailbox",
+      "prompt": "mailbox"
+    },
+    {
+      "name": "suitcase",
+      "zh": "suitcase",
+      "prompt": "suitcase"
+    },
+    {
+      "name": "shopping_cart",
+      "zh": "shopping cart / handcart",
+      "prompt": "shopping cart"
+    },
+    {
+      "name": "wheelchair",
+      "zh": "wheelchair",
+      "prompt": "wheelchair"
+    },
+    {
+      "name": "walker",
+      "zh": "walker",
+      "prompt": "walking frame"
+    },
+    {
+      "name": "skateboard",
+      "zh": "skateboard",
+      "prompt": "skateboard"
+    },
+    {
+      "name": "traffic_sign",
+      "zh": "traffic sign face",
+      "prompt": "traffic sign"
+    },
+    {
+      "name": "a_frame_sign",
+      "zh": "freestanding sign / A-frame sign",
+      "prompt": "sandwich board sign"
+    },
+    {
+      "name": "scaffolding",
+      "zh": "scaffolding structure",
+      "prompt": "scaffolding"
+    },
+    {
+      "name": "ladder",
+      "zh": "ladder",
+      "prompt": "ladder"
+    },
+    {
+      "name": "awning",
+      "zh": "sunshade / rain awning",
+      "prompt": "awning"
+    },
+    {
+      "name": "low_branch",
+      "zh": "low-hanging branch",
+      "prompt": "low hanging tree branch"
+    },
+    {
+      "name": "open_door",
+      "zh": "open door projecting into the path",
+      "prompt": "open door"
+    },
+    {
+      "name": "protruding_sign",
+      "zh": "protruding sign",
+      "prompt": "protruding shop sign"
+    },
+    {
+      "name": "cable",
+      "zh": "ground cable",
+      "prompt": "cable on the ground"
+    },
+    {
+      "name": "hose",
+      "zh": "ground hose",
+      "prompt": "hose on the ground"
+    },
+    {
+      "name": "fallen_branch",
+      "zh": "fallen branch",
+      "prompt": "fallen tree branch"
+    },
+    {
+      "name": "debris",
+      "zh": "scattered debris / fragments",
+      "prompt": "debris"
+    },
+    {
+      "name": "open_manhole",
+      "zh": "open manhole",
+      "prompt": "open manhole"
+    },
+    {
+      "name": "speed_bump",
+      "zh": "speed bump",
+      "prompt": "speed bump"
+    },
+    {
+      "name": "patio_umbrella",
+      "zh": "patio umbrella",
+      "prompt": "patio umbrella"
+    },
+    {
+      "name": "vending_machine",
+      "zh": "vending machine",
+      "prompt": "vending machine"
+    },
+    {
+      "name": "box",
+      "zh": "box / parcel",
+      "prompt": "box"
+    },
+    {
+      "name": "statue",
+      "zh": "statue / monument",
+      "prompt": "statue"
+    },
+    {
+      "name": "bird",
+      "zh": "bird on the ground",
+      "prompt": "bird"
+    },
+    {
+      "name": "umbrella",
+      "zh": "handheld umbrella",
+      "prompt": "umbrella"
+    },
+    {
+      "name": "cabinet",
+      "zh": "roadside equipment / electrical cabinet",
+      "prompt": "street utility cabinet"
+    },
+    {
+      "name": "pipe",
+      "zh": "exposed pipe / fire department connection",
+      "prompt": "exposed pipe"
+    },
+    {
+      "name": "bush",
+      "zh": "bush / hedge",
+      "prompt": "bush"
+    }
+  ],
+  "annotation_rules": [
+    "Only annotate visible object extent; clip boxes at the image edge. Preserve truncated flags.",
+    "Do not infer electric utility use from an unidentified pole. Keep pole when function is uncertain.",
+    "Tree is the visible whole; tree_trunk is the visible trunk. They are distinct overlapping targets.",
+    "Traffic signal pole is separate from the lamp head. Never infer red/green state from an object prompt.",
+    "All automatic predictions are pseudo_label_unreviewed, including empty files. Empty predictions are not verified negatives.",
+    "Single-route frames are training data only. No random frame train/test split and no independent accuracy claim.",
+    "No synthetic boxes for absent or uncertain classes. Class vocabulary inclusion does not establish training coverage.",
+    "Exposed pipes/fire department connections are pipe, not freestanding fire hydrants; preserve visibly separate instances.",
+    "Small planters include their contained small plant; raised masonry tree planters use the visible container extent, with tree/tree_trunk separately annotated. Flush tree pits are not planters or open manholes.",
+    "Bush/hedge is distinct from a tree with a visible trunk. Use visible connected hedge extent; do not label foliage as a pole or building column."
+  ]
+}

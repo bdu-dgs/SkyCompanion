@@ -1,0 +1,33 @@
+{
+  "validated_at": "2026-09-27T02:32:23.749137+00:00",
+  "device": "iPhone 15 Plus",
+  "bundle": "com.stanley.skycompanion.capture",
+  "signed_build": "passed",
+  "device_install": "passed",
+  "device_sync": "Photon device sync OK: pending=0, inbox=3, cursor=3",
+  "https_unauthenticated_status": 401,
+  "https_authenticated_status": 200,
+  "initial_imessage_receipt": "user confirmed",
+  "inbound_messages_processed": 1,
+  "delivery_counts": {
+    "pending": 0,
+    "sent": 3,
+    "failed": 0
+  },
+  "english_service_tests": 16,
+  "swift_companion_tests": 6,
+  "typecheck": "passed",
+  "obstacles": "synthetic integration fixture, not real perception",
+  "remaining": [
+    "Real trip upload",
+    "Physical VoiceOver and obstacle speech interruption",
+    "DJI Fly background coexistence",
+    "Real device offline recovery"
+  ],
+  "source_sha256": {
+    "/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/skycompanion/src/agent.ts": "4222b30ed7d19979e0890cb0fbec1b59873ecd21fcbcde39f804f666f1fe1cb0",
+    "/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/skycompanion/src/store.ts": "8d7c14ad5d86f866bb68f148d3554da6361c081ef76d241cad265c0b7e0dbc4c",
+    "/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/ios/OnDevice/PhotonCompanion.swift": "d25e064f9f26467927d482a17552252433b6f92a594979aceb63e711e07d6595",
+    "/Users/stanley/Documents/ChatGPT/Hackathon/SkyCompanion/ios/CaptureCore/Sources/CaptureCore/CompanionSpeech.swift": "d7e6879c56df1e76599b958ac784deb9e0961bbc3dbe83455a5227f1d599c6ef"
+  }
+}

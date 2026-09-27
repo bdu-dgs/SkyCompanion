@@ -1,0 +1,19 @@
+{
+  "app": "/private/tmp/skycompanion-device/Build/Products/Release-iphoneos/SkyCompanion.app",
+  "bundleIdentifier": "com.stanley.skycompanion.capture",
+  "minimumOSVersion": "18.0",
+  "model": "SkyWorld72_epoch15_640_FP32",
+  "classes": 72,
+  "sourceSHA256": "8789b4d5be50d1a30d8637fad7548e47d90b068dcedf67894f1883941832cf49",
+  "task": "detect",
+  "maskChannels": 0,
+  "depthModel": "SkyMetricDepthSmall_392_FP32",
+  "depthValidation": "unvalidated",
+  "matchingModelAndPairingInBothTargets": true,
+  "desktopConfigurationAbsent": true,
+  "appIconAndLicenseBundled": true,
+  "englishResourcesInBothTargets": true,
+  "compiledModelContractsMatch": true,
+  "signedProfilePresent": true,
+  "scope": "Static checks of actual built bundles; not device execution or precision validation"
+}

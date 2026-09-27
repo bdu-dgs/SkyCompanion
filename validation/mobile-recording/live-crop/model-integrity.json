@@ -1,0 +1,5 @@
+{
+  "Data/com.apple.CoreML/model.mlmodel": true,
+  "Data/com.apple.CoreML/weights/weight.bin": true,
+  "Manifest.json": true
+}

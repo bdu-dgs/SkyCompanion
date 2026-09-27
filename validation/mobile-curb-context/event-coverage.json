@@ -1,0 +1,338 @@
+{
+  "fixed_input_repeats_identical": true,
+  "all_reviewed_events_covered": true,
+  "results": [
+    {
+      "scenario": "repeat-1-5fps",
+      "coverage": [
+        {
+          "event": "blue_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 4.4,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "right_column",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution right. Pole. Check your path.",
+              "second": 8.4,
+              "direction": "right",
+              "label": "pole"
+            }
+          ]
+        },
+        {
+          "event": "green_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 16.4,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "planter_before_gap",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        },
+        {
+          "event": "cone_before_passing",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "repeat-2-5fps",
+      "coverage": [
+        {
+          "event": "blue_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 4.4,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "right_column",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution right. Pole. Check your path.",
+              "second": 8.4,
+              "direction": "right",
+              "label": "pole"
+            }
+          ]
+        },
+        {
+          "event": "green_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 16.4,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "planter_before_gap",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        },
+        {
+          "event": "cone_before_passing",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "repeat-3-5fps",
+      "coverage": [
+        {
+          "event": "blue_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 4.4,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "right_column",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution right. Pole. Check your path.",
+              "second": 8.4,
+              "direction": "right",
+              "label": "pole"
+            }
+          ]
+        },
+        {
+          "event": "green_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 16.4,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "planter_before_gap",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        },
+        {
+          "event": "cone_before_passing",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "phase-0-2.5fps",
+      "coverage": [
+        {
+          "event": "blue_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 4.8,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "right_column",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution right. Pole. Check your path.",
+              "second": 8.8,
+              "direction": "right",
+              "label": "pole"
+            }
+          ]
+        },
+        {
+          "event": "green_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 16.8,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "planter_before_gap",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant. Check your path.",
+              "second": 24.8,
+              "direction": "ahead",
+              "label": "potted plant"
+            },
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 28,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        },
+        {
+          "event": "cone_before_passing",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 28,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "phase-1-2.5fps",
+      "coverage": [
+        {
+          "event": "blue_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 5,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "right_column",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution right. Pole. Check your path.",
+              "second": 9,
+              "direction": "right",
+              "label": "pole"
+            }
+          ]
+        },
+        {
+          "event": "green_pedestrian",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution left. Person. Check your path.",
+              "second": 17,
+              "direction": "left",
+              "label": "person"
+            }
+          ]
+        },
+        {
+          "event": "planter_before_gap",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        },
+        {
+          "event": "cone_before_passing",
+          "covered": true,
+          "matches": [
+            {
+              "text": "Caution front. Potted plant and traffic cone. Check your path.",
+              "second": 27.8,
+              "direction": "ahead",
+              "label": "potted plant and traffic cone"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitation": "Coverage does not certify every spoken object, metric danger, or unseen-video generalization."
+}

@@ -1,0 +1,13 @@
+# Single-user receiver image. Terminate HTTPS/WSS at a reverse proxy.
+FROM python:3.12-slim
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends libglib2.0-0 libgl1 && rm -rf /var/lib/apt/lists/*
+COPY deploy/requirements-live.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/app /app/backend/app
+RUN useradd --uid 10001 --create-home skycompanion && mkdir -p /app/backend/data/models /app/backend/data/obstacle_cases && chown -R skycompanion:skycompanion /app
+USER skycompanion
+ENV SKYCOMPANION_LIVE_CONFIG=/run/secrets/skycompanion-config.json SKYCOMPANION_LIVE_DEVICE=auto
+WORKDIR /app/backend
+EXPOSE 8000
+CMD ["python", "-m", "uvicorn", "app.live:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--ws-max-size", "1100000"]

@@ -1,0 +1,40 @@
+{
+  "description": "Authenticated iPhone preflight completed; no screen frames yet",
+  "state": {
+    "protocol_version": 1,
+    "measurement": "capture-to-render-ack roundtrip; not photon-to-display",
+    "target": {
+      "capture_fps": 5,
+      "processed_fps": 3,
+      "roundtrip_p95_ms": 1000
+    },
+    "type": "state",
+    "session_id": "caea2aa5-1d54-4874-a68c-f15f9d816468",
+    "revision": 10,
+    "connection": "ended",
+    "capture": "ended",
+    "source": "screen_video_test",
+    "analysis_enabled": false,
+    "roi": null,
+    "roi_version": 5,
+    "dimensions": null,
+    "model": {
+      "state": "ready",
+      "name": "yolo11n",
+      "device": "cpu",
+      "error": null
+    },
+    "metrics": {
+      "received_fps": 0.0,
+      "processed_fps": 0.0,
+      "dropped_frames": 0,
+      "received_frames": 0,
+      "processed_frames": 0,
+      "queue_ms": null,
+      "inference_ms": null,
+      "roundtrip_p50_ms": null,
+      "roundtrip_p95_ms": null
+    },
+    "message": "Input ended."
+  }
+}

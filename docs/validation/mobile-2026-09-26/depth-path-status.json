@@ -1,0 +1,22 @@
+{
+  "swiftTests": 67,
+  "swiftFailures": 0,
+  "distanceDataToolTests": 6,
+  "localLoopbackChecks": 10,
+  "xcodeReleaseBuild": "passed",
+  "conversion": "FP32 four same-input cases passed; FP16 and Mixed failed retained threshold",
+  "phoneInstallation": "succeeded",
+  "phoneDepthFPS": "not yet measured",
+  "pathFieldValidation": "not yet measured",
+  "metricDistanceValidation": "blocked: no measured-distance footage",
+  "source": "manual confirmed corridor, not automatic crosswalk recognition",
+  "limitations": [
+    "monocular footpoint approximation",
+    "manual sighted-helper region selection",
+    "unvalidated person identity in drone video",
+    "no wearer heading or body-relative steering",
+    "no traffic-signal permission or route-clear claim",
+    "no released metric range profile"
+  ],
+  "phoneLaunch": "succeeded"
+}

@@ -1,0 +1,35 @@
+PASS mutual authentication and bidirectional application packets
+PASS stop keeps transport alive through recording completion
+PASS command microphone relay requires recording, preserves PCM and stops after drain
+PASS broadcast reconnects after app link loss and explicit stop cancels retries
+PASS wrong key rejected by both peers
+PASS hello never leaks key; echo/reflection rejected
+PASS server proof cannot be reflected as client proof
+PASS application packet before proof rejected
+PASS previous connection proof cannot authorize new connection
+PASS oversized unterminated packet closes connection
+PASS large valid packet plus coalesced successor remains valid
+PASS disconnect clears authorization; old connection cannot inject after reconnect
+PASS idle unauthenticated connection expires
+{
+  "applicationSessionBoundary" : "Transport isolates connection epochs; frame sessionID\/revision\/freshness enforced in LocalSessionModel.receive and CaptureCore tests, not claimed by this harness.",
+  "failures" : [
+
+  ],
+  "passed" : [
+    "mutual authentication and bidirectional application packets",
+    "stop keeps transport alive through recording completion",
+    "command microphone relay requires recording, preserves PCM and stops after drain",
+    "broadcast reconnects after app link loss and explicit stop cancels retries",
+    "wrong key rejected by both peers",
+    "hello never leaks key; echo\/reflection rejected",
+    "server proof cannot be reflected as client proof",
+    "application packet before proof rejected",
+    "previous connection proof cannot authorize new connection",
+    "oversized unterminated packet closes connection",
+    "large valid packet plus coalesced successor remains valid",
+    "disconnect clears authorization; old connection cannot inject after reconnect",
+    "idle unauthenticated connection expires"
+  ],
+  "platform" : "macOS Network.framework real localhost TCP"
+}

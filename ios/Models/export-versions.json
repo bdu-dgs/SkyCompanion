@@ -1,0 +1,8 @@
+{
+  "ultralytics": "8.4.37",
+  "torch": "2.11.0",
+  "torchvision": "0.26.0",
+  "coremltools": "9.0",
+  "numpy": "2.2.6",
+  "scikit-learn": "1.7.2"
+}

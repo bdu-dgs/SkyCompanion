@@ -1,0 +1,1875 @@
+{
+  "sourceSHA256": "b089b9d0d5793814e9690ebfec83e1c02a75712cd213139db676581b5ce69bb8",
+  "datasetSHA256": "b4df5b7fa13e04978cebec5b1e24a7c7906b49c357646f84014c52f842856bd6",
+  "hardware": "macOS-27.0-arm64-arm-64bit",
+  "scope": "Mac CPU_ONLY Core ML; conversion equivalence + selected-class regression, NOT phone runtime or 115-class acceptance",
+  "limitations": [
+    "Ten correlated frames of one scene, two assistant reviews, not human-reviewed.",
+    "Model-to-model agreement is not ground truth accuracy.",
+    "Partial annotations: no false-positive gate computed.",
+    "Input intentionally uses fixed square letterbox; desktop rect=True padding has a different shape."
+  ],
+  "models": {
+    "SkyCompanionYOLOE_v7_960_FP16": {
+      "inputSize": 960,
+      "packageBytes": 20532367,
+      "loadSeconds": 0.1898833340019337,
+      "macPredictionP50MS": 47.53074949985603,
+      "macPredictionP95MS": 50.70736020043114,
+      "meanBoxIoU": 0.9881857141437054,
+      "meanMaskIoU": 0.9870478371881389,
+      "meanDetectionAgreement": 1.0,
+      "selectedTargetRecallCounts": {
+        "railing": {
+          "targets": 10,
+          "hits": 0
+        },
+        "curb": {
+          "targets": 10,
+          "hits": 0
+        },
+        "traffic cone": {
+          "targets": 5,
+          "hits": 3
+        },
+        "pole": {
+          "targets": 1,
+          "hits": 0
+        },
+        "tree trunk": {
+          "targets": 13,
+          "hits": 0
+        }
+      },
+      "frames": [
+        {
+          "id": "commons-japan-riverside-000030",
+          "imageSHA256": "9d15c4c108336c392775ffee7d4db7b74f0615bdc0ee680b9f6a039073537d92",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 46.227667000493966
+        },
+        {
+          "id": "commons-japan-riverside-000120",
+          "imageSHA256": "19267d6d05481294ce0b1700e25962fd4f36a5fc88df82aa50694d5abf586cf8",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 46.55258300044807
+        },
+        {
+          "id": "commons-japan-riverside-000210",
+          "imageSHA256": "b43898a0892462ca1be360f732394e1c509328ad7138fae08046eb7d7e3e0ff9",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.28248661756515503,
+              "xyxy": [
+                0.5684138545283565,
+                0.11681194305419922,
+                0.6215488009982639,
+                0.1936659812927246
+              ]
+            },
+            {
+              "classID": 102,
+              "label": "concrete block",
+              "confidence": 0.2714478075504303,
+              "xyxy": [
+                0.5988237169053819,
+                0.2903414726257324,
+                0.7405342384620949,
+                0.33753779729207356
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.279541015625,
+              "xyxy": [
+                0.5680555555555555,
+                0.11653645833333333,
+                0.6208333333333333,
+                0.19361979166666668
+              ]
+            },
+            {
+              "classID": 102,
+              "label": "concrete block",
+              "confidence": 0.2587890625,
+              "xyxy": [
+                0.5995370370370371,
+                0.29049479166666664,
+                0.7412037037037037,
+                0.33763020833333335
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9758907375361863,
+              "maskIoU": 0.9850746268656716
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9851668175774208,
+              "maskIoU": 0.9821428571428571
+            }
+          ],
+          "macPredictionMS": 47.047583997482434
+        },
+        {
+          "id": "commons-japan-riverside-000300",
+          "imageSHA256": "d9b51b1e3bb528a9605878113420817a74f86ad71481dbf4a3fb4fae4f1e32c8",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.7355974912643433,
+              "xyxy": [
+                0.6114470305266204,
+                0.1715534528096517,
+                0.7089857313368055,
+                0.28991359074910483
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.73046875,
+              "xyxy": [
+                0.6125,
+                0.17161458333333332,
+                0.7097222222222223,
+                0.28984375
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9807130644597074,
+              "maskIoU": 1.0
+            }
+          ],
+          "macPredictionMS": 47.06704100317438
+        },
+        {
+          "id": "commons-japan-riverside-000390",
+          "imageSHA256": "2adf15bd0e16d51ec370a0e99356215c7283f1d48dcc77a74c380322c56ffbce",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.8726577758789062,
+              "xyxy": [
+                0.7363500524450232,
+                0.36510276794433594,
+                0.9990367748119213,
+                0.6649601618448894
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.29464468359947205,
+              "xyxy": [
+                0.4909868593569155,
+                0.5247338294982911,
+                0.9981397840711805,
+                0.7585760752360026
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.8662109375,
+              "xyxy": [
+                0.7361111111111112,
+                0.3651041666666667,
+                0.9990740740740741,
+                0.6651041666666667
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.290283203125,
+              "xyxy": [
+                0.493287037037037,
+                0.5244791666666667,
+                0.9974537037037037,
+                0.7609375
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9984653454108023,
+              "maskIoU": 0.997920997920998
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9831772859430438,
+              "maskIoU": 0.9525959367945824
+            }
+          ],
+          "macPredictionMS": 47.84191599901533
+        },
+        {
+          "id": "commons-japan-riverside-000480",
+          "imageSHA256": "cd3a1ce7e46598201ca67035d61381f63043f294b243361b40abf8dac7cac221",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 47.21958300069673
+        },
+        {
+          "id": "commons-japan-riverside-000570",
+          "imageSHA256": "fb76f832a063b6546e86b9c6469dbb885ec38c05ab81eb78b0fa675d186c7176",
+          "pytorchDetections": [
+            {
+              "classID": 103,
+              "label": "concrete barrier",
+              "confidence": 0.4457957446575165,
+              "xyxy": [
+                0.6047125922309028,
+                0.218455441792806,
+                0.9985663519965278,
+                0.6866942723592122
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 103,
+              "label": "concrete barrier",
+              "confidence": 0.44482421875,
+              "xyxy": [
+                0.6050925925925926,
+                0.21888020833333333,
+                0.9986111111111111,
+                0.6873697916666667
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9965792166312,
+              "maskIoU": 0.994693680656054
+            }
+          ],
+          "macPredictionMS": 48.86945800171816
+        },
+        {
+          "id": "commons-japan-riverside-000660",
+          "imageSHA256": "f51080f1aba9629074b30fab1c71c50cd70272d8208604d6ed9289606097080a",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 48.98825000054785
+        },
+        {
+          "id": "commons-japan-riverside-000750",
+          "imageSHA256": "731903e7801fedf05b1bc015e027fac3f231a57dfd07134dbf06047320d25eb8",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 50.50654200022109
+        },
+        {
+          "id": "commons-japan-riverside-000840",
+          "imageSHA256": "b7c6f12446de36c0429cb162ae4b0889b2c22e76f78926555dc739f20685df8d",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.3099377453327179,
+              "xyxy": [
+                0.4610876577871817,
+                0.1417660077412923,
+                0.9285382306134259,
+                0.5265528678894043
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.3154296875,
+              "xyxy": [
+                0.46064814814814814,
+                0.14205729166666667,
+                0.9282407407407407,
+                0.5266927083333334
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9973075314475763,
+              "maskIoU": 0.9969067609368095
+            }
+          ],
+          "macPredictionMS": 50.871666000603
+        }
+      ]
+    },
+    "SkyCompanionYOLOE_v7_640_FP16": {
+      "inputSize": 640,
+      "packageBytes": 20469300,
+      "loadSeconds": 0.15893074999985402,
+      "macPredictionP50MS": 24.17822899951716,
+      "macPredictionP95MS": 25.205164650833467,
+      "meanBoxIoU": 0.9934366395919899,
+      "meanMaskIoU": 0.9861828926001746,
+      "meanDetectionAgreement": 1.0,
+      "selectedTargetRecallCounts": {
+        "railing": {
+          "targets": 10,
+          "hits": 0
+        },
+        "curb": {
+          "targets": 10,
+          "hits": 0
+        },
+        "traffic cone": {
+          "targets": 5,
+          "hits": 3
+        },
+        "pole": {
+          "targets": 1,
+          "hits": 0
+        },
+        "tree trunk": {
+          "targets": 13,
+          "hits": 0
+        }
+      },
+      "frames": [
+        {
+          "id": "commons-japan-riverside-000030",
+          "imageSHA256": "9d15c4c108336c392775ffee7d4db7b74f0615bdc0ee680b9f6a039073537d92",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.30290091037750244,
+              "xyxy": [
+                0.7259229871961805,
+                0.07094287872314453,
+                0.9992224799262153,
+                0.43704614639282224
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.310302734375,
+              "xyxy": [
+                0.7256944444444444,
+                0.071484375,
+                0.9993055555555556,
+                0.4375
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9961504569091071,
+              "maskIoU": 0.9931428571428571
+            }
+          ],
+          "macPredictionMS": 25.41420900161029
+        },
+        {
+          "id": "commons-japan-riverside-000120",
+          "imageSHA256": "19267d6d05481294ce0b1700e25962fd4f36a5fc88df82aa50694d5abf586cf8",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.31597089767456055,
+              "xyxy": [
+                0.005681016710069445,
+                0.07252235412597656,
+                0.9941726684570312,
+                1.0
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.29332423210144043,
+              "xyxy": [
+                0.5750391642252605,
+                0.05350942611694336,
+                0.9984244452582465,
+                0.5200656890869141
+              ]
+            },
+            {
+              "classID": 87,
+              "label": "construction barrier",
+              "confidence": 0.26657480001449585,
+              "xyxy": [
+                0.7236787584092882,
+                0.15236915349960328,
+                0.9976781209309896,
+                0.5191741466522217
+              ]
+            },
+            {
+              "classID": 87,
+              "label": "construction barrier",
+              "confidence": 0.26629653573036194,
+              "xyxy": [
+                0.5499218410915798,
+                0.06379354596138001,
+                0.6028130425347222,
+                0.14012362957000732
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.306640625,
+              "xyxy": [
+                0.006944444444444444,
+                0.07265625,
+                0.9944444444444445,
+                1.0
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.282470703125,
+              "xyxy": [
+                0.575,
+                0.053515625,
+                0.9986111111111111,
+                0.519921875
+              ]
+            },
+            {
+              "classID": 87,
+              "label": "construction barrier",
+              "confidence": 0.271728515625,
+              "xyxy": [
+                0.7239583333333334,
+                0.15234375,
+                0.9982638888888888,
+                0.51875
+              ]
+            },
+            {
+              "classID": 87,
+              "label": "construction barrier",
+              "confidence": 0.25927734375,
+              "xyxy": [
+                0.55,
+                0.06376953125,
+                0.6027777777777777,
+                0.14013671875
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9983032479673636,
+              "maskIoU": 0.9982788296041308
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9991457031741601,
+              "maskIoU": 0.9938223938223938
+            },
+            {
+              "pytorch": 2,
+              "coreml": 2,
+              "boxIoU": 0.9956294337635095,
+              "maskIoU": 0.9975845410628019
+            },
+            {
+              "pytorch": 3,
+              "coreml": 3,
+              "boxIoU": 0.9973717480618504,
+              "maskIoU": 1.0
+            }
+          ],
+          "macPredictionMS": 24.94966599988402
+        },
+        {
+          "id": "commons-japan-riverside-000210",
+          "imageSHA256": "b43898a0892462ca1be360f732394e1c509328ad7138fae08046eb7d7e3e0ff9",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.29800155758857727,
+              "xyxy": [
+                0.0009377373589409722,
+                0.14842119216918945,
+                0.9962621053059896,
+                1.0
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.26389941573143005,
+              "xyxy": [
+                0.583042229546441,
+                0.11192288398742675,
+                0.6241527981228299,
+                0.19181361198425292
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.293212890625,
+              "xyxy": [
+                0.009375,
+                0.1484375,
+                0.9961805555555555,
+                1.0
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.261474609375,
+              "xyxy": [
+                0.5836805555555555,
+                0.111865234375,
+                0.6246527777777777,
+                0.191650390625
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9914221834561548,
+              "maskIoU": 0.9949446316803081
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9699912506098847,
+              "maskIoU": 0.8571428571428571
+            }
+          ],
+          "macPredictionMS": 24.335540998436045
+        },
+        {
+          "id": "commons-japan-riverside-000300",
+          "imageSHA256": "d9b51b1e3bb528a9605878113420817a74f86ad71481dbf4a3fb4fae4f1e32c8",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.765799343585968,
+              "xyxy": [
+                0.6133124457465278,
+                0.1711264133453369,
+                0.7070787217881944,
+                0.28943142890930174
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.47284793853759766,
+              "xyxy": [
+                0.6461110432942708,
+                0.17060843706130982,
+                0.7075954861111111,
+                0.2900050163269043
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.29399916529655457,
+              "xyxy": [
+                0.5817291259765625,
+                0.10928101539611816,
+                0.9984751383463542,
+                0.5629808902740479
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.29138123989105225,
+              "xyxy": [
+                0.010599009195963542,
+                0.08659429550170898,
+                0.9938919915093316,
+                0.9990373611450195
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.76416015625,
+              "xyxy": [
+                0.6128472222222222,
+                0.17138671875,
+                0.7065972222222222,
+                0.28955078125
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.4853515625,
+              "xyxy": [
+                0.6454861111111111,
+                0.170654296875,
+                0.7072916666666667,
+                0.289892578125
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.30029296875,
+              "xyxy": [
+                0.011111111111111112,
+                0.0859375,
+                0.9930555555555556,
+                0.9984375
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.291748046875,
+              "xyxy": [
+                0.5833333333333334,
+                0.11015625,
+                0.9986111111111111,
+                0.5625
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9867953110972123,
+              "maskIoU": 1.0
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9837536466304014,
+              "maskIoU": 1.0
+            },
+            {
+              "pytorch": 2,
+              "coreml": 3,
+              "boxIoU": 0.9928501346717867,
+              "maskIoU": 0.9658671586715867
+            },
+            {
+              "pytorch": 3,
+              "coreml": 2,
+              "boxIoU": 0.9972551672792573,
+              "maskIoU": 0.9964780464897863
+            }
+          ],
+          "macPredictionMS": 23.793084001226816
+        },
+        {
+          "id": "commons-japan-riverside-000390",
+          "imageSHA256": "2adf15bd0e16d51ec370a0e99356215c7283f1d48dcc77a74c380322c56ffbce",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.9225144982337952,
+              "xyxy": [
+                0.7358976576063369,
+                0.3659339904785156,
+                0.9991195678710938,
+                0.664366626739502
+              ]
+            },
+            {
+              "classID": 102,
+              "label": "concrete block",
+              "confidence": 0.25590237975120544,
+              "xyxy": [
+                0.49433983696831596,
+                0.525229549407959,
+                0.9981409708658854,
+                0.759089183807373
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.9208984375,
+              "xyxy": [
+                0.7364583333333333,
+                0.365625,
+                0.9996527777777777,
+                0.6640625
+              ]
+            },
+            {
+              "classID": 102,
+              "label": "concrete block",
+              "confidence": 0.255126953125,
+              "xyxy": [
+                0.49444444444444446,
+                0.525,
+                0.9986111111111111,
+                0.75859375
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9938130562359954,
+              "maskIoU": 0.9938366718027735
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9957688997722791,
+              "maskIoU": 0.9856418918918919
+            }
+          ],
+          "macPredictionMS": 24.261332997411955
+        },
+        {
+          "id": "commons-japan-riverside-000480",
+          "imageSHA256": "cd3a1ce7e46598201ca67035d61381f63043f294b243361b40abf8dac7cac221",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.28327420353889465,
+              "xyxy": [
+                0.4414927164713542,
+                0.05787744522094727,
+                0.9991609361436632,
+                0.6167987823486328
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.28173828125,
+              "xyxy": [
+                0.44166666666666665,
+                0.0578125,
+                0.9986111111111111,
+                0.61640625
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9978849470153924,
+              "maskIoU": 0.9961300309597523
+            }
+          ],
+          "macPredictionMS": 23.767208000208484
+        },
+        {
+          "id": "commons-japan-riverside-000570",
+          "imageSHA256": "fb76f832a063b6546e86b9c6469dbb885ec38c05ab81eb78b0fa675d186c7176",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.3033449053764343,
+              "xyxy": [
+                0.0030247582329644097,
+                0.12058420181274414,
+                0.9946548461914062,
+                1.0
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.29736328125,
+              "xyxy": [
+                0.002777777777777778,
+                0.1203125,
+                0.9944444444444445,
+                1.0
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9992302182379902,
+              "maskIoU": 0.9947239737485523
+            }
+          ],
+          "macPredictionMS": 24.437999996735016
+        },
+        {
+          "id": "commons-japan-riverside-000660",
+          "imageSHA256": "f51080f1aba9629074b30fab1c71c50cd70272d8208604d6ed9289606097080a",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 24.07495900115464
+        },
+        {
+          "id": "commons-japan-riverside-000750",
+          "imageSHA256": "731903e7801fedf05b1bc015e027fac3f231a57dfd07134dbf06047320d25eb8",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.31419500708580017,
+              "xyxy": [
+                0.4718939039442274,
+                0.15899066925048827,
+                0.9956425136990017,
+                0.6297535419464111
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.28568536043167114,
+              "xyxy": [
+                0.0025527530246310763,
+                0.17104225158691405,
+                0.9999330308702257,
+                0.9990262985229492
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.31201171875,
+              "xyxy": [
+                0.4684027777777778,
+                0.158203125,
+                0.9954861111111111,
+                0.63046875
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.284912109375,
+              "xyxy": [
+                0.0020833333333333333,
+                0.17109375,
+                0.9993055555555556,
+                0.99921875
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9899227816924289,
+              "maskIoU": 0.9939347990902199
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9986066775095519,
+              "maskIoU": 0.9976485956890921
+            }
+          ],
+          "macPredictionMS": 24.095125001622364
+        },
+        {
+          "id": "commons-japan-riverside-000840",
+          "imageSHA256": "b7c6f12446de36c0429cb162ae4b0889b2c22e76f78926555dc739f20685df8d",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.36636102199554443,
+              "xyxy": [
+                0.003984366522894966,
+                0.15914173126220704,
+                0.9944890340169271,
+                0.9995824813842773
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.349365234375,
+              "xyxy": [
+                0.0038194444444444443,
+                0.159375,
+                0.9934027777777777,
+                1.0
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9979646485714924,
+              "maskIoU": 0.9921147880041365
+            }
+          ],
+          "macPredictionMS": 23.964292002347065
+        }
+      ]
+    },
+    "SkyCompanionYOLOE_v7_480_FP16": {
+      "inputSize": 480,
+      "packageBytes": 20447239,
+      "loadSeconds": 0.15341041600186145,
+      "macPredictionP50MS": 14.194708499417175,
+      "macPredictionP95MS": 14.689700150483986,
+      "meanBoxIoU": 0.9918505529112766,
+      "meanMaskIoU": 0.9991041220970366,
+      "meanDetectionAgreement": 1.0,
+      "selectedTargetRecallCounts": {
+        "railing": {
+          "targets": 10,
+          "hits": 0
+        },
+        "curb": {
+          "targets": 10,
+          "hits": 0
+        },
+        "traffic cone": {
+          "targets": 5,
+          "hits": 2
+        },
+        "pole": {
+          "targets": 1,
+          "hits": 0
+        },
+        "tree trunk": {
+          "targets": 13,
+          "hits": 0
+        }
+      },
+      "frames": [
+        {
+          "id": "commons-japan-riverside-000030",
+          "imageSHA256": "9d15c4c108336c392775ffee7d4db7b74f0615bdc0ee680b9f6a039073537d92",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 14.556959002220538
+        },
+        {
+          "id": "commons-japan-riverside-000120",
+          "imageSHA256": "19267d6d05481294ce0b1700e25962fd4f36a5fc88df82aa50694d5abf586cf8",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 14.154583997878945
+        },
+        {
+          "id": "commons-japan-riverside-000210",
+          "imageSHA256": "b43898a0892462ca1be360f732394e1c509328ad7138fae08046eb7d7e3e0ff9",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 14.627917000325397
+        },
+        {
+          "id": "commons-japan-riverside-000300",
+          "imageSHA256": "d9b51b1e3bb528a9605878113420817a74f86ad71481dbf4a3fb4fae4f1e32c8",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.7321947813034058,
+              "xyxy": [
+                0.6150894730179398,
+                0.16911179224650066,
+                0.7083647551359954,
+                0.28872563044230143
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.7294921875,
+              "xyxy": [
+                0.6143518518518518,
+                0.16901041666666666,
+                0.7078703703703704,
+                0.28880208333333335
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.985438017983089,
+              "maskIoU": 1.0
+            }
+          ],
+          "macPredictionMS": 14.072250000026543
+        },
+        {
+          "id": "commons-japan-riverside-000390",
+          "imageSHA256": "2adf15bd0e16d51ec370a0e99356215c7283f1d48dcc77a74c380322c56ffbce",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.8818299174308777,
+              "xyxy": [
+                0.7275831434461806,
+                0.362669563293457,
+                1.0,
+                0.6640643437703451
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.5011591911315918,
+              "xyxy": [
+                0.8029109248408565,
+                0.36308472951253257,
+                0.9987438060619213,
+                0.646900749206543
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.8818359375,
+              "xyxy": [
+                0.7282407407407407,
+                0.3625,
+                1.0,
+                0.6640625
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.4990234375,
+              "xyxy": [
+                0.8023148148148148,
+                0.36302083333333335,
+                0.9976851851851852,
+                0.6458333333333334
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9970203947155287,
+              "maskIoU": 1.0
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9876367944798126,
+              "maskIoU": 1.0
+            }
+          ],
+          "macPredictionMS": 14.147041001706384
+        },
+        {
+          "id": "commons-japan-riverside-000480",
+          "imageSHA256": "cd3a1ce7e46598201ca67035d61381f63043f294b243361b40abf8dac7cac221",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 14.234833000955405
+        },
+        {
+          "id": "commons-japan-riverside-000570",
+          "imageSHA256": "fb76f832a063b6546e86b9c6469dbb885ec38c05ab81eb78b0fa675d186c7176",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.25558146834373474,
+              "xyxy": [
+                0.000992160373263889,
+                0.1246458371480306,
+                0.9964794017650463,
+                0.9998091379801433
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.2568359375,
+              "xyxy": [
+                0.001851851851851852,
+                0.12473958333333333,
+                0.9962962962962963,
+                1.0
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9986279095847989,
+              "maskIoU": 0.9988503104161877
+            }
+          ],
+          "macPredictionMS": 14.115333000518149
+        },
+        {
+          "id": "commons-japan-riverside-000660",
+          "imageSHA256": "f51080f1aba9629074b30fab1c71c50cd70272d8208604d6ed9289606097080a",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 14.077374999033054
+        },
+        {
+          "id": "commons-japan-riverside-000750",
+          "imageSHA256": "731903e7801fedf05b1bc015e027fac3f231a57dfd07134dbf06047320d25eb8",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.28308025002479553,
+              "xyxy": [
+                0.6187255859375,
+                0.23112881978352864,
+                1.0,
+                0.680263900756836
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.27880859375,
+              "xyxy": [
+                0.6175925925925926,
+                0.23177083333333334,
+                1.0,
+                0.6854166666666667
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9843233788004635,
+              "maskIoU": 0.996937212863706
+            }
+          ],
+          "macPredictionMS": 14.247750001231907
+        },
+        {
+          "id": "commons-japan-riverside-000840",
+          "imageSHA256": "b7c6f12446de36c0429cb162ae4b0889b2c22e76f78926555dc739f20685df8d",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.33171796798706055,
+              "xyxy": [
+                0.005166286892361111,
+                0.1637044906616211,
+                0.9954919885706018,
+                0.9987086613972982
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.3291015625,
+              "xyxy": [
+                0.005555555555555556,
+                0.16354166666666667,
+                0.9944444444444445,
+                0.9989583333333333
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9980568219039663,
+              "maskIoU": 0.9988372093023256
+            }
+          ],
+          "macPredictionMS": 14.740250000613742
+        }
+      ]
+    },
+    "SkyCompanionYOLOE_v7_640_INT8": {
+      "inputSize": 640,
+      "packageBytes": 10422751,
+      "loadSeconds": 0.19077225000000908,
+      "macPredictionP50MS": 24.283583499709493,
+      "macPredictionP95MS": 24.538399849188863,
+      "meanBoxIoU": 0.9882119271999446,
+      "meanMaskIoU": 0.9777109304103941,
+      "meanDetectionAgreement": 0.9,
+      "selectedTargetRecallCounts": {
+        "railing": {
+          "targets": 10,
+          "hits": 0
+        },
+        "curb": {
+          "targets": 10,
+          "hits": 0
+        },
+        "traffic cone": {
+          "targets": 5,
+          "hits": 3
+        },
+        "pole": {
+          "targets": 1,
+          "hits": 0
+        },
+        "tree trunk": {
+          "targets": 13,
+          "hits": 0
+        }
+      },
+      "frames": [
+        {
+          "id": "commons-japan-riverside-000030",
+          "imageSHA256": "9d15c4c108336c392775ffee7d4db7b74f0615bdc0ee680b9f6a039073537d92",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.30290091037750244,
+              "xyxy": [
+                0.7259229871961805,
+                0.07094287872314453,
+                0.9992224799262153,
+                0.43704614639282224
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.292236328125,
+              "xyxy": [
+                0.7256944444444444,
+                0.070703125,
+                0.9993055555555556,
+                0.437109375
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9980351292132742,
+              "maskIoU": 0.9863791146424518
+            }
+          ],
+          "macPredictionMS": 24.495834000845207
+        },
+        {
+          "id": "commons-japan-riverside-000120",
+          "imageSHA256": "19267d6d05481294ce0b1700e25962fd4f36a5fc88df82aa50694d5abf586cf8",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.31597089767456055,
+              "xyxy": [
+                0.005681016710069445,
+                0.07252235412597656,
+                0.9941726684570312,
+                1.0
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.29332423210144043,
+              "xyxy": [
+                0.5750391642252605,
+                0.05350942611694336,
+                0.9984244452582465,
+                0.5200656890869141
+              ]
+            },
+            {
+              "classID": 87,
+              "label": "construction barrier",
+              "confidence": 0.26657480001449585,
+              "xyxy": [
+                0.7236787584092882,
+                0.15236915349960328,
+                0.9976781209309896,
+                0.5191741466522217
+              ]
+            },
+            {
+              "classID": 87,
+              "label": "construction barrier",
+              "confidence": 0.26629653573036194,
+              "xyxy": [
+                0.5499218410915798,
+                0.06379354596138001,
+                0.6028130425347222,
+                0.14012362957000732
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.309814453125,
+              "xyxy": [
+                0.005208333333333333,
+                0.0703125,
+                0.9947916666666666,
+                1.0
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.282958984375,
+              "xyxy": [
+                0.575,
+                0.053125,
+                0.9986111111111111,
+                0.519921875
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.996522463304533,
+              "maskIoU": 0.9813979706877114
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9983363809255952,
+              "maskIoU": 0.9892555640828856
+            }
+          ],
+          "macPredictionMS": 24.36837499772082
+        },
+        {
+          "id": "commons-japan-riverside-000210",
+          "imageSHA256": "b43898a0892462ca1be360f732394e1c509328ad7138fae08046eb7d7e3e0ff9",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.29800155758857727,
+              "xyxy": [
+                0.0009377373589409722,
+                0.14842119216918945,
+                0.9962621053059896,
+                1.0
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.26389941573143005,
+              "xyxy": [
+                0.583042229546441,
+                0.11192288398742675,
+                0.6241527981228299,
+                0.19181361198425292
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.2978515625,
+              "xyxy": [
+                0.008333333333333333,
+                0.146875,
+                0.9972222222222222,
+                1.0
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.2509765625,
+              "xyxy": [
+                0.5833333333333334,
+                0.1125,
+                0.6236111111111111,
+                0.1916015625
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9898292562136561,
+              "maskIoU": 0.9866316543327763
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9700647012853004,
+              "maskIoU": 0.8571428571428571
+            }
+          ],
+          "macPredictionMS": 24.455457998556085
+        },
+        {
+          "id": "commons-japan-riverside-000300",
+          "imageSHA256": "d9b51b1e3bb528a9605878113420817a74f86ad71481dbf4a3fb4fae4f1e32c8",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.765799343585968,
+              "xyxy": [
+                0.6133124457465278,
+                0.1711264133453369,
+                0.7070787217881944,
+                0.28943142890930174
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.47284793853759766,
+              "xyxy": [
+                0.6461110432942708,
+                0.17060843706130982,
+                0.7075954861111111,
+                0.2900050163269043
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.29399916529655457,
+              "xyxy": [
+                0.5817291259765625,
+                0.10928101539611816,
+                0.9984751383463542,
+                0.5629808902740479
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.29138123989105225,
+              "xyxy": [
+                0.010599009195963542,
+                0.08659429550170898,
+                0.9938919915093316,
+                0.9990373611450195
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.76318359375,
+              "xyxy": [
+                0.6118055555555556,
+                0.1705078125,
+                0.7076388888888889,
+                0.2900390625
+              ]
+            },
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.42626953125,
+              "xyxy": [
+                0.6465277777777778,
+                0.17080078125,
+                0.7076388888888889,
+                0.29013671875
+              ]
+            },
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.266357421875,
+              "xyxy": [
+                0.5847222222222223,
+                0.11015625,
+                0.9986111111111111,
+                0.562890625
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.252685546875,
+              "xyxy": [
+                0.0,
+                0.0703125,
+                0.9958333333333333,
+                1.0
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9683932859676063,
+              "maskIoU": 1.0
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9898392192317369,
+              "maskIoU": 1.0
+            },
+            {
+              "pytorch": 2,
+              "coreml": 2,
+              "boxIoU": 0.9903827150349874,
+              "maskIoU": 0.9551282051282052
+            },
+            {
+              "pytorch": 3,
+              "coreml": 3,
+              "boxIoU": 0.9690921232634694,
+              "maskIoU": 0.9587989615080709
+            }
+          ],
+          "macPredictionMS": 24.559624998801155
+        },
+        {
+          "id": "commons-japan-riverside-000390",
+          "imageSHA256": "2adf15bd0e16d51ec370a0e99356215c7283f1d48dcc77a74c380322c56ffbce",
+          "pytorchDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.9225144982337952,
+              "xyxy": [
+                0.7358976576063369,
+                0.3659339904785156,
+                0.9991195678710938,
+                0.664366626739502
+              ]
+            },
+            {
+              "classID": 102,
+              "label": "concrete block",
+              "confidence": 0.25590237975120544,
+              "xyxy": [
+                0.49433983696831596,
+                0.525229549407959,
+                0.9981409708658854,
+                0.759089183807373
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 80,
+              "label": "traffic cone",
+              "confidence": 0.91162109375,
+              "xyxy": [
+                0.7350694444444444,
+                0.36630859375,
+                0.9982638888888888,
+                0.66416015625
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9916942196177777,
+              "maskIoU": 0.9984496124031008
+            }
+          ],
+          "macPredictionMS": 24.51245799966273
+        },
+        {
+          "id": "commons-japan-riverside-000480",
+          "imageSHA256": "cd3a1ce7e46598201ca67035d61381f63043f294b243361b40abf8dac7cac221",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.28327420353889465,
+              "xyxy": [
+                0.4414927164713542,
+                0.05787744522094727,
+                0.9991609361436632,
+                0.6167987823486328
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.25244140625,
+              "xyxy": [
+                0.4375,
+                0.053515625,
+                1.0,
+                0.620703125
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.976961405023482,
+              "maskIoU": 0.9907763259031515
+            }
+          ],
+          "macPredictionMS": 24.198792001698166
+        },
+        {
+          "id": "commons-japan-riverside-000570",
+          "imageSHA256": "fb76f832a063b6546e86b9c6469dbb885ec38c05ab81eb78b0fa675d186c7176",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.3033449053764343,
+              "xyxy": [
+                0.0030247582329644097,
+                0.12058420181274414,
+                0.9946548461914062,
+                1.0
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.308349609375,
+              "xyxy": [
+                0.004166666666666667,
+                0.1203125,
+                0.9958333333333333,
+                1.0
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.997355011040347,
+              "maskIoU": 0.9970478757540752
+            }
+          ],
+          "macPredictionMS": 23.58266699957312
+        },
+        {
+          "id": "commons-japan-riverside-000660",
+          "imageSHA256": "f51080f1aba9629074b30fab1c71c50cd70272d8208604d6ed9289606097080a",
+          "pytorchDetections": [],
+          "coremlDetections": [],
+          "matches": [],
+          "macPredictionMS": 24.1585000003397
+        },
+        {
+          "id": "commons-japan-riverside-000750",
+          "imageSHA256": "731903e7801fedf05b1bc015e027fac3f231a57dfd07134dbf06047320d25eb8",
+          "pytorchDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.31419500708580017,
+              "xyxy": [
+                0.4718939039442274,
+                0.15899066925048827,
+                0.9956425136990017,
+                0.6297535419464111
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.28568536043167114,
+              "xyxy": [
+                0.0025527530246310763,
+                0.17104225158691405,
+                0.9999330308702257,
+                0.9990262985229492
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 85,
+              "label": "fence",
+              "confidence": 0.30322265625,
+              "xyxy": [
+                0.4704861111111111,
+                0.1578125,
+                0.9961805555555555,
+                0.63046875
+              ]
+            },
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.292236328125,
+              "xyxy": [
+                0.002777777777777778,
+                0.171875,
+                1.0,
+                0.99921875
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9923075486355184,
+              "maskIoU": 0.974739970282318
+            },
+            {
+              "pytorch": 1,
+              "coreml": 1,
+              "boxIoU": 0.9984698407133897,
+              "maskIoU": 0.9959577519885252
+            }
+          ],
+          "macPredictionMS": 24.145750001480337
+        },
+        {
+          "id": "commons-japan-riverside-000840",
+          "imageSHA256": "b7c6f12446de36c0429cb162ae4b0889b2c22e76f78926555dc739f20685df8d",
+          "pytorchDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.36636102199554443,
+              "xyxy": [
+                0.003984366522894966,
+                0.15914173126220704,
+                0.9944890340169271,
+                0.9995824813842773
+              ]
+            }
+          ],
+          "coremlDetections": [
+            {
+              "classID": 93,
+              "label": "sidewalk",
+              "confidence": 0.3701171875,
+              "xyxy": [
+                0.003472222222222222,
+                0.15703125,
+                0.9951388888888889,
+                0.99921875
+              ]
+            }
+          ],
+          "matches": [
+            {
+              "pytorch": 0,
+              "coreml": 0,
+              "boxIoU": 0.9958956085284956,
+              "maskIoU": 0.9939580922997815
+            }
+          ],
+          "macPredictionMS": 23.536624998087063
+        }
+      ]
+    }
+  }
+}

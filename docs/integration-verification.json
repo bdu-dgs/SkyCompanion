@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-27",
+  "scope": "Local copy, project identity normalization, English-only source/docs, and integration verification. Checks recorded during the preparation phase, before the subsequently authorized GitHub publication.",
+  "application_tests": {
+    "backend": {
+      "passed": 176,
+      "failed": 0
+    },
+    "frontend": {
+      "passed": 37,
+      "failed": 0
+    },
+    "photon": {
+      "passed": 25,
+      "failed": 0
+    },
+    "swift_capture_core": {
+      "passed": 162,
+      "failed": 0
+    }
+  },
+  "builds": {
+    "frontend_vite": "passed",
+    "photon_typescript_typecheck": "passed",
+    "ios_release_unsigned": "passed; generic iOS destination, no device installation"
+  },
+  "photon_swift_typescript_contract": "passed: Swift records accepted and deduplicated by TypeScript; Swift decoded actual server inbox",
+  "training_code_tests": {
+    "passed": 24,
+    "skipped": 1,
+    "scope": "Unit tests only; no training or held-out model evaluation"
+  },
+  "existing_desktop_pipeline_tests": {
+    "passed": 3,
+    "failed": 3,
+    "baseline_confirmation": "The same three failures reproduce from the pre-change HEAD versions of sky_companion.py and test_sky_companion.py in a separate temporary directory. These files were not changed.",
+    "failures": [
+      "test_corridor_confirmation_outside_person_and_cooldown: IndexError from hazards[1]",
+      "test_moving_camera_default_never_claims_person_approaches: IndexError from hazards[0]",
+      "test_stairs_require_a_separate_model_two_tracked_frames_and_corridor: expected speak=True, got False"
+    ]
+  },
+  "model_integrity": {
+    "current_mobile_packages": "All six manifest file hashes match; packages unchanged",
+    "desktop_checkpoints": "11 metadata-normalized checkpoints; all tensor-storage entries unchanged; all 11 deserialized successfully without inference"
+  },
+  "exclusions_verified": [
+    "raw training footage",
+    "private environment files",
+    "new device pairing token",
+    "local model binaries",
+    "build outputs",
+    "dependency caches",
+    "intermediate prediction images, duplicate renders and diagnostic dumps"
+  ],
+  "historical_evidence": "Copied reports are translated archival evidence, not fresh measurements. Historical source hashes were preserved as historical values.",
+  "source_checkout": "Original development checkout not edited",
+  "limitations": [
+    "No real-device install or listening test performed for renamed bundle identifiers",
+    "No held-out accuracy evaluation or training performed",
+    "Model binaries are local and Git-ignored; public model distribution not published",
+    "Existing desktop pipeline failures remain as recorded above"
+  ],
+  "repository_text_scan": {
+    "checked_text_files": 575,
+    "findings": []
+  }
+}

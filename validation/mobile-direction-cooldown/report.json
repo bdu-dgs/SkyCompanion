@@ -1,0 +1,1027 @@
+{
+  "model": "SkyWorld72_epoch15_640_FP32",
+  "sourceSHA256": "8789b4d5be50d1a30d8637fad7548e47d90b068dcedf67894f1883941832cf49",
+  "modelFilesMatch": {
+    "Data/com.apple.CoreML/model.mlmodel": true,
+    "Data/com.apple.CoreML/weights/weight.bin": true,
+    "Manifest.json": true
+  },
+  "videoSHA256": "0be80387aca832d2813a191c60d620022ad132be606ff732cb6bdb5d81ad72f6",
+  "videoPreferredTransform": "identity",
+  "replay": "Actual shipping Core ML preprocessing/inference/risk/guidance on macOS, 5 fps, first 25 seconds, default corridor, no selected wearer and no concurrent speech. Not a physical iPhone timing replay.",
+  "detectionsIdenticalBeforeAfter": true,
+  "segmentChecks": [
+    {
+      "window": [
+        6,
+        8
+      ],
+      "direction": "left",
+      "label": "person",
+      "passed": true,
+      "events": [
+        {
+          "second": 7.2,
+          "direction": "left",
+          "detectedLabel": "person",
+          "target": {
+            "confidence": 0.9665623307228088,
+            "height": 0.47967987060546874,
+            "label": "person",
+            "width": 0.16643269062042237,
+            "x": 0.041940498352050784,
+            "y": 0.36189693874782985
+          },
+          "category": "person",
+          "kind": "nearby_side_person"
+        }
+      ]
+    },
+    {
+      "window": [
+        8,
+        12
+      ],
+      "direction": "right",
+      "label": "pole",
+      "passed": true,
+      "events": [
+        {
+          "second": 10.4,
+          "direction": "right",
+          "detectedLabel": "pole",
+          "target": {
+            "confidence": 0.4831082820892334,
+            "height": 0.9770311991373698,
+            "label": "pole",
+            "width": 0.37201652526855467,
+            "x": 0.5376405715942383,
+            "y": 0.003001530965169271
+          },
+          "category": "pole",
+          "kind": "lower_visible_body"
+        }
+      ]
+    },
+    {
+      "window": [
+        16,
+        20
+      ],
+      "direction": "left",
+      "label": "person",
+      "passed": true,
+      "events": [
+        {
+          "second": 18.6,
+          "direction": "left",
+          "detectedLabel": "person",
+          "target": {
+            "confidence": 0.9718340039253235,
+            "height": 0.45680448744032126,
+            "label": "person",
+            "width": 0.10075638294219974,
+            "x": 0.23472570180892943,
+            "y": 0.2652929941813151
+          },
+          "category": "person",
+          "kind": "lower_visible_body"
+        }
+      ]
+    }
+  ],
+  "admittedEvents": [
+    {
+      "second": 0.4,
+      "direction": "left",
+      "detectedLabel": "curb",
+      "target": {
+        "confidence": 0.9672937989234924,
+        "height": 0.8098058064778646,
+        "label": "curb",
+        "width": 0.3148317337036133,
+        "x": 0.17500839233398438,
+        "y": 0.19004779391818577
+      },
+      "category": "curb",
+      "kind": "low_object_candidate"
+    },
+    {
+      "second": 2,
+      "direction": "right",
+      "detectedLabel": "bush",
+      "target": {
+        "confidence": 0.9869229197502136,
+        "height": 0.7699647267659505,
+        "label": "bush",
+        "width": 0.4458696365356445,
+        "x": 0.5537593841552735,
+        "y": 0.2300352732340495
+      },
+      "category": "tree",
+      "kind": "lower_visible_body"
+    },
+    {
+      "second": 3.6,
+      "direction": "ahead",
+      "detectedLabel": null,
+      "target": {
+        "confidence": 0.3846527636051178,
+        "height": 0.7892431047227648,
+        "label": "curb",
+        "width": 0.3490182399749756,
+        "x": 0.3752099275588989,
+        "y": 0.21075689527723523
+      },
+      "category": null,
+      "kind": "low_object_candidate"
+    },
+    {
+      "second": 5.2,
+      "direction": "right",
+      "detectedLabel": null,
+      "target": {
+        "confidence": 0.8981446623802185,
+        "height": 0.9103661431206597,
+        "label": "bush",
+        "width": 0.28703756332397456,
+        "x": 0.7124826908111572,
+        "y": 0.07592502170138889
+      },
+      "category": null,
+      "kind": "lower_visible_body"
+    },
+    {
+      "second": 6.8,
+      "direction": "right",
+      "detectedLabel": "curb",
+      "target": {
+        "confidence": 0.8203735947608948,
+        "height": 0.6965340932210287,
+        "label": "curb",
+        "width": 0.35371441841125484,
+        "x": 0.5491951704025269,
+        "y": 0.30346590677897134
+      },
+      "category": "curb",
+      "kind": "low_object_candidate"
+    },
+    {
+      "second": 7.2,
+      "direction": "left",
+      "detectedLabel": "person",
+      "target": {
+        "confidence": 0.9665623307228088,
+        "height": 0.47967987060546874,
+        "label": "person",
+        "width": 0.16643269062042237,
+        "x": 0.041940498352050784,
+        "y": 0.36189693874782985
+      },
+      "category": "person",
+      "kind": "nearby_side_person"
+    },
+    {
+      "second": 8.8,
+      "direction": "ahead",
+      "detectedLabel": "person",
+      "target": {
+        "confidence": 0.9834211468696594,
+        "height": 0.6027656555175782,
+        "label": "person",
+        "width": 0.10369977951049808,
+        "x": 0.4418801784515381,
+        "y": 0.2921326955159505
+      },
+      "category": "person",
+      "kind": "lower_visible_body"
+    },
+    {
+      "second": 10.4,
+      "direction": "right",
+      "detectedLabel": "pole",
+      "target": {
+        "confidence": 0.4831082820892334,
+        "height": 0.9770311991373698,
+        "label": "pole",
+        "width": 0.37201652526855467,
+        "x": 0.5376405715942383,
+        "y": 0.003001530965169271
+      },
+      "category": "pole",
+      "kind": "lower_visible_body"
+    },
+    {
+      "second": 14.8,
+      "direction": "right",
+      "detectedLabel": "person",
+      "target": {
+        "confidence": 0.9710309505462646,
+        "height": 0.4098557366265191,
+        "label": "person",
+        "width": 0.1670880794525147,
+        "x": 0.799344277381897,
+        "y": 0.38582801818847656
+      },
+      "category": "person",
+      "kind": "nearby_side_person"
+    },
+    {
+      "second": 18.6,
+      "direction": "left",
+      "detectedLabel": "person",
+      "target": {
+        "confidence": 0.9718340039253235,
+        "height": 0.45680448744032126,
+        "label": "person",
+        "width": 0.10075638294219974,
+        "x": 0.23472570180892943,
+        "y": 0.2652929941813151
+      },
+      "category": "person",
+      "kind": "lower_visible_body"
+    },
+    {
+      "second": 20.2,
+      "direction": "left",
+      "detectedLabel": null,
+      "target": {
+        "confidence": 0.33750924468040466,
+        "height": 0.1189160664876302,
+        "label": "table",
+        "width": 0.19750752449035647,
+        "x": 0.2803926944732666,
+        "y": 0.8810839335123698
+      },
+      "category": null,
+      "kind": "lower_visible_body"
+    },
+    {
+      "second": 23.6,
+      "direction": "right",
+      "detectedLabel": "awning",
+      "target": {
+        "confidence": 0.4812735617160797,
+        "height": 0.15611093309190538,
+        "label": "awning",
+        "width": 0.19655580520629878,
+        "x": 0.6653841018676758,
+        "y": 0.3007788128323025
+      },
+      "category": "obstacle",
+      "kind": "elevated_image_alignment"
+    }
+  ],
+  "baselineEvents": [
+    {
+      "second": 0.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "play(deadlineMS: 1900.0)"
+    },
+    {
+      "second": 0.6,
+      "direction": "right",
+      "label": "bush",
+      "decision": "cooldown"
+    },
+    {
+      "second": 0.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 1,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 1.2,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 1.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 1.6,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 1.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 2.2,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 2.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 2.6,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 2.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 3,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 3.2,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 3.4,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 3.6,
+      "direction": "ahead",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 3.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 4.2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 4.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 4.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 4.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 5,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 5.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 5.4,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 5.6,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 5.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 6.2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 6.4,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 6.6,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 6.8,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 7,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 7.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 7.4,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 7.6,
+      "direction": "right",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 7.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 8.2,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 8.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 8.6,
+      "direction": "left",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 8.8,
+      "direction": "right",
+      "label": null,
+      "decision": "play(deadlineMS: 10300.0)"
+    },
+    {
+      "second": 9,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 9.2,
+      "direction": "right",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 9.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 9.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 9.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 10,
+      "direction": "left",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 10.2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 10.4,
+      "direction": "right",
+      "label": "pole",
+      "decision": "cooldown"
+    },
+    {
+      "second": 10.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 10.8,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 11,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 11.2,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "cooldown"
+    },
+    {
+      "second": 11.4,
+      "direction": "right",
+      "label": "pole",
+      "decision": "cooldown"
+    },
+    {
+      "second": 11.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 11.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 12,
+      "direction": "right",
+      "label": "pole",
+      "decision": "cooldown"
+    },
+    {
+      "second": 12.2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 12.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 12.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 12.8,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 13,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 13.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 13.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 13.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 13.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 14,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 14.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 14.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 14.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 14.8,
+      "direction": "ahead",
+      "label": "person",
+      "decision": "cooldown"
+    },
+    {
+      "second": 15,
+      "direction": "right",
+      "label": "table",
+      "decision": "cooldown"
+    },
+    {
+      "second": 15.2,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 15.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 15.6,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 15.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 16,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 16.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 16.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 16.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 16.8,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 17,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "play(deadlineMS: 18500.0)"
+    },
+    {
+      "second": 17.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 17.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 17.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 17.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 18,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 18.2,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 18.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 18.6,
+      "direction": "ahead",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 18.8,
+      "direction": "left",
+      "label": "potted plant",
+      "decision": "cooldown"
+    },
+    {
+      "second": 19,
+      "direction": "right",
+      "label": "bush",
+      "decision": "cooldown"
+    },
+    {
+      "second": 19.2,
+      "direction": "left",
+      "label": "person",
+      "decision": "cooldown"
+    },
+    {
+      "second": 19.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 19.6,
+      "direction": "left",
+      "label": "person",
+      "decision": "cooldown"
+    },
+    {
+      "second": 19.8,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 20,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 20.2,
+      "direction": "ahead",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 20.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 20.6,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 20.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 21,
+      "direction": "right",
+      "label": "bush",
+      "decision": "cooldown"
+    },
+    {
+      "second": 21.2,
+      "direction": "left",
+      "label": "debris",
+      "decision": "duplicate"
+    },
+    {
+      "second": 21.4,
+      "direction": "right",
+      "label": "table",
+      "decision": "cooldown"
+    },
+    {
+      "second": 21.6,
+      "direction": "right",
+      "label": "table",
+      "decision": "cooldown"
+    },
+    {
+      "second": 21.8,
+      "direction": "right",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 22,
+      "direction": "right",
+      "label": null,
+      "decision": "cooldown"
+    },
+    {
+      "second": 22.2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 22.4,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 22.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 22.8,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 23,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 23.2,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 23.4,
+      "direction": "right",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 23.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 23.8,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 24,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 24.2,
+      "direction": "ahead",
+      "label": null,
+      "decision": "duplicate"
+    },
+    {
+      "second": 24.4,
+      "direction": "ahead",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 24.6,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    },
+    {
+      "second": 24.8,
+      "direction": "right",
+      "label": "bush",
+      "decision": "cooldown"
+    },
+    {
+      "second": 25,
+      "direction": "left",
+      "label": "curb",
+      "decision": "duplicate"
+    }
+  ],
+  "tests": "146 CaptureCore tests passed",
+  "build": "Release iPhone build succeeded",
+  "phonePlaybackRetestPassed": false,
+  "deviceInstallation": "Succeeded; com.stanley.skycompanion.capture",
+  "deviceLaunch": "Succeeded",
+  "deploymentStatus": "ROLLED BACK at user request; evidence retained as historical results, not current app behavior."
+}

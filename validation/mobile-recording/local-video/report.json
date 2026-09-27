@@ -1,0 +1,26 @@
+{
+  "buildPassed": true,
+  "changes": [
+    "Broadcast lifetime is independent of imported-video session lifetime",
+    "Import retains the prepared broadcast and microphone",
+    "Local test exposes recording prepare and stop/save",
+    "Extension vision packets are excluded while analyzing a local video",
+    "Broadcast disconnect only updates recording status in local-video mode",
+    "Stop/save pauses local playback and drains microphone audio before finalization"
+  ],
+  "phoneLocalVideoRecordingVerified": false,
+  "phoneConversationAudioVerified": false,
+  "sourceSHA256": {
+    "ios/OnDevice/LocalSessionModel.swift": "2ef31c40bde2c159a2737f122024b3ec45310f77a14b77419353bc006ee9b8c5",
+    "ios/OnDevice/LocalContentView.swift": "8a5aa2e70fc9afa72856275837ac5e95ac47b89ca255ec506a49c48430f3a198",
+    "ios/OnDevice/LocalVisionPipeline.swift": "4e06d442aa37050d9b8d569fcc37abb9eee557185b9f8160722d5fee94d9d7fb"
+  },
+  "pending": [
+    "Start broadcast under Connect drone, import local video and confirm broadcast remains active",
+    "Start recording directly in Test a video",
+    "Verify recorded user question, rendered response and obstacle alert in Photos",
+    "Stop, save and resume ordinary local-video use"
+  ],
+  "installSucceeded": true,
+  "launchSucceeded": true
+}

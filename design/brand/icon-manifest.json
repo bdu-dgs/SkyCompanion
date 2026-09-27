@@ -1,0 +1,15 @@
+{
+  "source": "native ImageGen edit",
+  "theme": "Fly Me to the Moon",
+  "date": "2026-09-26",
+  "master": "/Users/stanley/.codex/generated_images/01a0dc5e-5e75-7d63-91ad-ad1bca72f1eb/exec-38c0a0c5-1736-4542-8ee6-3abf883e7ba5.png",
+  "appIcon": "ios/SkyCompanionCapture/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+  "sha256": "f02148094e20d18930d92e3e106c43b69cbbafa1cd83f02cfe5e900f94511996",
+  "size": [
+    1024,
+    1024
+  ],
+  "mode": "RGB",
+  "realPhoto": false,
+  "composition": "smaller drone above upper lunar hemisphere at bottom edge"
+}

@@ -1,0 +1,71 @@
+{
+  "error" : {
+    "code" : 10002,
+    "domain" : "com.apple.dt.CoreDeviceError",
+    "userInfo" : {
+      "BundleIdentifier" : {
+        "string" : "com.stanley.skycompanion.capture"
+      },
+      "NSLocalizedDescription" : {
+        "string" : "The application failed to launch."
+      },
+      "NSUnderlyingError" : {
+        "error" : {
+          "code" : 1,
+          "domain" : "FBSOpenApplicationServiceErrorDomain",
+          "userInfo" : {
+            "BSErrorCodeDescription" : {
+              "string" : "RequestDenied"
+            },
+            "FBSOpenApplicationRequestID" : {
+              "string" : "0x7b3d"
+            },
+            "NSLocalizedDescription" : {
+              "string" : "The request to open \"com.stanley.skycompanion.capture\" failed."
+            },
+            "NSLocalizedFailureReason" : {
+              "string" : "The request was denied by service delegate (SBMainWorkspace) for reason: Locked (\"Unable to launch com.stanley.skycompanion.capture because the device was not, or could not be, unlocked\")."
+            },
+            "NSUnderlyingError" : {
+              "error" : {
+                "code" : 7,
+                "domain" : "FBSOpenApplicationErrorDomain",
+                "userInfo" : {
+                  "BSErrorCodeDescription" : {
+                    "string" : "Locked"
+                  },
+                  "NSLocalizedFailureReason" : {
+                    "string" : "Unable to launch com.stanley.skycompanion.capture because the device was not, or could not be, unlocked."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "process",
+      "launch",
+      "--device",
+      "00008120-001A10D002E2201E",
+      "--terminate-existing",
+      "--timeout",
+      "25",
+      "--json-output",
+      "/tmp/sky-selective-launch.json",
+      "com.stanley.skycompanion.capture"
+    ],
+    "commandType" : "devicectl.device.process.launch",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "failed",
+    "version" : "642.16"
+  }
+}

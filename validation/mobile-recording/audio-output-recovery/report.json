@@ -1,0 +1,29 @@
+{
+  "userReported": "No live sound, including sound check; saved video contains microphone only.",
+  "sampleDurationSeconds": 86.748333,
+  "exactPhysicalCauseConfirmed": false,
+  "defectsAddressed": [
+    "No recovery after audio engine configuration stop",
+    "Speech scheduling incorrectly counted as playback",
+    "Local video automatically muted outside recording"
+  ],
+  "offlineRenderedSpeechTestPassed": true,
+  "initialSandboxAudioComponentTestFailed": true,
+  "unsandboxedOfflineRenderPassed": true,
+  "physicalPlaybackVerified": true,
+  "physicalThreeSourceRecordingVerified": false,
+  "deviceBuildPassed": true,
+  "installSucceeded": true,
+  "launchSucceeded": true,
+  "physicalStandaloneSoundCheckUserConfirmed": true,
+  "physicalBroadcastPlaybackVerified": false,
+  "engineStopAndRecoveryObservedOnPhone": true,
+  "observedOutputRoute": "Speaker",
+  "observedOutputVolume": 1.0,
+  "observedSampleRateHz": 48000,
+  "physicalPlaybackScope": "User confirmed sound check; broadcast and saved three-source audio remain pending.",
+  "physicalLocalAlertPlaybackUserConfirmed": true,
+  "currentOriginalVideoAudio": "AAC stereo track, all 4593664 decoded float samples exactly zero; SHA256 matches current phone session",
+  "modelModifiedByThisTask": false,
+  "modelManifestHashesUnchanged": true
+}

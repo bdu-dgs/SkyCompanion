@@ -1,0 +1,46 @@
+{
+  "scope": "Conversion parity only. Shared PIL input; not Swift preprocessing, phone performance or real distance validation.",
+  "cases": [
+    {
+      "image": "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+      "rotation": 0,
+      "relativeErrorMedian": 0.0042478470131754875,
+      "relativeErrorP99": 0.015465516597032547,
+      "maxAbsoluteDeltaMeters": 1.4946670532226562,
+      "macCPUInferenceMS": 65.15200000285404,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "image": "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+      "rotation": 90,
+      "relativeErrorMedian": 0.010588886216282845,
+      "relativeErrorP99": 0.02557375654578209,
+      "maxAbsoluteDeltaMeters": 0.6003017425537109,
+      "macCPUInferenceMS": 39.604416000656784,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "image": "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png",
+      "rotation": 0,
+      "relativeErrorMedian": 0.009534217417240143,
+      "relativeErrorP99": 0.02149214781820774,
+      "maxAbsoluteDeltaMeters": 0.6451940536499023,
+      "macCPUInferenceMS": 37.44341599667678,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "image": "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png",
+      "rotation": 90,
+      "relativeErrorMedian": 0.018911762163043022,
+      "relativeErrorP99": 0.03498469293117523,
+      "maxAbsoluteDeltaMeters": 0.4942741394042969,
+      "macCPUInferenceMS": 37.76241699961247,
+      "finite": true,
+      "passed": false
+    }
+  ],
+  "passed": false
+}

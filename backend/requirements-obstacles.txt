@@ -1,0 +1,4 @@
+-r requirements-live.txt
+clip @ git+https://github.com/ultralytics/CLIP.git@a13192f8cb767260d7dfd98c843b0716593169e7
+# Public dataset Parquet import; not needed by the live receiver.
+pyarrow==25.0.1

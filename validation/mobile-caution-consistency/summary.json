@@ -1,0 +1,17 @@
+{
+  "core_tests": 149,
+  "core_failures": 0,
+  "xcode_build": "passed",
+  "installed": true,
+  "launched": true,
+  "still_running_after_launch": true,
+  "model_files_checked": 42,
+  "model_files_changed": 0,
+  "fixed_input_three_runs_identical": true,
+  "reviewed_events": 5,
+  "event_coverage_default_speech_passed": true,
+  "event_coverage_long_speech_passed": true,
+  "iphone_video_replay_verified": false,
+  "unseen_video_accuracy_verified": false,
+  "metric_danger_verified": false
+}

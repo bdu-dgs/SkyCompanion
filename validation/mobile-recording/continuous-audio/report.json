@@ -1,0 +1,23 @@
+{
+  "userReported": "Live speech is smooth; only the saved local-video screen recording is choppy. No drone used.",
+  "sampleDurationSeconds": 90.188333,
+  "sampleAACPacketGapsOver30ms": 0,
+  "sampleIncludesNearSilentIntervals": true,
+  "identifiedCodeDefect": "Audio flush and final duration followed new video frames, allowing continuous microphone packets to exceed the bounded mix window on a static screen.",
+  "exactCauseOfEveryGapInSharedVideoProven": false,
+  "staticScreenSavedMovieSeconds": 6,
+  "staticScreenVideoFrameCount": 2,
+  "bothDirectTonesPresentAfterLongStaticInterval": true,
+  "savedMovieVideoTailPreserved": true,
+  "movingScreenRegressionPassed": true,
+  "hapticAndSceneTestsPassed": 18,
+  "buildPassed": true,
+  "physicalAudioRetestPassed": false,
+  "physicalVibrationRetestPassed": false,
+  "writerQueueLimit": 96,
+  "originalSoundtrackRequested": true,
+  "threeSourceDecodedAudioTestPassed": true,
+  "physicalOriginalSoundtrackRetestPassed": false,
+  "installSucceeded": true,
+  "launchSucceeded": true
+}

@@ -1,0 +1,13 @@
+{
+  "decodedFrames" : 24,
+  "duplicateFinish" : true,
+  "durationSeconds" : 1.9666666666666666,
+  "emptyRecording" : true,
+  "height" : 360,
+  "orientationChange" : true,
+  "passed" : true,
+  "pauseGapRemoved" : true,
+  "scope" : "Synthetic macOS writer check; not iPhone ReplayKit or Photos validation",
+  "width" : 640,
+  "writeFailure" : true
+}

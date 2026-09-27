@@ -1,0 +1,41 @@
+Building for debugging...
+[Planning deferred tasks]
+[1 / 10]
+[2 / 11] CaptureCore
+[6 / 15] CaptureCore
+[15 / 18] CaptureCoreTests-product
+[21 / 24] CaptureCoreTests-product
+[27 / 29] CaptureCoreTests-product
+Build complete! (9.88 sec.)
+Test Suite 'Selected tests' started at 2026-09-27 01:53:08.409.
+Test Suite 'CaptureCoreTests.xctest' started at 2026-09-27 01:53:08.410.
+Test Suite 'LocalSceneDescriberTests' started at 2026-09-27 01:53:08.410.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testDuplicateFramesAndFreshness]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testDuplicateFramesAndFreshness]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testGroupingCapsCountAndUnknownLabelsStayAbsent]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testGroupingCapsCountAndUnknownLabelsStayAbsent]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testPythonGoldenDistinctKindsAndImageDirections]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testPythonGoldenDistinctKindsAndImageDirections]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testWeakAndMissingObservationsDoNotImplyClearPath]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testWeakAndMissingObservationsDoNotImplyClearPath]' passed (0.000 seconds).
+Test Suite 'LocalSceneDescriberTests' passed at 2026-09-27 01:53:08.411.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'MobileWearerTests' started at 2026-09-27 01:53:08.411.
+Test Case '-[CaptureCoreTests.MobileWearerTests testExcludeOnlyExplicitSameFramePerson]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testExcludeOnlyExplicitSameFramePerson]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testIndependentMatchRejectsAmbiguityAndOverlap]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testIndependentMatchRejectsAmbiguityAndOverlap]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testLostWearerDescriptionKeepsCarsWithoutTrackingDisclaimer]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testLostWearerDescriptionKeepsCarsWithoutTrackingDisclaimer]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testOtherPedestrianRemainsAndLossClearsOldPeopleCount]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testOtherPedestrianRemainsAndLossClearsOldPeopleCount]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testSelectedUserDoesNotCreateRiskButOtherPersonStillDoes]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testSelectedUserDoesNotCreateRiskButOtherPersonStillDoes]' passed (0.006 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testWearerAndTwoCarsAcrossDirections]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testWearerAndTwoCarsAcrossDirections]' passed (0.000 seconds).
+Test Suite 'MobileWearerTests' passed at 2026-09-27 01:53:08.418.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'CaptureCoreTests.xctest' passed at 2026-09-27 01:53:08.418.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'Selected tests' passed at 2026-09-27 01:53:08.418.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds

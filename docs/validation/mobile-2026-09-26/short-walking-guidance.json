@@ -1,0 +1,27 @@
+{
+  "change": "Two-part speech with experimental rear-following route selection",
+  "swiftTests": 78,
+  "swiftFailures": 0,
+  "iOSReleaseBuild": "passed",
+  "appAndExtensionBundleCheck": {
+    "app": "/private/tmp/skycompanion-device/Build/Products/Release-iphoneos/SkyCompanion.app",
+    "bundleIdentifier": "com.stanley.skycompanion.capture",
+    "minimumOSVersion": "18.0",
+    "model": "SkyCompanionYOLOE_v7_960_FP16",
+    "classes": 115,
+    "depthModel": "SkyMetricDepthSmall_392_FP32",
+    "depthValidation": "unvalidated",
+    "matchingModelAndPairingInBothTargets": true,
+    "desktopConfigurationAbsent": true,
+    "englishResourcesInBothTargets": true,
+    "compiledModelContractsMatch": true,
+    "signedProfilePresent": true,
+    "scope": "Static checks of actual built bundles; not device execution or precision validation"
+  },
+  "registration": "synthetic translation and local ground mismatch checks passed on Mac",
+  "phoneInstall": "pending: physical iPhone unavailable",
+  "acousticTest": "not performed",
+  "walkingFieldValidation": "not performed",
+  "headingSource": "user-confirmed unmirrored rear-following deployment, not automatic body orientation estimation",
+  "walkableRegionSource": "manually selected, image-registered corridor"
+}

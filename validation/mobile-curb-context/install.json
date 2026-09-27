@@ -1,0 +1,39 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "install",
+      "app",
+      "--device",
+      "00008120-001A10D002E2201E",
+      "--timeout",
+      "90",
+      "--json-output",
+      "/tmp/sky-curb-install.json",
+      "/tmp/skycompanion-device/Build/Products/Release-iphoneos/SkyCompanion.app"
+    ],
+    "commandType" : "devicectl.device.install.app",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "success",
+    "version" : "642.16"
+  },
+  "result" : {
+    "deviceIdentifier" : "670B3B1F-A63D-5E92-9B2E-3F5BDF1D6B85",
+    "installedApplications" : [
+      {
+        "bundleID" : "com.stanley.skycompanion.capture",
+        "databaseSequenceNumber" : 10000,
+        "databaseUUID" : "EF8B2B03-536A-4E49-A7DD-03533241DAED",
+        "installationURL" : "file:///private/var/containers/Bundle/Application/87A652E5-27B6-4639-80C5-B24D7F592C85/SkyCompanion.app/",
+        "launchServicesIdentifier" : "unknown",
+        "options" : {
+
+        }
+      }
+    ]
+  }
+}

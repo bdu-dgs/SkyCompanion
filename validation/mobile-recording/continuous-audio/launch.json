@@ -1,0 +1,59 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "process",
+      "launch",
+      "--device",
+      "00008120-001A10D002E2201E",
+      "com.stanley.skycompanion.capture",
+      "--terminate-existing",
+      "--json-output",
+      "/tmp/sky-original-audio-launch.json",
+      "--timeout",
+      "25"
+    ],
+    "commandType" : "devicectl.device.process.launch",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "success",
+    "version" : "642.16"
+  },
+  "result" : {
+    "deviceIdentifier" : "670B3B1F-A63D-5E92-9B2E-3F5BDF1D6B85",
+    "launchOptions" : {
+      "activatedWhenStarted" : true,
+      "arguments" : [
+        "--terminate-existing"
+      ],
+      "environmentVariables" : {
+        "TERM" : "dumb"
+      },
+      "platformSpecificOptions" : {
+
+      },
+      "startStopped" : false,
+      "terminateExistingInstances" : false,
+      "user" : {
+        "active" : true
+      }
+    },
+    "process" : {
+      "auditToken" : [
+        4294967295,
+        501,
+        501,
+        501,
+        501,
+        11081,
+        0,
+        28644
+      ],
+      "executable" : "file:///private/var/containers/Bundle/Application/FB716CC4-60C3-402F-AF3C-E8A4EBBA4CE3/SkyCompanion.app/SkyCompanion",
+      "processIdentifier" : 11081
+    }
+  }
+}

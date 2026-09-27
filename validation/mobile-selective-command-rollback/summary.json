@@ -1,0 +1,22 @@
+{
+  "reference_message_utc": "2026-09-27T03:14:52.699Z",
+  "core_tests_passed": 144,
+  "native_crop_cases_passed": 6,
+  "recording_system_mix_passed": true,
+  "recording_direct_fallback_passed": true,
+  "locked_model_files": 42,
+  "model_files_changed": 0,
+  "retained_support_files": 31,
+  "retained_support_files_changed": 0,
+  "class_names_in_automatic_cautions": false,
+  "curb_cautions_in_replay": 0,
+  "default_interval_seconds": 8,
+  "build": "passed",
+  "install": "success",
+  "launch": "success",
+  "physical_phone_retest_verified": false,
+  "followed_user_exclusion_retained": true,
+  "explicit_initial_user_selection_required": true,
+  "wearer_replay_tracked": 258,
+  "wearer_replay_samples": 261
+}

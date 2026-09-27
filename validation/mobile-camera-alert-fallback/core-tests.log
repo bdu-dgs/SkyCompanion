@@ -1,0 +1,414 @@
+Building for debugging...
+[Planning deferred tasks]
+[7 / 28]
+[8 / 29] CaptureCore
+[20 / 41] CaptureCore
+[25 / 38] CaptureCore
+[29 / 38] CaptureCoreTests-product
+[48 / 57] CaptureCoreTests-product
+[52 / 56] CaptureCoreTests-product
+[54 / 56] CaptureCoreTests-product
+Build complete! (1.90 sec.)
+Test Suite 'All tests' started at 2026-09-27 10:33:45.452.
+Test Suite 'CaptureCoreTests.xctest' started at 2026-09-27 10:33:45.453.
+Test Suite 'AlertPreferencesTests' started at 2026-09-27 10:33:45.453.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testAttentionCanPreemptNavigationButNavigationCannotPreemptAlerts]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testAttentionCanPreemptNavigationButNavigationCannotPreemptAlerts]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testCategoryAliasesAndUnknownLabels]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testCategoryAliasesAndUnknownLabels]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testEscalationBypassesLongIntervalAndUrgencyStillRequiresVerification]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testEscalationBypassesLongIntervalAndUrgencyStillRequiresVerification]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testMutedCategoriesOnlySuppressAttention]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testMutedCategoriesOnlySuppressAttention]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testOrdinaryIntervalHonorsBoundsAndClampsInvalidCallerValues]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testOrdinaryIntervalHonorsBoundsAndClampsInvalidCallerValues]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testPreferenceWireDocumentRoundTripsAndDefaultsAreValid]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testPreferenceWireDocumentRoundTripsAndDefaultsAreValid]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testRiskEvidenceOnlyCarriesConsistentLabelForCategoryFiltering]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testRiskEvidenceOnlyCarriesConsistentLabelForCategoryFiltering]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testUnsupportedAndUnsafeDecodedPoliciesFailValidation]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testUnsupportedAndUnsafeDecodedPoliciesFailValidation]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testVerbosityAddsEvidenceContextWithoutDistanceOrSafetyClaims]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testVerbosityAddsEvidenceContextWithoutDistanceOrSafetyClaims]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingAvoidanceTrackingAndBoundaryInstructionsCannotBeMutedOrShortenedAway]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingAvoidanceTrackingAndBoundaryInstructionsCannotBeMutedOrShortenedAway]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingLegacyAndUnknownCategoryUseObstacleFallback]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingLegacyAndUnknownCategoryUseObstacleFallback]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingSideFilterRetainsEveryRelevantCategoryAndExcludesWearer]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingSideFilterRetainsEveryRelevantCategoryAndExcludesWearer]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingVerbosityOnlyShortensConfirmedOrdinarySideReminder]' started.
+Test Case '-[CaptureCoreTests.AlertPreferencesTests testWalkingVerbosityOnlyShortensConfirmedOrdinarySideReminder]' passed (0.001 seconds).
+Test Suite 'AlertPreferencesTests' passed at 2026-09-27 10:33:45.462.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'CaptureCadenceTests' started at 2026-09-27 10:33:45.462.
+Test Case '-[CaptureCoreTests.CaptureCadenceTests testJitteredThirtyFPSInputMaintainsFifteenFPS]' started.
+Test Case '-[CaptureCoreTests.CaptureCadenceTests testJitteredThirtyFPSInputMaintainsFifteenFPS]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CaptureCadenceTests testResetAllowsImmediateFrameAfterReconnect]' started.
+Test Case '-[CaptureCoreTests.CaptureCadenceTests testResetAllowsImmediateFrameAfterReconnect]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CaptureCadenceTests testSlowEncodingSkipsSlotsWithoutCatchUpBurst]' started.
+Test Case '-[CaptureCoreTests.CaptureCadenceTests testSlowEncodingSkipsSlotsWithoutCatchUpBurst]' passed (0.000 seconds).
+Test Suite 'CaptureCadenceTests' passed at 2026-09-27 10:33:45.462.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'CompanionSpeechTests' started at 2026-09-27 10:33:45.462.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testCompanionSummaryStaysEnglishWithChineseCommandLocale]' started.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testCompanionSummaryStaysEnglishWithChineseCommandLocale]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testCompanionWaitsForObstacleSpeechAndCommand]' started.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testCompanionWaitsForObstacleSpeechAndCommand]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testEmptyRecordedTripDoesNotClaimSafety]' started.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testEmptyRecordedTripDoesNotClaimSafety]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testExpiredAndDuplicateRepliesDoNotPlay]' started.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testExpiredAndDuplicateRepliesDoNotPlay]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testExplicitCompanionAndCorrectionCommands]' started.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testExplicitCompanionAndCorrectionCommands]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testTripEndIsIdempotentAndCountsReminders]' started.
+Test Case '-[CaptureCoreTests.CompanionSpeechTests testTripEndIsIdempotentAndCountsReminders]' passed (0.000 seconds).
+Test Suite 'CompanionSpeechTests' passed at 2026-09-27 10:33:45.463.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'FrameWindowTests' started at 2026-09-27 10:33:45.463.
+Test Case '-[CaptureCoreTests.FrameWindowTests testDisconnectDropsFramesAndPreviousSessionReceipts]' started.
+Test Case '-[CaptureCoreTests.FrameWindowTests testDisconnectDropsFramesAndPreviousSessionReceipts]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.FrameWindowTests testPauseDiscardsImagesButRetainsNetworkWindowUntilAcknowledged]' started.
+Test Case '-[CaptureCoreTests.FrameWindowTests testPauseDiscardsImagesButRetainsNetworkWindowUntilAcknowledged]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.FrameWindowTests testReceiptHistoryHasHardLimitAndRejectsNegativeLatency]' started.
+Test Case '-[CaptureCoreTests.FrameWindowTests testReceiptHistoryHasHardLimitAndRejectsNegativeLatency]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.FrameWindowTests testReceiptUsesCaptureTimeAndCannotBeReplayed]' started.
+Test Case '-[CaptureCoreTests.FrameWindowTests testReceiptUsesCaptureTimeAndCannotBeReplayed]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.FrameWindowTests testSlowReceiverRetainsOnlyNewestPendingFrame]' started.
+Test Case '-[CaptureCoreTests.FrameWindowTests testSlowReceiverRetainsOnlyNewestPendingFrame]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.FrameWindowTests testStalePendingIsNotReplayedAndTimeoutIsBounded]' started.
+Test Case '-[CaptureCoreTests.FrameWindowTests testStalePendingIsNotReplayedAndTimeoutIsBounded]' passed (0.000 seconds).
+Test Suite 'FrameWindowTests' passed at 2026-09-27 10:33:45.463.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'LocalRiskEngineTests' started at 2026-09-27 10:33:45.463.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testAnnouncedR1UpgradesImmediately]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testAnnouncedR1UpgradesImmediately]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testContractsRoundTrip]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testContractsRoundTrip]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testCurbContextDoesNotSuppressPedestrianOrGroundChangeHazards]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testCurbContextDoesNotSuppressPedestrianOrGroundChangeHazards]' passed (0.005 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testDisconnectedMaskComponentsPreserveAllVisibleRegions]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testDisconnectedMaskComponentsPreserveAllVisibleRegions]' passed (0.004 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testEventGateExpiresAtCaptureDeadlineAndDoesNotResurrectMutedEvents]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testEventGateExpiresAtCaptureDeadlineAndDoesNotResurrectMutedEvents]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testLargeRepeatedCurbBoxesDoNotBecomeIndependentHazards]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testLargeRepeatedCurbBoxesDoNotBecomeIndependentHazards]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testNamingRequiresValidatedClassAndStableIdentity]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testNamingRequiresValidatedClassAndStableIdentity]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testNewRelevantObjectNotSuppressedByAnother]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testNewRelevantObjectNotSuppressedByAnother]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testOcclusionRemainsUnresolvedBeyondTrackMemory]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testOcclusionRemainsUnresolvedBeyondTrackMemory]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testPolygonGapsAndInvalidInputs]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testPolygonGapsAndInvalidInputs]' passed (0.003 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testPythonGoldenAttentionRiskAndEvidence]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testPythonGoldenAttentionRiskAndEvidence]' passed (0.005 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testQuietStillAllowsRiskUpgradeWithoutCooldown]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testQuietStillAllowsRiskUpgradeWithoutCooldown]' passed (0.004 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testRevisionAndRegionChangeRequireNewEvidence]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testRevisionAndRegionChangeRequireNewEvidence]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testSameTimestampCannotConfirmOrReplay]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testSameTimestampCannotConfirmOrReplay]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testStaleFutureAndSessionChangeNeverReplayOldDirection]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testStaleFutureAndSessionChangeNeverReplayOldDirection]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testUncertainCategoryUsesGenericObstacleAndVehicleDoesNotClaimMotion]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testUncertainCategoryUsesGenericObstacleAndVehicleDoesNotClaimMotion]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testVisibleSeparationResolvesOnlyImageConflict]' started.
+Test Case '-[CaptureCoreTests.LocalRiskEngineTests testVisibleSeparationResolvesOnlyImageConflict]' passed (0.006 seconds).
+Test Suite 'LocalRiskEngineTests' passed at 2026-09-27 10:33:45.503.
+	 Executed 17 tests, with 0 failures (0 unexpected) in 0.039 (0.040) seconds
+Test Suite 'LocalSceneDescriberTests' started at 2026-09-27 10:33:45.503.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testDuplicateFramesAndFreshness]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testDuplicateFramesAndFreshness]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testGroupingCapsCountAndUnknownLabelsStayAbsent]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testGroupingCapsCountAndUnknownLabelsStayAbsent]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testPythonGoldenDistinctKindsAndImageDirections]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testPythonGoldenDistinctKindsAndImageDirections]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testWeakAndMissingObservationsDoNotImplyClearPath]' started.
+Test Case '-[CaptureCoreTests.LocalSceneDescriberTests testWeakAndMissingObservationsDoNotImplyClearPath]' passed (0.000 seconds).
+Test Suite 'LocalSceneDescriberTests' passed at 2026-09-27 10:33:45.504.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'MobileAlertSpeechTests' started at 2026-09-27 10:33:45.504.
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testCameraDirectionCannotImplyWalkingPermission]' started.
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testCameraDirectionCannotImplyWalkingPermission]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testDistantLeftPedestrianDoesNotBecomeRightWarning]' started.
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testDistantLeftPedestrianDoesNotBecomeRightWarning]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testObservedBoxSideSurvivesRiskEventAndSpokenCaution]' started.
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testObservedBoxSideSurvivesRiskEventAndSpokenCaution]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testShortTwoPartAlertsAndFrontVocabulary]' started.
+Test Case '-[CaptureCoreTests.MobileAlertSpeechTests testShortTwoPartAlertsAndFrontVocabulary]' passed (0.000 seconds).
+Test Suite 'MobileAlertSpeechTests' passed at 2026-09-27 10:33:45.509.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'MobileAssistanceStatusTests' started at 2026-09-27 10:33:45.509.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testEnglishQueriesAndRecoveryRequireAnExplicitWakePhrase]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testEnglishQueriesAndRecoveryRequireAnExplicitWakePhrase]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testFaultIsOncePerEpisodeAndRejectedSpeechCanRetry]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testFaultIsOncePerEpisodeAndRejectedSpeechCanRetry]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testFreshnessUsesCaptureTimeAndCurrentSessionNotRecentDelivery]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testFreshnessUsesCaptureTimeAndCurrentSessionNotRecentDelivery]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testHealthyAndMutedAreOperationalNotSafeClaims]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testHealthyAndMutedAreOperationalNotSafeClaims]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testPathHealthIsIndependentOfUserIdentity]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testPathHealthIsIndependentOfUserIdentity]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testPausedWaitingAndIdleDoNotBecomeHealthy]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testPausedWaitingAndIdleDoNotBecomeHealthy]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testRequiredFollowedUserCannotEnableDirectionAlertsBeforeSelection]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testRequiredFollowedUserCannotEnableDirectionAlertsBeforeSelection]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testTrackingFailureBeatsMuteAndNeverHidesVideoFailure]' started.
+Test Case '-[CaptureCoreTests.MobileAssistanceStatusTests testTrackingFailureBeatsMuteAndNeverHidesVideoFailure]' passed (0.000 seconds).
+Test Suite 'MobileAssistanceStatusTests' passed at 2026-09-27 10:33:45.510.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'MobileCameraObstacleTests' started at 2026-09-27 10:33:45.510.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testCameraSpeechNamesFrameDirectionWithoutSteeringOrClassNames]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testCameraSpeechNamesFrameDirectionWithoutSteeringOrClassNames]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testCapabilitySplitNeverAuthorizesSteeringOrStaleCameraAlerts]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testCapabilitySplitNeverAuthorizesSteeringOrStaleCameraAlerts]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testOrdinaryLocalVideoWithoutWearerRequirementPreservesPeopleAlerts]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testOrdinaryLocalVideoWithoutWearerRequirementPreservesPeopleAlerts]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testPendingCameraCautionIsDroppedWhenOccludedOrSessionChanges]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testPendingCameraCautionIsDroppedWhenOccludedOrSessionChanges]' passed (0.005 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testTrackedOtherPedestrianStillWarnsAndLossClearsOldPersonTracks]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testTrackedOtherPedestrianStillWarnsAndLossClearsOldPersonTracks]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testTrackingNoticeCannotPermanentlyConsumeFirstCameraCaution]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testTrackingNoticeCannotPermanentlyConsumeFirstCameraCaution]' passed (0.006 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testUnknownPeopleAndSelectedUserNeverCreateSelfAlert]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testUnknownPeopleAndSelectedUserNeverCreateSelfAlert]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testUnknownUserDoesNotSilenceConfirmedCarOrChangeDetections]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testUnknownUserDoesNotSilenceConfirmedCarOrChangeDetections]' passed (0.003 seconds).
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testWalkingFailureRequiresFreshCameraConfirmation]' started.
+Test Case '-[CaptureCoreTests.MobileCameraObstacleTests testWalkingFailureRequiresFreshCameraConfirmation]' passed (0.003 seconds).
+Test Suite 'MobileCameraObstacleTests' passed at 2026-09-27 10:33:45.531.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.020 (0.020) seconds
+Test Suite 'MobileGuidanceCadenceTests' started at 2026-09-27 10:33:45.531.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testCommandInteractionUsesHapticAdmissionWithoutOrdinarySpeechInterruption]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testCommandInteractionUsesHapticAdmissionWithoutOrdinarySpeechInterruption]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testContinuousObservationAndOcclusionNeverCausePeriodicReminders]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testContinuousObservationAndOcclusionNeverCausePeriodicReminders]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testDifferentDirectionsRespectGlobalGap]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testDifferentDirectionsRespectGlobalGap]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testHapticsDeliverFreshObstacleWhileSpeechIsBusyWithoutInterruptingVoice]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testHapticsDeliverFreshObstacleWhileSpeechIsBusyWithoutInterruptingVoice]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testMuteExpiryAndNewSessionDoNotReplayOldEvents]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testMuteExpiryAndNewSessionDoNotReplayOldEvents]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testRapidNewTrackIDsDoNotRestartSameAlert]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testRapidNewTrackIDsDoNotRestartSameAlert]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testSamePrioritySpeechFinishesAndDroppedEventIsNotQueued]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testSamePrioritySpeechFinishesAndDroppedEventIsNotQueued]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testUpgradeBypassesCooldownAndInterruptsLowerSpeech]' started.
+Test Case '-[CaptureCoreTests.MobileGuidanceCadenceTests testUpgradeBypassesCooldownAndInterruptsLowerSpeech]' passed (0.000 seconds).
+Test Suite 'MobileGuidanceCadenceTests' passed at 2026-09-27 10:33:45.532.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'MobileLayoutGateTests' started at 2026-09-27 10:33:45.532.
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testLayoutChangesAfterAcceptanceRequireReconfirmation]' started.
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testLayoutChangesAfterAcceptanceRequireReconfirmation]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testNewSessionDropsPreviousLayout]' started.
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testNewSessionDropsPreviousLayout]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testPortraitDJIViewIsAcceptedAfterSettling]' started.
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testPortraitDJIViewIsAcceptedAfterSettling]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testStartupRotationMustSettleAgain]' started.
+Test Case '-[CaptureCoreTests.MobileLayoutGateTests testStartupRotationMustSettleAgain]' passed (0.000 seconds).
+Test Suite 'MobileLayoutGateTests' passed at 2026-09-27 10:33:45.532.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'MobileModelLabelTests' started at 2026-09-27 10:33:45.532.
+Test Case '-[CaptureCoreTests.MobileModelLabelTests testNewObstacleAppearsInStableSceneSummary]' started.
+Test Case '-[CaptureCoreTests.MobileModelLabelTests testNewObstacleAppearsInStableSceneSummary]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileModelLabelTests testNewVocabularyUsesExistingRiskSemanticsWithoutMasks]' started.
+Test Case '-[CaptureCoreTests.MobileModelLabelTests testNewVocabularyUsesExistingRiskSemanticsWithoutMasks]' passed (0.020 seconds).
+Test Case '-[CaptureCoreTests.MobileModelLabelTests testTrafficColorsNeverBecomeMovementInstructions]' started.
+Test Case '-[CaptureCoreTests.MobileModelLabelTests testTrafficColorsNeverBecomeMovementInstructions]' passed (0.000 seconds).
+Test Suite 'MobileModelLabelTests' passed at 2026-09-27 10:33:45.552.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.020 (0.020) seconds
+Test Suite 'MobilePathDepthTests' started at 2026-09-27 10:33:45.552.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testContinuousConfirmationAndNoPeriodicRepeat]' started.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testContinuousConfirmationAndNoPeriodicRepeat]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testCrosswalkStripeGapsRemainInsideWholeCorridor]' started.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testCrosswalkStripeGapsRemainInsideWholeCorridor]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testDepthInvalidAndMixedSurfacesFailClosed]' started.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testDepthInvalidAndMixedSurfacesFailClosed]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testGapsAndRevisionResetConfirmation]' started.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testGapsAndRevisionResetConfirmation]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testNearBoundaryIsNotOutsideOrMeters]' started.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testNearBoundaryIsNotOutsideOrMeters]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testOcclusionDoesNotClearDepartureAndStaleCannotAlert]' started.
+Test Case '-[CaptureCoreTests.MobilePathDepthTests testOcclusionDoesNotClearDepartureAndStaleCannotAlert]' passed (0.000 seconds).
+Test Suite 'MobilePathDepthTests' passed at 2026-09-27 10:33:45.553.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'MobileSceneReplyTests' started at 2026-09-27 10:33:45.553.
+Test Case '-[CaptureCoreTests.MobileSceneReplyTests testDescriptionKeepsObservationDeadline]' started.
+Test Case '-[CaptureCoreTests.MobileSceneReplyTests testDescriptionKeepsObservationDeadline]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileSceneReplyTests testNearExpiredDescriptionWaitsInsteadOfStoppingSpeechEngine]' started.
+Test Case '-[CaptureCoreTests.MobileSceneReplyTests testNearExpiredDescriptionWaitsInsteadOfStoppingSpeechEngine]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileSceneReplyTests testStalePausedMissingAndMismatchedViewsAnswerUnavailable]' started.
+Test Case '-[CaptureCoreTests.MobileSceneReplyTests testStalePausedMissingAndMismatchedViewsAnswerUnavailable]' passed (0.000 seconds).
+Test Suite 'MobileSceneReplyTests' passed at 2026-09-27 10:33:45.553.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'MobileSpeechInputTests' started at 2026-09-27 10:33:45.553.
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testContinuationCancelsAndNewCommandCanSchedule]' started.
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testContinuationCancelsAndNewCommandCanSchedule]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testDuplicatePartialsKeepFirstCommitAndFinalCanExpedite]' started.
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testDuplicatePartialsKeepFirstCommitAndFinalCanExpedite]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testEmbeddedOrUntimedWordsDoNotBecomeCommands]' started.
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testEmbeddedOrUntimedWordsDoNotBecomeCommands]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testLatestSeparateWakeWinsWithoutSplittingPauseInsideCommand]' started.
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testLatestSeparateWakeWinsWithoutSplittingPauseInsideCommand]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testNewWakeUtteranceAfterEarlierAmbientSpeech]' started.
+Test Case '-[CaptureCoreTests.MobileSpeechInputTests testNewWakeUtteranceAfterEarlierAmbientSpeech]' passed (0.000 seconds).
+Test Suite 'MobileSpeechInputTests' passed at 2026-09-27 10:33:45.554.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'MobileVoiceCommandTests' started at 2026-09-27 10:33:45.554.
+Test Case '-[CaptureCoreTests.MobileVoiceCommandTests testLegacyNameAndEmbeddedNewNameCannotActivateMobileCommands]' started.
+Test Case '-[CaptureCoreTests.MobileVoiceCommandTests testLegacyNameAndEmbeddedNewNameCannotActivateMobileCommands]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileVoiceCommandTests testLocalLifecycleCommandsAreWholeUtterances]' started.
+Test Case '-[CaptureCoreTests.MobileVoiceCommandTests testLocalLifecycleCommandsAreWholeUtterances]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileVoiceCommandTests testRecognitionSpellingVariantAndAllActions]' started.
+Test Case '-[CaptureCoreTests.MobileVoiceCommandTests testRecognitionSpellingVariantAndAllActions]' passed (0.000 seconds).
+Test Suite 'MobileVoiceCommandTests' passed at 2026-09-27 10:33:45.554.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'MobileWalkingPlannerTests' started at 2026-09-27 10:33:45.554.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testBoundaryAlertsRemainEvenWithoutAnObstacle]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testBoundaryAlertsRemainEvenWithoutAnObstacle]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testChangeRevokesPreviousInstructionBeforeNextMovementIsConfirmed]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testChangeRevokesPreviousInstructionBeforeNextMovementIsConfirmed]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testContinuousHazardDoesNotRepeatAndUnsafeChangeRevokesStraight]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testContinuousHazardDoesNotRepeatAndUnsafeChangeRevokesStraight]' passed (0.006 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testCurbContextDoesNotNagButConfirmedPathBoundaryStillWarns]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testCurbContextDoesNotNagButConfirmedPathBoundaryStillWarns]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testForwardObstacleChoosesOnlyAvailableSide]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testForwardObstacleChoosesOnlyAvailableSide]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testFrontHasPriorityOverNearSideAndOwnBodyIsExcluded]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testFrontHasPriorityOverNearSideAndOwnBodyIsExcluded]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testNearSideHazardsAllowStraightOnlyAfterConfirmation]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testNearSideHazardsAllowStraightOnlyAfterConfirmation]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testQuietCurbStillBlocksAnUnverifiedTurn]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testQuietCurbStillBlocksAnUnverifiedTurn]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testStaleOrWrongFrameCannotProduceMovement]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testStaleOrWrongFrameCannotProduceMovement]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testTripSummaryCountsObstacleSpeechButNotLostTrackingOrBoundaryAdvice]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testTripSummaryCountsObstacleSpeechButNotLostTrackingOrBoundaryAdvice]' passed (0.002 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testTwoBlockedSidesAndNarrowRegionCannotSteer]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testTwoBlockedSidesAndNarrowRegionCannotSteer]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testUnknownHeadingLostUserAndDisappearingObstacleCannotAuthorizeMovement]' started.
+Test Case '-[CaptureCoreTests.MobileWalkingPlannerTests testUnknownHeadingLostUserAndDisappearingObstacleCannotAuthorizeMovement]' passed (0.000 seconds).
+Test Suite 'MobileWalkingPlannerTests' passed at 2026-09-27 10:33:45.572.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.017 (0.017) seconds
+Test Suite 'MobileWearerTests' started at 2026-09-27 10:33:45.572.
+Test Case '-[CaptureCoreTests.MobileWearerTests testDuplicateUserStaysOutOfRiskAndDescriptionWithoutChangingDetections]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testDuplicateUserStaysOutOfRiskAndDescriptionWithoutChangingDetections]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testExcludeOnlyExplicitSameFramePerson]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testExcludeOnlyExplicitSameFramePerson]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testIndependentMatchRejectsAmbiguityAndOverlap]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testIndependentMatchRejectsAmbiguityAndOverlap]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testLostWearerDescriptionKeepsCarsWithoutTrackingDisclaimer]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testLostWearerDescriptionKeepsCarsWithoutTrackingDisclaimer]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testOtherPedestrianRemainsAndLossClearsOldPeopleCount]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testOtherPedestrianRemainsAndLossClearsOldPeopleCount]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testSelectedUserDoesNotCreateRiskButOtherPersonStillDoes]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testSelectedUserDoesNotCreateRiskButOtherPersonStillDoes]' passed (0.006 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testWalkingExcludesUserDuplicatesAndStillWarnsForOtherPedestrian]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testWalkingExcludesUserDuplicatesAndStillWarnsForOtherPedestrian]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testWeakerDuplicateOfSelectedBodyDoesNotBecomeAnotherObstacle]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testWeakerDuplicateOfSelectedBodyDoesNotBecomeAnotherObstacle]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.MobileWearerTests testWearerAndTwoCarsAcrossDirections]' started.
+Test Case '-[CaptureCoreTests.MobileWearerTests testWearerAndTwoCarsAcrossDirections]' passed (0.000 seconds).
+Test Suite 'MobileWearerTests' passed at 2026-09-27 10:33:45.580.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'NavigationProgressTests' started at 2026-09-27 10:33:45.580.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testAdvanceThenImmediateEachOnce]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testAdvanceThenImmediateEachOnce]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testAlertRejectedPromptNeverReplaysAfterPassingTurn]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testAlertRejectedPromptNeverReplaysAfterPassingTurn]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testArrivalNeedsRouteProgressGoodAccuracyAndTwoFixes]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testArrivalNeedsRouteProgressGoodAccuracyAndTwoFixes]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testBadAccuracyStaleFutureAndDuplicateLocationsCannotSteer]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testBadAccuracyStaleFutureAndDuplicateLocationsCannotSteer]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testLoopEndpointNearStartDoesNotCauseArrivalOrJump]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testLoopEndpointNearStartDoesNotCauseArrivalOrJump]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testManeuverLanguageDoesNotConfuseStreetNamesWithTurns]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testManeuverLanguageDoesNotConfuseStreetNamesWithTurns]' passed (0.001 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testOffRouteRequiresPersistentEvidenceAndBlocksSpeech]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testOffRouteRequiresPersistentEvidenceAndBlocksSpeech]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationProgressTests testRejectedAdvanceMayRetryOnlyWithFreshNewFix]' started.
+Test Case '-[CaptureCoreTests.NavigationProgressTests testRejectedAdvanceMayRetryOnlyWithFreshNewFix]' passed (0.000 seconds).
+Test Suite 'NavigationProgressTests' passed at 2026-09-27 10:33:45.581.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'NavigationVoiceCommandTests' started at 2026-09-27 10:33:45.581.
+Test Case '-[CaptureCoreTests.NavigationVoiceCommandTests testCancellationAndSelectionAreWholeUtterances]' started.
+Test Case '-[CaptureCoreTests.NavigationVoiceCommandTests testCancellationAndSelectionAreWholeUtterances]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationVoiceCommandTests testDestinationRetainsAddressAndPlaceSpelling]' started.
+Test Case '-[CaptureCoreTests.NavigationVoiceCommandTests testDestinationRetainsAddressAndPlaceSpelling]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.NavigationVoiceCommandTests testWakePhraseAndNonEmptyDestinationAreRequired]' started.
+Test Case '-[CaptureCoreTests.NavigationVoiceCommandTests testWakePhraseAndNonEmptyDestinationAreRequired]' passed (0.000 seconds).
+Test Suite 'NavigationVoiceCommandTests' passed at 2026-09-27 10:33:45.582.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'PhotonProtocolTests' started at 2026-09-27 10:33:45.582.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testAtomicBatchRetryKeepsIDsAndOrderUntilExactAcknowledgment]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testAtomicBatchRetryKeepsIDsAndOrderUntilExactAcknowledgment]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testBoundedQueueReservesTripEndAndRejectsWithoutDroppingOlderData]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testBoundedQueueReservesTripEndAndRejectsWithoutDroppingOlderData]' passed (0.053 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testHTTPSOriginValidationPreventsCredentialURLsAndProductionPlaintext]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testHTTPSOriginValidationPreventsCredentialURLsAndProductionPlaintext]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testInboxCursorCannotSkipUnseenMessagesOrMoveBackwards]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testInboxCursorCannotSkipUnseenMessagesOrMoveBackwards]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testNewRecordsAddedDuringRequestAreNotAcknowledgedByThatResponse]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testNewRecordsAddedDuringRequestAreNotAcknowledgedByThatResponse]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testOldOtherTripAndFutureMessagesAreNeverAutomaticallyAnnounced]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testOldOtherTripAndFutureMessagesAreNeverAutomaticallyAnnounced]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testRestartRecoveryClosesAfterOldAlertsAndDoesNotInventCompletion]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testRestartRecoveryClosesAfterOldAlertsAndDoesNotInventCompletion]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testTextAndIdentifiersRespectServerWireLimits]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testTextAndIdentifiersRespectServerWireLimits]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testWireKeysAreSnakeCaseAndUnrelatedFieldsAreOmitted]' started.
+Test Case '-[CaptureCoreTests.PhotonProtocolTests testWireKeysAreSnakeCaseAndUnrelatedFieldsAreOmitted]' passed (0.000 seconds).
+Test Suite 'PhotonProtocolTests' passed at 2026-09-27 10:33:45.636.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.054 (0.054) seconds
+Test Suite 'VoiceCommandTests' started at 2026-09-27 10:33:45.636.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testAmbientAndSubstringsCannotTrigger]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testAmbientAndSubstringsCannotTrigger]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testCameraQuestionAliasesAreWholeUtterances]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testCameraQuestionAliasesAreWholeUtterances]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testDescriptionsStateCameraViewLimits]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testDescriptionsStateCameraViewLimits]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testExactCommands]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testExactCommands]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testPhoneCaptureClockPreventsNetworkStaleReplay]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testPhoneCaptureClockPreventsNetworkStaleReplay]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testRiskControlCommandsAndAmbientRejection]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testRiskControlCommandsAndAmbientRejection]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testRiskRepliesUseWhitelistedReasonsAndMakeNoResolutionClaim]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testRiskRepliesUseWhitelistedReasonsAndMakeNoResolutionClaim]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testSceneSummaryIncludesVisibleObjectsWithoutClaimingSafety]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testSceneSummaryIncludesVisibleObjectsWithoutClaimingSafety]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testSceneSummaryRejectsUnknownLabelsCountsAndInjectedDirections]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testSceneSummaryRejectsUnknownLabelsCountsAndInjectedDirections]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceCommandTests testUntrustedRepliesAndDirectionsRejected]' started.
+Test Case '-[CaptureCoreTests.VoiceCommandTests testUntrustedRepliesAndDirectionsRejected]' passed (0.000 seconds).
+Test Suite 'VoiceCommandTests' passed at 2026-09-27 10:33:45.638.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'VoiceEventTests' started at 2026-09-27 10:33:45.638.
+Test Case '-[CaptureCoreTests.VoiceEventTests testDeadlineUsesOnlyReceivingDeviceMonotonicTime]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testDeadlineUsesOnlyReceivingDeviceMonotonicTime]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testDuplicatesAndExpiredMessagesNeverReplay]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testDuplicatesAndExpiredMessagesNeverReplay]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testEveryRiskSpeechCodeIsLocalAndDirectionScoped]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testEveryRiskSpeechCodeIsLocalAndDirectionScoped]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testHealthIsSeparateFromRiskAndHasNoSourceCaptureClock]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testHealthIsSeparateFromRiskAndHasNoSourceCaptureClock]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testLegacyProductionRejectedAndLegacyTestHasSafeCameraPhrase]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testLegacyProductionRejectedAndLegacyTestHasSafeCameraPhrase]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testLowerPrioritiesCannotInterruptRiskAndUrgentCannotBeDowngraded]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testLowerPrioritiesCannotInterruptRiskAndUrgentCannotBeDowngraded]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testNetworkEventsCannotInjectSpeechOrMismatchedDirections]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testNetworkEventsCannotInjectSpeechOrMismatchedDirections]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testProductionSeverityMustMatchPriorityAndR0NeverAlerts]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testProductionSeverityMustMatchPriorityAndR0NeverAlerts]' passed (0.000 seconds).
+Test Case '-[CaptureCoreTests.VoiceEventTests testRouteChangesCannotReplayDroppedEventsAndHistoryIsBounded]' started.
+Test Case '-[CaptureCoreTests.VoiceEventTests testRouteChangesCannotReplayDroppedEventsAndHistoryIsBounded]' passed (0.000 seconds).
+Test Suite 'VoiceEventTests' passed at 2026-09-27 10:33:45.639.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'CaptureCoreTests.xctest' passed at 2026-09-27 10:33:45.639.
+	 Executed 162 tests, with 0 failures (0 unexpected) in 0.179 (0.186) seconds
+Test Suite 'All tests' passed at 2026-09-27 10:33:45.639.
+	 Executed 162 tests, with 0 failures (0 unexpected) in 0.179 (0.186) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

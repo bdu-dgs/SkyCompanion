@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* SkyCompanionCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* SkyCompanionCaptureApp.swift */; };
+		A10000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* ContentView.swift */; };
+		A10000000000000000000003 /* ConnectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* ConnectionModel.swift */; };
+		A10000000000000000000004 /* CaptureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* CaptureConfiguration.swift */; };
+		A10000000000000000000005 /* LocalCaptureConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* LocalCaptureConfig.json */; };
+		A10000000000000000000006 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* SampleHandler.swift */; };
+		A10000000000000000000007 /* FrameEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000007 /* FrameEncoder.swift */; };
+		A10000000000000000000008 /* BroadcastTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000008 /* BroadcastTransport.swift */; };
+		A10000000000000000000009 /* CaptureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* CaptureConfiguration.swift */; };
+		A1000000000000000000000A /* LocalCaptureConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* LocalCaptureConfig.json */; };
+		A1000000000000000000000B /* CaptureCore/Sources/CaptureCore/FrameWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000009 /* CaptureCore/Sources/CaptureCore/FrameWindow.swift */; };
+		A1000000000000000000000C /* SkyCompanionBroadcast.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000B /* SkyCompanionBroadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1000000000000000000000D /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000E /* VoiceModel.swift */; };
+		A1000000000000000000000E /* VoiceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000F /* VoiceEvent.swift */; };
+		A1000000000000000000000F /* VoiceClips in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* VoiceClips */; };
+		A10000000000000000000011 = {isa = PBXBuildFile; fileRef = B10000000000000000000011; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C10000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D10000000000000000000002;
+			remoteInfo = SkyCompanionBroadcast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C10000000000000000000002 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1000000000000000000000C /* SkyCompanionBroadcast.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B10000000000000000000001 /* SkyCompanionCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyCompanionCaptureApp.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B10000000000000000000003 /* ConnectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModel.swift; sourceTree = "<group>"; };
+		B10000000000000000000004 /* CaptureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureConfiguration.swift; sourceTree = "<group>"; };
+		B10000000000000000000005 /* LocalCaptureConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalCaptureConfig.json; sourceTree = "<group>"; };
+		B10000000000000000000006 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		B10000000000000000000007 /* FrameEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameEncoder.swift; sourceTree = "<group>"; };
+		B10000000000000000000008 /* BroadcastTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastTransport.swift; sourceTree = "<group>"; };
+		B10000000000000000000009 /* CaptureCore/Sources/CaptureCore/FrameWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCore/Sources/CaptureCore/FrameWindow.swift; sourceTree = "<group>"; };
+		B1000000000000000000000A /* SkyCompanionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyCompanionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000000000000000000000B /* SkyCompanionBroadcast.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkyCompanionBroadcast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000000000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1000000000000000000000D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1000000000000000000000E /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
+		B1000000000000000000000F /* VoiceEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCore/Sources/CaptureCore/VoiceEvent.swift; sourceTree = "<group>"; };
+		B10000000000000000000010 /* VoiceClips */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VoiceClips; sourceTree = "<group>"; };
+		B10000000000000000000011 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCore/Sources/CaptureCore/VoiceCommand.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E10000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F20000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				F20000000000000000000002 /* SkyCompanionCapture */,
+				F20000000000000000000003 /* SkyCompanionBroadcast */,
+				F20000000000000000000004 /* Shared */,
+				B10000000000000000000009 /* CaptureCore/Sources/CaptureCore/FrameWindow.swift */,
+				B1000000000000000000000F /* VoiceEvent.swift */,
+				B10000000000000000000011,
+				F20000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F20000000000000000000002 /* SkyCompanionCapture */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000001 /* SkyCompanionCaptureApp.swift */,
+				B10000000000000000000002 /* ContentView.swift */,
+				B10000000000000000000003 /* ConnectionModel.swift */,
+				B1000000000000000000000E /* VoiceModel.swift */,
+				B10000000000000000000010 /* VoiceClips */,
+				B1000000000000000000000C /* Info.plist */,
+			);
+			path = SkyCompanionCapture;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000003 /* SkyCompanionBroadcast */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000006 /* SampleHandler.swift */,
+				B10000000000000000000007 /* FrameEncoder.swift */,
+				B10000000000000000000008 /* BroadcastTransport.swift */,
+				B1000000000000000000000D /* Info.plist */,
+			);
+			path = SkyCompanionBroadcast;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000004 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000004 /* CaptureConfiguration.swift */,
+				B10000000000000000000005 /* LocalCaptureConfig.json */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1000000000000000000000A /* SkyCompanionCapture.app */,
+				B1000000000000000000000B /* SkyCompanionBroadcast.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D10000000000000000000001 /* SkyCompanionCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30000000000000000000002 /* Build configuration list for PBXNativeTarget "SkyCompanionCapture" */;
+			buildPhases = (
+				E20000000000000000000001 /* Sources */,
+				E10000000000000000000001 /* Frameworks */,
+				E30000000000000000000001 /* Resources */,
+				C10000000000000000000002 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C10000000000000000000003 /* PBXTargetDependency */,
+			);
+			name = SkyCompanionCapture;
+			productName = SkyCompanionCapture;
+			productReference = B1000000000000000000000A /* SkyCompanionCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D10000000000000000000002 /* SkyCompanionBroadcast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30000000000000000000003 /* Build configuration list for PBXNativeTarget "SkyCompanionBroadcast" */;
+			buildPhases = (
+				E20000000000000000000002 /* Sources */,
+				E10000000000000000000002 /* Frameworks */,
+				E30000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyCompanionBroadcast;
+			productName = SkyCompanionBroadcast;
+			productReference = B1000000000000000000000B /* SkyCompanionBroadcast.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F10000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					D10000000000000000000001 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					D10000000000000000000002 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+			};
+			buildConfigurationList = F30000000000000000000001 /* Build configuration list for PBXProject "SkyCompanionCapture" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F20000000000000000000001;
+			productRefGroup = F20000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D10000000000000000000001 /* SkyCompanionCapture */,
+				D10000000000000000000002 /* SkyCompanionBroadcast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E30000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000005 /* LocalCaptureConfig.json in Resources */,
+				A1000000000000000000000F /* VoiceClips in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E30000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000000000000000000000A /* LocalCaptureConfig.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E20000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* SkyCompanionCaptureApp.swift in Sources */,
+				A10000000000000000000002 /* ContentView.swift in Sources */,
+				A10000000000000000000003 /* ConnectionModel.swift in Sources */,
+				A1000000000000000000000D /* VoiceModel.swift in Sources */,
+				A1000000000000000000000E /* VoiceEvent.swift in Sources */,
+				A10000000000000000000011,
+				A10000000000000000000004 /* CaptureConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E20000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000006 /* SampleHandler.swift in Sources */,
+				A10000000000000000000007 /* FrameEncoder.swift in Sources */,
+				A10000000000000000000008 /* BroadcastTransport.swift in Sources */,
+				A10000000000000000000009 /* CaptureConfiguration.swift in Sources */,
+				A1000000000000000000000B /* CaptureCore/Sources/CaptureCore/FrameWindow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C10000000000000000000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D10000000000000000000002 /* SkyCompanionBroadcast */;
+			targetProxy = C10000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F40000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				SKYCOMPANION_BUNDLE_IDENTIFIER = com.stanley.skycompanion.capture;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F40000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				SKYCOMPANION_BUNDLE_IDENTIFIER = com.stanley.skycompanion.capture;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F40000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkyCompanionCapture/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F40000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkyCompanionCapture/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F40000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkyCompanionBroadcast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER).SkyCompanionBroadcast";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F40000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkyCompanionBroadcast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER).SkyCompanionBroadcast";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F30000000000000000000001 /* Build configuration list for PBXProject "SkyCompanionCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40000000000000000000001 /* Debug */,
+				F40000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30000000000000000000002 /* Build configuration list for PBXNativeTarget "SkyCompanionCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40000000000000000000003 /* Debug */,
+				F40000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30000000000000000000003 /* Build configuration list for PBXNativeTarget "SkyCompanionBroadcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40000000000000000000005 /* Debug */,
+				F40000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F10000000000000000000001 /* Project object */;
+}

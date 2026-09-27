@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-27",
+  "scope": [
+    "same-session applied-area restoration",
+    "recording crop acknowledgement and first-frame crop",
+    "retained external preview",
+    "continuous voice command handling and fresh describe replies",
+    "required followed-user identity for drone directional alerts"
+  ],
+  "validation": {
+    "core_tests_passed": 153,
+    "area_state_harness": "passed",
+    "crop_slider_harness": "passed",
+    "synthetic_recording_system_mix": "passed",
+    "synthetic_recording_direct_audio": "passed",
+    "ios_release_build": "passed",
+    "model_locked_files_unchanged": 42,
+    "install": "success",
+    "launch": "success"
+  },
+  "device_bundle_id": "com.stanley.skycompanion.capture",
+  "unverified": [
+    "new real-drone spoken-command recognition",
+    "new iPhone saved-file crop appearance and acoustic continuity",
+    "real-device performance impact of external preview caching"
+  ],
+  "operation_guide": "../../docs/mobile-drone-recording-runbook.md"
+}

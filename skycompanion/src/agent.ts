@@ -1,128 +1,44 @@
-import { createReadStream } from "node:fs";
-import { access } from "node:fs/promises";
-import { createInterface } from "node:readline";
-import { fileURLToPath } from "node:url";
-
-type Hazard = { target_id?: number | string; type?: string; direction?: string; approaching?: boolean | "unknown"; evidence?: string[] };
-type FrameRecord = {
-  schema_version?: string;
-  frame_id?: number;
-  video_timestamp_ms?: number;
-  hazards?: Hazard[];
-  warning?: { speak?: boolean; text?: string; target_id?: number | string; avoid_direction?: string };
-};
-export type WarningEvent = {
-  id: string;
-  frameId: number;
-  videoTimestampMs: number;
-  text: string;
-  targetId: number | string;
-  type: string;
-  direction: string;
-  evidence: string[];
-  approaching: boolean | "unknown";
-  avoidDirection: string;
-  sessionId?: string;
-  observedAtMs?: number;
-  receivedAtMs?: number;
-};
-
-export const defaultFramesPath = fileURLToPath(new URL("../../run/frames.jsonl", import.meta.url));
-
-export function eventFromFrame(frame: FrameRecord): WarningEvent | null {
-  const warning = frame.warning;
-  if (frame.schema_version !== "1.0" || !warning?.speak ||
-      typeof frame.frame_id !== "number" || typeof frame.video_timestamp_ms !== "number") return null;
-  const hazard = frame.hazards?.find((item) => item.target_id === warning.target_id);
-  return {
-    id: `${frame.frame_id}:${String(warning.target_id ?? "unknown")}`,
-    frameId: frame.frame_id,
-    videoTimestampMs: frame.video_timestamp_ms,
-    text: warning.text || "Warning issued",
-    targetId: warning.target_id ?? "unknown",
-    type: hazard?.type ?? "unknown",
-    direction: hazard?.direction ?? "unknown",
-    evidence: hazard?.evidence ?? [],
-    approaching: hazard?.approaching ?? "unknown",
-    avoidDirection: warning.avoid_direction ?? "unknown",
-  };
+import type { Alert, TripRecord } from './records.ts';
+export const alertsFor = (records: TripRecord[], session: string): Alert[] => records.filter((r): r is Alert => r.session_id === session && r.kind === 'alert');
+// Display only English in generated replies; retain original-language evidence in storage.
+export function englishExcerpt(value: string, fallback: string): string {
+  return /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(value) ? fallback : value;
 }
-
-export async function loadEvents(path: string): Promise<WarningEvent[] | null> {
-  try { await access(path); } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") return null;
-    throw error;
+function sourceLabel(records: TripRecord[], session: string): string {
+  const start = records.find(r => r.session_id === session && r.kind === 'start');
+  return start?.kind === 'start' && start.source === 'video' ? 'Recorded demo' : 'Trip record';
+}
+export function summary(records: TripRecord[], session: string): string {
+  const alerts = alertsFor(records, session);
+  const date = records.find(r => r.session_id === session && r.kind === 'start')?.at_ms;
+  const interrupted = records.some(r => r.session_id === session && r.kind === 'end' && /interrupt|restart|replac|incomplete/i.test(r.reason));
+  const caveat = interrupted ? ': Trip interrupted; obstacle log may be incomplete' : '';
+  const prefix = `${sourceLabel(records, session)}${date ? ` (${new Date(date).toISOString()})` : ''}${caveat}`;
+  if (!alerts.length) return `${prefix}: No obstacle alerts were recorded; this does not mean there were no obstacles.`;
+  const counts = new Map<string, number>();
+  for (const alert of alerts) counts.set(alert.category, (counts.get(alert.category) ?? 0) + 1);
+  const categories = [...counts].sort((a, b) => b[1] - a[1]);
+  const top = categories.slice(0, 4).map(([category, count]) => `${englishExcerpt(category, "obstacle (original category saved)")} ×${count}`).join(', ');
+  const corrected = new Set(records.filter(r => r.session_id === session && r.kind === 'feedback').map(r => r.kind === 'feedback' ? r.event_id : '')).size;
+  return `${prefix}: ${alerts.length} recorded obstacle alerts (${top}${categories.length > 4 ? ', others' : ''}), not distinct physical obstacles.${corrected ? ` ${corrected} flagged for review.` : ''}`;
+}
+export function answer(records: TripRecord[], session: string, question: string, name: string): string {
+  const q = question.toLowerCase();
+  const help = `I'm ${englishExcerpt(name, 'SkyCompanion Assistant')}. Ask "summary", "recent", or "why". Report "wrong latest: what actually happened", or replace latest with an event ID. Personalize alerts with \"say less\", \"say more\", \"mute trees\", \"enable trees\", or \"alert interval 30 seconds\". Ask \"my preferences\" or \"reset preferences\". Feedback is saved for review, not immediate model training.`;
+  if (/help/.test(q)) return help;
+  if (/summary/.test(q)) return summary(records, session);
+  if (/why|recent|last|happen/.test(q)) {
+    const last = alertsFor(records, session).at(-1);
+    if (!last) return 'No alerts are recorded.';
+    const when = new Date(last.observed_at_ms).toISOString();
+    const excerpt = (value: string, limit: number) => value.length > limit ? `${value.slice(0, limit)}…` : value;
+    const alertText = excerpt(englishExcerpt(last.text, 'The original alert was recorded in another language and is retained in the trip record'), 500);
+    const evidence = last.evidence.length ? last.evidence.slice(0, 3).map(value => excerpt(englishExcerpt(value, 'Original-language evidence retained in the trip record'), 160)).join('; ') + (last.evidence.length > 3 ? '; additional evidence omitted' : '') : 'no additional evidence recorded';
+    return `Historical alert from ${sourceLabel(records, session).toLowerCase()} (${when}, event ${last.event_id}): ${alertText}. Category: ${englishExcerpt(last.category, 'obstacle (original category saved)')}. Direction ${last.direction} refers to the image frame, not current navigation. Recorded evidence: ${evidence}.`;
   }
-  const events: WarningEvent[] = [];
-  const lines = createInterface({ input: createReadStream(path, { encoding: "utf8" }), crlfDelay: Infinity });
-  for await (const line of lines) {
-    if (!line.trim()) continue;
-    try {
-      const event = eventFromFrame(JSON.parse(line) as FrameRecord);
-      if (event) events.push(event);
-    } catch (error) {
-      if (!(error instanceof SyntaxError)) throw error;
-      // A live producer may still be writing its final line.
-    }
-  }
-  return events;
+  return help;
 }
-
-function timeLabel(ms: number): string {
-  const seconds = Math.floor(ms / 1000);
-  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
-}
-function typeLabel(type: string): string {
-  return type;
-}
-function directionLabel(direction: string): string {
-  return direction === "center" ? "ahead" : direction;
-}
-function eventLine(event: WarningEvent): string {
-  const label = event.observedAtMs === undefined
-    ? `video ${timeLabel(event.videoTimestampMs)} (frame ${event.frameId})`
-    : `${new Date(event.observedAtMs).toISOString().replace("T", " ").replace(".000Z", " UTC")} (frame ${event.frameId})`;
-  return `${label}: ${typeLabel(event.type)} ${directionLabel(event.direction)}; "${event.text}"`;
-}
-function reasonLine(event: WarningEvent): string {
-  const facts: string[] = [];
-  if (event.evidence.includes("separate_stairs_model")) facts.push("a dedicated stair model detected a candidate");
-  if (event.evidence.includes("bbox_footpoint_in_configured_corridor")) facts.push("target inside the configured walking corridor");
-  if (event.evidence.some((item) => item.startsWith("relative_image_region_"))) facts.push("target in a nearer image region");
-  if (event.evidence.some((item) => item.startsWith("consecutive_track_frames_"))) facts.push("confirmed across tracked frames");
-  if (event.approaching === "unknown") facts.push("approach could not be confirmed");
-  if (event.avoidDirection === "unknown") facts.push("no safe avoidance direction was verified");
-  if (event.evidence.includes("step_height_and_ascent_direction_unknown")) facts.push("step height and ascent direction are unknown");
-  return `Evidence: ${facts.join("; ") || "no further evidence in the record"}.`;
-}
-
-export function answerQuestion(question: string, events: WarningEvent[] | null): string {
-  const q = question.trim().toLowerCase();
-  if (/^(help|menu|commands?)$/u.test(q)) return "Ask: What happened? Why did you warn me? Trip summary? You can also ask about pedestrian or car warnings.";
-  if (!events) return "No phone events have been synchronized yet.";
-  if (!events.length) return "No spoken warning events were recorded in this session.";
-
-  const filter = /stairs?|steps?/u.test(q) ? "stairs" : /pedestrian|person/u.test(q) ? "person" :
-    /bicycle|bike/u.test(q) ? "bicycle" : /car/u.test(q) ? "car" : null;
-  const matches = filter ? events.filter((event) => event.type === filter) : events;
-  if (!matches.length) return `No ${filter} warning was recorded in this session.`;
-  const last = matches.at(-1)!;
-  if (/why|reason|evidence/u.test(q)) return `${eventLine(last)}\n${reasonLine(last)}`;
-  if (/summary|report|how many|count/u.test(q)) {
-    const counts = new Map<string, number>();
-    for (const event of matches) counts.set(event.type, (counts.get(event.type) ?? 0) + 1);
-    const detail = [...counts].map(([kind, count]) => `${typeLabel(kind)} ${count}`).join(", ");
-    return `${matches.length} warnings recorded (${detail}). Latest: ${eventLine(last)}. These count spoken warnings, not distinct objects.`;
-  }
-  if (/last|recent|happen|what|where|when/u.test(q)) return `Latest warning: ${eventLine(last)}.`;
-  return "I can answer from recorded warnings. Ask: What happened? Why did you warn me? Trip summary?";
-}
-
-export function answerSynchronizedQuestion(question: string, events: WarningEvent[], now = Date.now()): string {
-  const answer = answerQuestion(question, events.length ? events : null);
-  const latest = events.at(-1);
-  if (!latest?.observedAtMs) return answer;
-  const age = now - latest.observedAtMs;
-  if (age <= 15_000 && age >= -5_000) return answer;
-  return `No current live update; this answer uses synchronized history only.\n${answer}`;
+export function parseCorrection(question: string): { target: string; note: string } | null {
+  const match = /^(?:wrong|feedback)\s+([^\s:]+)\s*[:]\s*(.+)$/is.exec(question.trim());
+  return match?.[1] && match[2] ? { target: match[1], note: match[2] } : null;
 }

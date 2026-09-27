@@ -1,0 +1,32 @@
+{
+  "version": "core18-20260926",
+  "purpose": "Common street obstacles; does not determine traffic light colors, all rare hazards or traversability",
+  "classes": [
+    {"name":"person","zh":"pedestrian","from":["person"]},
+    {"name":"vehicle","zh":"motor vehicle","from":["car","bus","truck"]},
+    {"name":"bicycle","zh":"bicycle","from":["bicycle"]},
+    {"name":"two_wheeler","zh":"motorcycle / scooter","from":["motorcycle","scooter"]},
+    {"name":"tree_trunk","zh":"tree trunk","from":["tree_trunk"]},
+    {"name":"pole","zh":"streetlight / utility / traffic signal / sign pole","from":["streetlight","utility_pole","traffic_light_pole","signpost","pole"]},
+    {"name":"column","zh":"building column","from":["column"]},
+    {"name":"bollard","zh":"low bollard / protective post","from":["bollard"]},
+    {"name":"planter","zh":"flower pot / planter box","from":["planter"]},
+    {"name":"bench","zh":"bench","from":["bench"]},
+    {"name":"fence","zh":"railing / fence","from":["railing","fence"]},
+    {"name":"construction_barrier","zh":"construction barrier","from":["construction_barrier"]},
+    {"name":"traffic_cone","zh":"traffic cone","from":["traffic_cone"]},
+    {"name":"trash_can","zh":"trash can","from":["trash_can"]},
+    {"name":"fire_hydrant","zh":"fire hydrant","from":["fire_hydrant"]},
+    {"name":"stairs","zh":"steps / stairs","from":["stairs"]},
+    {"name":"curb","zh":"curb","from":["curb"]},
+    {"name":"a_frame_sign","zh":"freestanding advertising sign","from":["a_frame_sign"]}
+  ],
+  "annotation_rules": [
+    "Class IDs are renumbered consecutively from 0 to 17; do not use them with the old 72-class weights.",
+    "Use only reviewed trunk boxes for tree trunks; do not relabel whole-tree or canopy boxes as trunks.",
+    "Pole classes retain the verified visible instance extent, including streetlight attachments; merging classes does not justify inventing occluded shafts.",
+    "Boxes from removed classes remain as ignore regions; they do not establish an absence of obstacles.",
+    "A merged class may be a negative example only when all constituent classes are confirmed absent.",
+    "Retain original videos, previous annotations and saved 72-class checkpoints; only this training round uses reduced learning targets."
+  ]
+}

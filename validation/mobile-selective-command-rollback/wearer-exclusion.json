@@ -1,0 +1,30 @@
+{
+  "explicit_initial_selection_required": true,
+  "reference_first_frame_person_index": 3,
+  "samples": 261,
+  "tracked": 258,
+  "uncertain_seconds": [
+    20,
+    20.2,
+    42
+  ],
+  "prior_reviewed_tracking_output_matches": true,
+  "preserved_tracking_sources_match_pre_rollback": {
+    "ios/CaptureCore/Sources/CaptureCore/MobileWearer.swift": true,
+    "ios/OnDevice/WearerTracker.swift": true
+  },
+  "core_tests_passed": 144,
+  "raw_model_detections_modified": false,
+  "native_video_tracking_test_platform": "macOS Vision, 5 fps cached native YOLO detections",
+  "iPhone_tracking_retest_verified": false,
+  "final_source_sha256": {
+    "ios/CaptureCore/Sources/CaptureCore/MobileWearer.swift": "4050766f4bd4c42c33daa36b646324d88fb0a4e06918bfb49f369845d15dfde3",
+    "ios/OnDevice/WearerTracker.swift": "860d6fd3bc859ba188dfd98c7d0cd139cbf5b0ae5dad6073953d346f53ce2f71",
+    "ios/OnDevice/LocalVisionPipeline.swift": "0c53b38cc75b5c70e7c31d718fcf00db19394e9b8c1752480e2ec2ba43a848e9",
+    "ios/OnDevice/LocalSessionModel.swift": "4c0cdf5ffdfb93b2b3047d19a0fa305bb8a1cb931b6f7b7d96377767b37a4c32",
+    "ios/CaptureCore/Tests/CaptureCoreTests/MobileWearerTests.swift": "caf31176ddcd3ae778d5b15a33365032f7b1ae544bcc1f449cf372f6e33d08c0"
+  },
+  "installed_app_executable_sha256": "ea60d46b6e2c27ef269a57b210c50a9f9d7166f43e553f1360a9372ced130997",
+  "installation": "success",
+  "launch": "success"
+}

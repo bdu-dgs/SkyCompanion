@@ -1,0 +1,10 @@
+{
+  "sourceSHA256": "0be80387aca832d2813a191c60d620022ad132be606ff732cb6bdb5d81ad72f6",
+  "matchesCurrentPhoneTest": true,
+  "sampleCount": 4593664,
+  "nonzeroSamples": 0,
+  "peak": 0.0,
+  "rms": 0.0,
+  "audioTracks": 1,
+  "durationSeconds": 52.081973
+}

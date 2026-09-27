@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "resourceName": "SkyMetricDepthSmall_392_FP32",
+  "inputName": "image",
+  "inputSize": 392,
+  "outputName": "depth_meters",
+  "outputShape": [
+    1,
+    392,
+    392
+  ],
+  "sourceRevision": "a561b849ebae10a6f5ef49e26c83cbbcd36c71bf",
+  "weightsRevision": "c725b8589bdf6ab04072cab74c0467830db80d6d",
+  "weightsSHA256": "9203e538d35255c90dda4b7fedb47ff33fe725497bcca3b1e53b3a65ee63f0cb",
+  "sourceURL": "https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Small",
+  "license": "Apache-2.0",
+  "maxDepthMeters": 80,
+  "measurementReference": "camera_optical_axis",
+  "validationState": "unvalidated",
+  "preprocessing": "upright selected ROI; centered aspect-preserving square letterbox RGB 124,116,104; CoreImage bilinear; RGB/255 then ImageNet channel mean/std inside model",
+  "domain": "outdoor_virtual_kitti_training_not_validated_for_this_camera",
+  "sampleIntervalMS": 2000,
+  "files": {
+    "Data/com.apple.CoreML/model.mlmodel": "854192f7fbd2ddb457fe3d1c72c5977b176082e5f61402503b70b0cac8f9de86",
+    "Data/com.apple.CoreML/weights/weight.bin": "2b2e0f962bccce6a737e2abaff28ea8d7e8ca8747e364380fb1da034b8a82552",
+    "Manifest.json": "e97aad9d1c1bd920ef3db408a340b541c3c211811908545178273a5fb8d56f9f"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "install",
+      "app",
+      "--device",
+      "00008120-001A10D002E2201E",
+      "/tmp/skycompanion-device/Build/Products/Release-iphoneos/SkyCompanion.app",
+      "--json-output",
+      "/tmp/sky-conversation-audio-install.json",
+      "--timeout",
+      "60"
+    ],
+    "commandType" : "devicectl.device.install.app",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "success",
+    "version" : "642.16"
+  },
+  "result" : {
+    "deviceIdentifier" : "670B3B1F-A63D-5E92-9B2E-3F5BDF1D6B85",
+    "installedApplications" : [
+      {
+        "bundleID" : "com.stanley.skycompanion.capture",
+        "databaseSequenceNumber" : 9888,
+        "databaseUUID" : "EF8B2B03-536A-4E49-A7DD-03533241DAED",
+        "installationURL" : "file:///private/var/containers/Bundle/Application/BACE3DA1-B0A6-4D44-94AA-1B3DF41D7B56/SkyCompanion.app/",
+        "launchServicesIdentifier" : "unknown",
+        "options" : {
+
+        }
+      }
+    ]
+  }
+}

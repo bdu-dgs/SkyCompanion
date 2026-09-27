@@ -1,0 +1,13 @@
+{
+  "ios/CaptureCore/Sources/CaptureCore/LocalRiskEngine.swift": "dc1a1cd7abba7361217f829c7fb701f06598319bd612dcf707df07431dcac935",
+  "ios/CaptureCore/Sources/CaptureCore/LocalVisionTypes.swift": "11b71e6a37af1c4b52bfd6abf58fa5d6eb36bdbe967df58ae951d919fbb88eeb",
+  "ios/CaptureCore/Sources/CaptureCore/LocalSceneDescriber.swift": "c86c67adbde746b100c9a823853dee623e4e8a8b45d8dc39f7df611c45db7475",
+  "ios/CaptureCore/Sources/CaptureCore/AlertPreferences.swift": "c3306c550e062a579477127f1bd7b83d8505ea930c4f422f222916aeb1e3ac1f",
+  "ios/CaptureCore/Sources/CaptureCore/MobileWalkingPlanner.swift": "ea1b238c9db7cff9afe0b3aa28d24fe1abd32b9b77a002fc90c6227b275f78ee",
+  "ios/CaptureCore/Sources/CaptureCore/MobileWearer.swift": "4050766f4bd4c42c33daa36b646324d88fb0a4e06918bfb49f369845d15dfde3",
+  "ios/OnDevice/LocalSessionModel.swift": "1c3e74483b59652a04d58e0a28b154337a7656fb2aa6df6a8612d7f8489c4d5a",
+  "ios/OnDevice/LocalContentView.swift": "d4878a54c5128dc0f5888bf772ab70acde83b758fb5c7b978493323e062e618b",
+  "ios/OnDevice/LocalVisionPipeline.swift": "2a4be853da8f4ec655b457c98aabffedf0c4e97a54322aae556190f5d9f1d16e",
+  "ios/OnDevice/WearerTracker.swift": "860d6fd3bc859ba188dfd98c7d0cd139cbf5b0ae5dad6073953d346f53ce2f71",
+  "ios/OnDevice/CompanionScreen.swift": "9c8e36ca4a8f4dd21cb3c929ac0e55fe82466c738443c2908d5f5b32b63e0ae8"
+}

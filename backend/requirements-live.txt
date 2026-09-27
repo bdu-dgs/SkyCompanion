@@ -1,0 +1,7 @@
+# Add to the existing backend environment for the local real-time workflow.
+ultralytics==8.4.37
+torch==2.11.0
+torchvision==0.26.0
+Pillow==11.3.0
+websockets==16.0
+zeroconf==0.151.3

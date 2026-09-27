@@ -1,0 +1,13 @@
+{
+  "ios/OnDevice/LocalCommandListener.swift": "50f6c8cf63da2b59f9a7c1769b3ff5682b2e04ba736edf6b94154ae5d70bbc7c",
+  "ios/OnDevice/LocalVoiceController.swift": "e0a2c7b5aac6a7e7e786d62d00429541817a45057b8bc4ffde261dc797d4c17d",
+  "ios/OnDevice/LocalSessionModel.swift": "433149b88fc358ffc35883171c402e0e65de9aa43fd43512cb92092cd09accc7",
+  "ios/OnDevice/LocalContentView.swift": "8561a1dc1bdaab06acd79261316e17b07cf3a873702a77d982537cc95f2ed3fd",
+  "ios/OnDevice/LocalProtocol.swift": "c37a0a006ce1d9c67dfb3a0452c4b722a4c5dedf435b61bc736e8e961162f0d1",
+  "ios/OnDevice/LocalVisionPipeline.swift": "63e32309db0a30df0a4364708d4e94b2580d4d378c1e6e3f5a2a0bc609bfcf19",
+  "ios/OnDevice/LocalSampleHandler.swift": "d68b5d8d62f4ce8f1240504b4bb7831d3b49b9708e47f097d2625856eb2e27b8",
+  "ios/OnDevice/BroadcastRecording.swift": "3937186e603c0033c29abb312f25ed60e493c47f3e459a75faecd2e0c1adc294",
+  "ios/OnDevice/BroadcastMovieWriter.swift": "d93fde2509e5d97576341ccc77546084cd0e4a1923bc38b568814d4bc723368a",
+  "ios/CaptureCore/Sources/CaptureCore/MobileSpeechInput.swift": "bd74e5891fd72115b9e31e5ad3dbfc308f951d169262c6525a97a95808c913db",
+  "ios/CaptureCore/Sources/CaptureCore/MobileSceneReply.swift": "5fbdd66c6c73963652345d4f92527d4488550a92ddaec2529855ac42a060eb74"
+}

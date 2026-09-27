@@ -1,0 +1,10 @@
+{
+  "ios/OnDevice/LocalVisionPipeline.swift": "ab503c325d51406a6ff16335887b4e9ac35a421ced4de637664b3dabb96dcab3",
+  "ios/OnDevice/LocalSessionModel.swift": "fd20db9db3b6432f5f85eb7d292c3731f874f76d295a061c00ecc3d596ed1453",
+  "ios/CaptureCore/Sources/CaptureCore/MobileAssistanceStatus.swift": "66df9c3456fd18874044bf3cb9c8f48da7eb424bbe32ef0d17d403d2da238313",
+  "ios/CaptureCore/Sources/CaptureCore/MobileAlertSpeech.swift": "a0a88e1e9e409599feb3f7cbf6633e52398ab1f7b186894b2c3b9733b859a2e0",
+  "ios/CaptureCore/Sources/CaptureCore/MobileCameraObstacleMonitor.swift": "717e5cb3235475c68614b59845af1dfe81116bd958ab7db61bdf9fa04938a490",
+  "ios/CaptureCore/Tests/CaptureCoreTests/MobileCameraObstacleTests.swift": "f1c6f313ee4ca6c6794ffc500eb001c242265cce5c1c23f98c9e70cdbfaf1771",
+  "ios/OnDevice/WearerTracker.swift": "860d6fd3bc859ba188dfd98c7d0cd139cbf5b0ae5dad6073953d346f53ce2f71",
+  "ios/CaptureCore/Sources/CaptureCore/MobileWearer.swift": "4050766f4bd4c42c33daa36b646324d88fb0a4e06918bfb49f369845d15dfde3"
+}

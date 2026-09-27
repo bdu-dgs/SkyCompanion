@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* SkyCompanionCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* SkyCompanionCaptureApp.swift */; };
+		A10000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* ContentView.swift */; };
+		A10000000000000000000003 /* ConnectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* ConnectionModel.swift */; };
+		A10000000000000000000004 /* CaptureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* CaptureConfiguration.swift */; };
+		A10000000000000000000005 /* LocalCaptureConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* LocalCaptureConfig.json */; };
+		A10000000000000000000006 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* SampleHandler.swift */; };
+		A10000000000000000000007 /* FrameEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000007 /* FrameEncoder.swift */; };
+		A10000000000000000000008 /* BroadcastTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000008 /* BroadcastTransport.swift */; };
+		A10000000000000000000009 /* CaptureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* CaptureConfiguration.swift */; };
+		A1000000000000000000000A /* LocalCaptureConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* LocalCaptureConfig.json */; };
+		A1000000000000000000000B /* CaptureCore/Sources/CaptureCore/FrameWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000009 /* CaptureCore/Sources/CaptureCore/FrameWindow.swift */; };
+		A1000000000000000000000C /* SkyCompanionBroadcast.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000B /* SkyCompanionBroadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1000000000000000000000D /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000E /* VoiceModel.swift */; };
+		A1000000000000000000000E /* VoiceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000F /* VoiceEvent.swift */; };
+		A1000000000000000000000F /* VoiceClips in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* VoiceClips */; };
+		A10000000000000000000011 = {isa = PBXBuildFile; fileRef = B10000000000000000000011; };
+/* SKYCOMPANION_LOCAL_BEGIN PBXBuildFile */
+		7FB3869F150144D064CE400E = {isa = PBXBuildFile; fileRef = 77FC27ED9037DAF027722549; };
+		156743975CC4D1AC12086BC5 = {isa = PBXBuildFile; fileRef = 77FC27ED9037DAF027722549; };
+		DD7E68C3B11F2B185647838F = {isa = PBXBuildFile; fileRef = E677B34466D0D6D4FA2DC779; };
+		3B05CB6CE9DBFBC754ED7F6F = {isa = PBXBuildFile; fileRef = E677B34466D0D6D4FA2DC779; };
+		12E758C7D048F95F18207836 = {isa = PBXBuildFile; fileRef = ECBD6392974314E3448DB8FF; };
+		60F48EC0916E2DBE74EB1E15 = {isa = PBXBuildFile; fileRef = ECBD6392974314E3448DB8FF; };
+		53A5D9B54F193AC2BA237200 = {isa = PBXBuildFile; fileRef = BA7B3066F444E2822E4B9553; };
+		D0D3D311BA504B7BDA614731 = {isa = PBXBuildFile; fileRef = BA7B3066F444E2822E4B9553; };
+		1436A01457254AC6DD4E5801 = {isa = PBXBuildFile; fileRef = 6F324A9002758BCCDE4F6BCA; };
+		6517DE4C04475BDB9A36D3F8 = {isa = PBXBuildFile; fileRef = 6F324A9002758BCCDE4F6BCA; };
+		39EEF3981B3F6BBB975138B1 = {isa = PBXBuildFile; fileRef = 8381683E6B97521F56F46A18; };
+		6573FB4BA9016EB756E7F100 = {isa = PBXBuildFile; fileRef = 8381683E6B97521F56F46A18; };
+		9F9EBFE5A838F1B981918231 = {isa = PBXBuildFile; fileRef = 49BB62D43F33CEE21C6544BE; };
+		E29A2E648798ADCF5ED91FCF = {isa = PBXBuildFile; fileRef = 49BB62D43F33CEE21C6544BE; };
+		85A271C9109D77524CE63329 = {isa = PBXBuildFile; fileRef = 511D6E68A130C69F994D020C; };
+		A25EDA96E52C5A357579747A = {isa = PBXBuildFile; fileRef = 511D6E68A130C69F994D020C; };
+		5866B184C0DA7F0D45142AFF = {isa = PBXBuildFile; fileRef = 8BF197EAAD7BE1E7E0393EFB; };
+		BFAEE31B2BFEA156DD187AC2 = {isa = PBXBuildFile; fileRef = 8BF197EAAD7BE1E7E0393EFB; };
+		161F534C05B4B99556A594D6 = {isa = PBXBuildFile; fileRef = 6092BB358E1CD8C4406A196D; };
+		C7E3E655208E3EABD3FC3620 = {isa = PBXBuildFile; fileRef = 39171B61C0CDC6D32EE01BCD; };
+		D5BFD42B77D9CF5893CE87F1 = {isa = PBXBuildFile; fileRef = 946B60EEB5617D6E874F1BAB; };
+		1DEDAC49A6EAA33AF53D0663 = {isa = PBXBuildFile; fileRef = AB700040FD8BA016240027B2; };
+		ED53D51A925618EE44900360 = {isa = PBXBuildFile; fileRef = E32E9AFDAC06F3D54ADF87D7; };
+		252EFA02E393184D21992682 = {isa = PBXBuildFile; fileRef = D6FE325F0758FE424AA31893; };
+		461981F53BA03648111EA747 = {isa = PBXBuildFile; fileRef = AA224C906CCE12BCD6A7DA72; };
+		219A6EB78667F70961257D13 = {isa = PBXBuildFile; fileRef = 8C24A1DBC46917FB4B5FE573; };
+		C3E0CB347028EFF1A300D08B = {isa = PBXBuildFile; fileRef = E238B797C59E531F4315E499; };
+		22AB71D6A0EBC0EAE42399CD = {isa = PBXBuildFile; fileRef = F41CB4D9D1E08F5DF35CA0A0; };
+		1F248AD46A9B11B8D72FEC52 = {isa = PBXBuildFile; fileRef = 2CFD8B6F93B039526E712A98; };
+		3A178547F422E55975A5926C = {isa = PBXBuildFile; fileRef = 0EF7E9724A86113AA8D61476; };
+		56955B4297009BD615A82D58 = {isa = PBXBuildFile; fileRef = 20ED70455EDA47F1BFB2FAC2; };
+		37B66E2297AF5D38A618FDC2 = {isa = PBXBuildFile; fileRef = D7A5238F1209682A09A30A35; };
+		1B09C6E675B5630F8B903B79 = {isa = PBXBuildFile; fileRef = 9FB35D51D19051945D153250; };
+		10A696EBF7CC2AEB3B227592 = {isa = PBXBuildFile; fileRef = 80B371324748F8953CAC7847; };
+		E41AB440FB297F1368C3AEDD = {isa = PBXBuildFile; fileRef = A77238229C674B02D1DB6F54; };
+		F1FD0CF4046C23B7C719959E = {isa = PBXBuildFile; fileRef = 3B6F1116EDA30FFADFD291D5; };
+		939521650C219848F76CE300 = {isa = PBXBuildFile; fileRef = 3B6F1116EDA30FFADFD291D5; };
+		562656CB93C4F2982C147F06 = {isa = PBXBuildFile; fileRef = 551FA94F27E74082725845E2; };
+		3E9A71D0BBE917E9121EAC1B = {isa = PBXBuildFile; fileRef = 551FA94F27E74082725845E2; };
+		62129C78B67922DB761E65B4 = {isa = PBXBuildFile; fileRef = 5E2FF31525A9CF1860C3A0E8; };
+		A07B3BA6E9782F8FB001D703 = {isa = PBXBuildFile; fileRef = 5E2FF31525A9CF1860C3A0E8; };
+		B88A0D12BD2A7695D97CDA75 = {isa = PBXBuildFile; fileRef = 370C2B4D8DBF3FFF1BFC1DE5; };
+		B1E16F8EEBF6E172DF3CEAB7 = {isa = PBXBuildFile; fileRef = 370C2B4D8DBF3FFF1BFC1DE5; };
+		C361A46A0F398BEE34B22B0E = {isa = PBXBuildFile; fileRef = 22BB078DFF000B9EDF31666D; };
+		EF3C29CC9654A6AD82EBBD05 = {isa = PBXBuildFile; fileRef = 22BB078DFF000B9EDF31666D; };
+		A32217F433E5DA328519B697 = {isa = PBXBuildFile; fileRef = 93DBAF76F5738810185A0F4B; };
+		FDAE654DA0E40592EB76D285 = {isa = PBXBuildFile; fileRef = 93DBAF76F5738810185A0F4B; };
+		3B12E5A8A08A3B778EAE224C = {isa = PBXBuildFile; fileRef = A34CBA74C480651AFBECCB21; };
+		4B25B908E96D9311EC17E0F1 = {isa = PBXBuildFile; fileRef = A34CBA74C480651AFBECCB21; };
+		75F08ECD48F46F171C0C2D4C = {isa = PBXBuildFile; fileRef = EB4890467DB3312523B0C408; };
+		124344B6104836A26FAE7D97 = {isa = PBXBuildFile; fileRef = EB4890467DB3312523B0C408; };
+/* SKYCOMPANION_LOCAL_END */
+/* SKYCOMPANION_LOCAL_BEGIN packagebuild */
+CE5261152A87172D15BD6081 = {isa = PBXBuildFile; productRef = 57DF77F80E510C346DE15160; };
+4D7D2FCE596BD983A9668CF7 = {isa = PBXBuildFile; productRef = F98FE0CAA229A98DE35302AB; };
+/* SKYCOMPANION_LOCAL_END */
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C10000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D10000000000000000000002;
+			remoteInfo = SkyCompanionBroadcast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C10000000000000000000002 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1000000000000000000000C /* SkyCompanionBroadcast.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B10000000000000000000001 /* SkyCompanionCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyCompanionCaptureApp.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B10000000000000000000003 /* ConnectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModel.swift; sourceTree = "<group>"; };
+		B10000000000000000000004 /* CaptureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureConfiguration.swift; sourceTree = "<group>"; };
+		B10000000000000000000005 /* LocalCaptureConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalCaptureConfig.json; sourceTree = "<group>"; };
+		B10000000000000000000006 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		B10000000000000000000007 /* FrameEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameEncoder.swift; sourceTree = "<group>"; };
+		B10000000000000000000008 /* BroadcastTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastTransport.swift; sourceTree = "<group>"; };
+		B10000000000000000000009 /* CaptureCore/Sources/CaptureCore/FrameWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCore/Sources/CaptureCore/FrameWindow.swift; sourceTree = "<group>"; };
+		B1000000000000000000000A /* SkyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000000000000000000000B /* SkyCompanionBroadcast.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkyCompanionBroadcast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1000000000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1000000000000000000000D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1000000000000000000000E /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
+		B1000000000000000000000F /* VoiceEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCore/Sources/CaptureCore/VoiceEvent.swift; sourceTree = "<group>"; };
+		B10000000000000000000010 /* VoiceClips */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VoiceClips; sourceTree = "<group>"; };
+		B10000000000000000000011 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCore/Sources/CaptureCore/VoiceCommand.swift; sourceTree = "<group>"; };
+/* SKYCOMPANION_LOCAL_BEGIN PBXFileReference */
+		77FC27ED9037DAF027722549 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/WearerTracker.swift"; sourceTree = SOURCE_ROOT; };
+		E677B34466D0D6D4FA2DC779 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/DepthEngine.swift"; sourceTree = SOURCE_ROOT; };
+		ECBD6392974314E3448DB8FF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/PathEngine.swift"; sourceTree = SOURCE_ROOT; };
+		BA7B3066F444E2822E4B9553 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalProtocol.swift"; sourceTree = SOURCE_ROOT; };
+		6F324A9002758BCCDE4F6BCA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalRecordingAudio.swift"; sourceTree = SOURCE_ROOT; };
+		8381683E6B97521F56F46A18 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LoopbackChannel.swift"; sourceTree = SOURCE_ROOT; };
+		49BB62D43F33CEE21C6544BE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/RecoveringBroadcastChannel.swift"; sourceTree = SOURCE_ROOT; };
+		511D6E68A130C69F994D020C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalVisionPipeline.swift"; sourceTree = SOURCE_ROOT; };
+		8BF197EAAD7BE1E7E0393EFB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/VisionEngine.swift"; sourceTree = SOURCE_ROOT; };
+		6092BB358E1CD8C4406A196D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/RecordingAudioRelay.swift"; sourceTree = SOURCE_ROOT; };
+		39171B61C0CDC6D32EE01BCD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/SpeechPCMPlayer.swift"; sourceTree = SOURCE_ROOT; };
+		946B60EEB5617D6E874F1BAB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/SkyAppearance.swift"; sourceTree = SOURCE_ROOT; };
+		AB700040FD8BA016240027B2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalVoiceController.swift"; sourceTree = SOURCE_ROOT; };
+		E32E9AFDAC06F3D54ADF87D7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalCommandListener.swift"; sourceTree = SOURCE_ROOT; };
+		D6FE325F0758FE424AA31893 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalSessionModel.swift"; sourceTree = SOURCE_ROOT; };
+		AA224C906CCE12BCD6A7DA72 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalContentView.swift"; sourceTree = SOURCE_ROOT; };
+		8C24A1DBC46917FB4B5FE573 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/ExperimentalScreens.swift"; sourceTree = SOURCE_ROOT; };
+		E238B797C59E531F4315E499 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/PhotonCompanion.swift"; sourceTree = SOURCE_ROOT; };
+		F41CB4D9D1E08F5DF35CA0A0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/CompanionScreen.swift"; sourceTree = SOURCE_ROOT; };
+		2CFD8B6F93B039526E712A98 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/NavigationController.swift"; sourceTree = SOURCE_ROOT; };
+		0EF7E9724A86113AA8D61476 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/NavigationScreen.swift"; sourceTree = SOURCE_ROOT; };
+		20ED70455EDA47F1BFB2FAC2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/LocalSampleHandler.swift"; sourceTree = SOURCE_ROOT; };
+		D7A5238F1209682A09A30A35 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/BroadcastMovieWriter.swift"; sourceTree = SOURCE_ROOT; };
+		9FB35D51D19051945D153250 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/BroadcastRecording.swift"; sourceTree = SOURCE_ROOT; };
+		80B371324748F8953CAC7847 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnDevice/RecordingAudioMixer.swift"; sourceTree = SOURCE_ROOT; };
+		A77238229C674B02D1DB6F54 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "SkyCompanionCapture/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		3B6F1116EDA30FFADFD291D5 = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Shared/LucideLicense.txt"; sourceTree = SOURCE_ROOT; };
+		551FA94F27E74082725845E2 = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Models/selectedDepthModel.json"; sourceTree = SOURCE_ROOT; };
+		5E2FF31525A9CF1860C3A0E8 = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Models/DepthModelLicense.txt"; sourceTree = SOURCE_ROOT; };
+		370C2B4D8DBF3FFF1BFC1DE5 = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Shared/DevicePairing.json"; sourceTree = SOURCE_ROOT; };
+		22BB078DFF000B9EDF31666D = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Models/selectedModel.json"; sourceTree = SOURCE_ROOT; };
+		93DBAF76F5738810185A0F4B = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "OnDevice/Localizable.xcstrings"; sourceTree = SOURCE_ROOT; };
+		A34CBA74C480651AFBECCB21 = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "Models/SkyWorld72_epoch15_640_FP32.mlpackage"; sourceTree = SOURCE_ROOT; };
+		EB4890467DB3312523B0C408 = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "Models/SkyMetricDepthSmall_392_FP32.mlpackage"; sourceTree = SOURCE_ROOT; };
+/* SKYCOMPANION_LOCAL_END */
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E10000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5261152A87172D15BD6081,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7D2FCE596BD983A9668CF7,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F20000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				F20000000000000000000002 /* SkyCompanionCapture */,
+				F20000000000000000000003 /* SkyCompanionBroadcast */,
+				F20000000000000000000004 /* Shared */,
+				B10000000000000000000009 /* CaptureCore/Sources/CaptureCore/FrameWindow.swift */,
+				B1000000000000000000000F /* VoiceEvent.swift */,
+				B10000000000000000000011,
+				F20000000000000000000005 /* Products */,
+/* SKYCOMPANION_LOCAL_BEGIN children */
+77FC27ED9037DAF027722549,
+E677B34466D0D6D4FA2DC779,
+ECBD6392974314E3448DB8FF,
+BA7B3066F444E2822E4B9553,
+6F324A9002758BCCDE4F6BCA,
+8381683E6B97521F56F46A18,
+49BB62D43F33CEE21C6544BE,
+511D6E68A130C69F994D020C,
+8BF197EAAD7BE1E7E0393EFB,
+6092BB358E1CD8C4406A196D,
+39171B61C0CDC6D32EE01BCD,
+946B60EEB5617D6E874F1BAB,
+AB700040FD8BA016240027B2,
+E32E9AFDAC06F3D54ADF87D7,
+D6FE325F0758FE424AA31893,
+AA224C906CCE12BCD6A7DA72,
+8C24A1DBC46917FB4B5FE573,
+E238B797C59E531F4315E499,
+F41CB4D9D1E08F5DF35CA0A0,
+2CFD8B6F93B039526E712A98,
+0EF7E9724A86113AA8D61476,
+20ED70455EDA47F1BFB2FAC2,
+D7A5238F1209682A09A30A35,
+9FB35D51D19051945D153250,
+80B371324748F8953CAC7847,
+A77238229C674B02D1DB6F54,
+3B6F1116EDA30FFADFD291D5,
+551FA94F27E74082725845E2,
+5E2FF31525A9CF1860C3A0E8,
+370C2B4D8DBF3FFF1BFC1DE5,
+22BB078DFF000B9EDF31666D,
+93DBAF76F5738810185A0F4B,
+A34CBA74C480651AFBECCB21,
+EB4890467DB3312523B0C408,
+/* SKYCOMPANION_LOCAL_END */
+);
+			sourceTree = "<group>";
+		};
+		F20000000000000000000002 /* SkyCompanionCapture */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000001 /* SkyCompanionCaptureApp.swift */,
+				B10000000000000000000002 /* ContentView.swift */,
+				B10000000000000000000003 /* ConnectionModel.swift */,
+				B1000000000000000000000E /* VoiceModel.swift */,
+				B10000000000000000000010 /* VoiceClips */,
+				B1000000000000000000000C /* Info.plist */,
+			);
+			path = SkyCompanionCapture;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000003 /* SkyCompanionBroadcast */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000006 /* SampleHandler.swift */,
+				B10000000000000000000007 /* FrameEncoder.swift */,
+				B10000000000000000000008 /* BroadcastTransport.swift */,
+				B1000000000000000000000D /* Info.plist */,
+			);
+			path = SkyCompanionBroadcast;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000004 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000004 /* CaptureConfiguration.swift */,
+				B10000000000000000000005 /* LocalCaptureConfig.json */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F20000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1000000000000000000000A /* SkyCompanion.app */,
+				B1000000000000000000000B /* SkyCompanionBroadcast.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D10000000000000000000001 /* SkyCompanionCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30000000000000000000002 /* Build configuration list for PBXNativeTarget "SkyCompanionCapture" */;
+			buildPhases = (
+				E20000000000000000000001 /* Sources */,
+				E10000000000000000000001 /* Frameworks */,
+				E30000000000000000000001 /* Resources */,
+				C10000000000000000000002 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C10000000000000000000003 /* PBXTargetDependency */,
+			);
+/* SKYCOMPANION_LOCAL_BEGIN product */
+packageProductDependencies = (57DF77F80E510C346DE15160,);
+/* SKYCOMPANION_LOCAL_END */
+			name = SkyCompanion;
+			productName = SkyCompanion;
+			productReference = B1000000000000000000000A /* SkyCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D10000000000000000000002 /* SkyCompanionBroadcast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30000000000000000000003 /* Build configuration list for PBXNativeTarget "SkyCompanionBroadcast" */;
+			buildPhases = (
+				E20000000000000000000002 /* Sources */,
+				E10000000000000000000002 /* Frameworks */,
+				E30000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+/* SKYCOMPANION_LOCAL_BEGIN product */
+packageProductDependencies = (F98FE0CAA229A98DE35302AB,);
+/* SKYCOMPANION_LOCAL_END */
+			name = SkyCompanionBroadcast;
+			productName = SkyCompanionBroadcast;
+			productReference = B1000000000000000000000B /* SkyCompanionBroadcast.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F10000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					D10000000000000000000001 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					D10000000000000000000002 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+			};
+			buildConfigurationList = F30000000000000000000001 /* Build configuration list for PBXProject "SkyCompanionCapture" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F20000000000000000000001;
+			productRefGroup = F20000000000000000000005 /* Products */;
+			projectDirPath = "";
+/* SKYCOMPANION_LOCAL_BEGIN packages */
+packageReferences = (51BB99EA3DBD52FF45A518BF,);
+/* SKYCOMPANION_LOCAL_END */
+			projectRoot = "";
+			targets = (
+				D10000000000000000000001 /* SkyCompanionCapture */,
+				D10000000000000000000002 /* SkyCompanionBroadcast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E30000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E41AB440FB297F1368C3AEDD,
+				F1FD0CF4046C23B7C719959E,
+				562656CB93C4F2982C147F06,
+				62129C78B67922DB761E65B4,
+				B88A0D12BD2A7695D97CDA75,
+				C361A46A0F398BEE34B22B0E,
+				A32217F433E5DA328519B697,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E30000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				939521650C219848F76CE300,
+				3E9A71D0BBE917E9121EAC1B,
+				A07B3BA6E9782F8FB001D703,
+				B1E16F8EEBF6E172DF3CEAB7,
+				EF3C29CC9654A6AD82EBBD05,
+				FDAE654DA0E40592EB76D285,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E20000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001,
+				7FB3869F150144D064CE400E,
+				DD7E68C3B11F2B185647838F,
+				12E758C7D048F95F18207836,
+				53A5D9B54F193AC2BA237200,
+				1436A01457254AC6DD4E5801,
+				39EEF3981B3F6BBB975138B1,
+				9F9EBFE5A838F1B981918231,
+				85A271C9109D77524CE63329,
+				5866B184C0DA7F0D45142AFF,
+				161F534C05B4B99556A594D6,
+				C7E3E655208E3EABD3FC3620,
+				D5BFD42B77D9CF5893CE87F1,
+				1DEDAC49A6EAA33AF53D0663,
+				ED53D51A925618EE44900360,
+				252EFA02E393184D21992682,
+				461981F53BA03648111EA747,
+				219A6EB78667F70961257D13,
+				C3E0CB347028EFF1A300D08B,
+				22AB71D6A0EBC0EAE42399CD,
+				1F248AD46A9B11B8D72FEC52,
+				3A178547F422E55975A5926C,
+				3B12E5A8A08A3B778EAE224C,
+				75F08ECD48F46F171C0C2D4C,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E20000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				156743975CC4D1AC12086BC5,
+				3B05CB6CE9DBFBC754ED7F6F,
+				60F48EC0916E2DBE74EB1E15,
+				D0D3D311BA504B7BDA614731,
+				6517DE4C04475BDB9A36D3F8,
+				6573FB4BA9016EB756E7F100,
+				E29A2E648798ADCF5ED91FCF,
+				A25EDA96E52C5A357579747A,
+				BFAEE31B2BFEA156DD187AC2,
+				56955B4297009BD615A82D58,
+				37B66E2297AF5D38A618FDC2,
+				1B09C6E675B5630F8B903B79,
+				10A696EBF7CC2AEB3B227592,
+				4B25B908E96D9311EC17E0F1,
+				124344B6104836A26FAE7D97,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C10000000000000000000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D10000000000000000000002 /* SkyCompanionBroadcast */;
+			targetProxy = C10000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* SKYCOMPANION_LOCAL_BEGIN packageobjects */
+51BB99EA3DBD52FF45A518BF = {isa = XCLocalSwiftPackageReference; relativePath = CaptureCore; };
+57DF77F80E510C346DE15160 = {isa = XCSwiftPackageProductDependency; package = 51BB99EA3DBD52FF45A518BF; productName = CaptureCore; };
+F98FE0CAA229A98DE35302AB = {isa = XCSwiftPackageProductDependency; package = 51BB99EA3DBD52FF45A518BF; productName = CaptureCore; };
+/* SKYCOMPANION_LOCAL_END */
+/* Begin XCBuildConfiguration section */
+		F40000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				SKYCOMPANION_BUNDLE_IDENTIFIER = com.stanley.skycompanion.capture;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F40000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				SKYCOMPANION_BUNDLE_IDENTIFIER = com.stanley.skycompanion.capture;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F40000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; INFOPLIST_FILE = SkyCompanionCapture/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F40000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; INFOPLIST_FILE = SkyCompanionCapture/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F40000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkyCompanionBroadcast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER).SkyCompanionBroadcast";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F40000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ACQ5K4HVB;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkyCompanionBroadcast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(SKYCOMPANION_BUNDLE_IDENTIFIER).SkyCompanionBroadcast";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F30000000000000000000001 /* Build configuration list for PBXProject "SkyCompanionCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40000000000000000000001 /* Debug */,
+				F40000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30000000000000000000002 /* Build configuration list for PBXNativeTarget "SkyCompanionCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40000000000000000000003 /* Debug */,
+				F40000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30000000000000000000003 /* Build configuration list for PBXNativeTarget "SkyCompanionBroadcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40000000000000000000005 /* Debug */,
+				F40000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F10000000000000000000001 /* Project object */;
+}

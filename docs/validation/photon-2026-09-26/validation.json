@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-26",
+  "swift_tests": 105,
+  "swift_failures": 0,
+  "photon_tests": 15,
+  "photon_typecheck": "passed",
+  "cross_language_contract": "passed: Swift encode -> TypeScript store/replay/feedback -> Swift decode",
+  "simulator_build": "Debug generic iOS Simulator, unsigned, passed",
+  "ui": "isolated iPhone 18 Pro / iOS 27 simulator Assistant initial screen rendered and inspected",
+  "real_photon_delivery": "not run",
+  "real_device_audio_voiceover": "not run",
+  "sha256": {
+    "ios/OnDevice/CompanionScreen.swift": "c771e3b06dacf41d10dc4ed516f2dbdf932f82ea0e80e9e834e2f3c0cbac97af",
+    "ios/OnDevice/PhotonCompanion.swift": "4ad5e82d8a615b856c1fcad08c9b3b84cafd2052c370b75eb54af7909e44ca20",
+    "ios/OnDevice/LocalSessionModel.swift": "cd99513b4bcbdfe27e97d91de46db67baafbf44860de923282b1cfdd04360b27",
+    "ios/OnDevice/LocalVoiceController.swift": "cfef60d3a6bd513c00e4e17260955e0dbe02351e8daf53c512c82e8a9f8966ce",
+    "ios/OnDevice/LocalContentView.swift": "36a8aa106bb7c665cf62de6abdaca1903f62b991c5bf6252275d277122d99ef5",
+    "ios/CaptureCore/Sources/CaptureCore/CompanionSpeech.swift": "063cbee035b788e2a0a835e1326ba25384f10a0fd7815c1b37ba5419165f257f",
+    "ios/CaptureCore/Sources/CaptureCore/PhotonProtocol.swift": "8c2654bd7f843bc385ae176e57ee68ddb5252880e457d881502e475ec807e109",
+    "ios/CaptureCore/Sources/CaptureCore/MobileVoiceCommand.swift": "c2ee4c78fe9787f349dbf85f9d89265329af43d90030b9c6d1dcfd53b76c60c0",
+    "ios/CaptureCore/Sources/CaptureCore/MobileWalkingPlanner.swift": "7f69bfe941a2239cef0d35f1dea856b6602313cdf8dcd65757d9dbd94ffd6710",
+    "scripts/test_photon_contract.py": "fa0866a1e262b5dee839b998a69cef7b4f94d27e3d238fd0da5f7b352d519f20"
+  },
+  "photon_sha256": {
+    "src/service.test.ts": "d92c0a7c3e396538fd8490c4d6fa846001bf0d023d4c6799d905c1e89312c820",
+    "src/http.ts": "73f8699de477546d6a882a3441bc07d5e83507e32ee48d4186ea113a2d7a6c84",
+    "src/agent.ts": "d3467e3e702c31cda5dddbb2b56b026cac21111b4fcdb7a2edad2122effdc7b6",
+    "src/records.ts": "b10d9ee14b094dd8ae0ae99565888183104e2a5641fbe6e29dbc5b9dec13d4c1",
+    "src/transport.ts": "d1e0b67e329aadda60419a8799a98409644fbee611e0382b1acdfcb65e5e72b8",
+    "src/index.ts": "5f71dda763b26539cdf4eca5b38f4e10aaf5dc67ec086c2d28ea1a2b6efe176b",
+    "src/store.ts": "63fad2f37607509b2273eb2c95df9de57a09837b1496cddd96e3e5dce20569b0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "cause": "SwiftUI Slider Normalizing.init assertion in CropSlider; zero-width and sub-step dynamic ranges",
+  "nativeOffscreenSliderCasesPassed": 6,
+  "testPlatform": "macOS SwiftUI; not physical iOS acceptance",
+  "deviceBuildPassed": true,
+  "modelPackageHashesMatch": true,
+  "installationSucceeded": true,
+  "physicalApplyRetestPassed": false
+}

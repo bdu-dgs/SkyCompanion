@@ -4,18 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts",
-    "dev": "tsx watch src/index.ts",
-    "test": "node src/agent.test.ts && node src/events.test.ts",
+    "start": "tsx --env-file=.env src/index.ts",
+    "start:local": "node --env-file=.env --import tsx scripts/start-local.mjs",
+    "dev": "tsx watch --env-file=.env src/index.ts",
+    "test": "tsx --test src/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dotenv": "^18.0.4",
     "spectrum-ts": "^12.10.1"
   },
   "devDependencies": {
+    "typescript": "^5",
     "@types/node": "^22",
-    "tsx": "^4",
-    "typescript": "^5"
+    "tsx": "^4"
   }
 }

@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-26",
+  "coreTests": {
+    "passed": 83,
+    "failed": 0,
+    "log": "/tmp/sky-wearer-tests.log"
+  },
+  "releaseBuild": "passed",
+  "simulatorBuild": "passed",
+  "iconSHA256": "e4b49e37e942452d9aac891034ba70710bb2bcb24795574f76f341130444f77e",
+  "phoneInstall": "passed, final Release build",
+  "phoneLaunch": "passed, final Release build",
+  "notVerified": [
+    "real wearer tracking accuracy",
+    "new tracker throughput",
+    "30 minute stability",
+    "DJI drone flight",
+    "physical voice/vibration",
+    "full VoiceOver traversal"
+  ],
+  "screenshots": [
+    "ui/home-light.png",
+    "ui/drone-setup-light.png",
+    "ui/drone-setup-dark-largest-text.png"
+  ]
+}

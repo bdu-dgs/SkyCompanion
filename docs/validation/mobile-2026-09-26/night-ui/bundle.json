@@ -1,0 +1,16 @@
+{
+  "app": "/private/tmp/skycompanion-device/Build/Products/Release-iphoneos/SkyCompanion.app",
+  "bundleIdentifier": "com.stanley.skycompanion.capture",
+  "minimumOSVersion": "18.0",
+  "model": "SkyCompanionYOLOE_v7_960_FP16",
+  "classes": 115,
+  "depthModel": "SkyMetricDepthSmall_392_FP32",
+  "depthValidation": "unvalidated",
+  "matchingModelAndPairingInBothTargets": true,
+  "desktopConfigurationAbsent": true,
+  "appIconAndLicenseBundled": true,
+  "englishResourcesInBothTargets": true,
+  "compiledModelContractsMatch": true,
+  "signedProfilePresent": true,
+  "scope": "Static checks of actual built bundles; not device execution or precision validation"
+}

@@ -1,0 +1,12 @@
+{
+  "core_tests": 153,
+  "failures": 0,
+  "model_files_changed": 0,
+  "raw_detections_unchanged": true,
+  "curb_cautions_in_replays": 0,
+  "reviewed_event_windows_covered": 5,
+  "xcode_build": "passed",
+  "installation": "success",
+  "launch": "success",
+  "physical_iphone_audio_replay_verified": false
+}

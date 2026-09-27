@@ -1,0 +1,36 @@
+{
+  "resource": "SkyWorld72_epoch15_640_FP32",
+  "classCount": 72,
+  "task": "detect",
+  "maskChannels": 0,
+  "sourceSHA256": "8789b4d5be50d1a30d8637fad7548e47d90b068dcedf67894f1883941832cf49",
+  "swiftTestsPassed": 109,
+  "conversionParityPassed": true,
+  "testSetExecuted": false,
+  "accuracyValidated": false,
+  "releaseBuildPassed": true,
+  "installedDevice": "iPhone 15 Plus",
+  "installedBundle": "com.stanley.skycompanion.capture",
+  "installationConfirmed": true,
+  "launchConfirmed": true,
+  "phoneInferenceVerified": true,
+  "sustainedPhoneFPSVerified": false,
+  "droneBroadcastVerified": false,
+  "limitations": [
+    "Source checkpoint produces dense proposals at existing confidence/NMS thresholds; 5/6 sampled training images reach max_det=300.",
+    "14 classes lack verified positive training examples.",
+    "FP16 conversion rejected; larger FP32 model requires new phone and broadcast memory/performance measurements.",
+    "No segmentation masks in the new checkpoint."
+  ],
+  "profileExpiresUTC": "2026-10-02T22:26:30Z",
+  "shortLocalVideoPhoneFPSVerified": true,
+  "visiblePreviewFix": "Superseded at user request: playback now shows original video without detection overlay or preview toggle; inference and speech remain enabled.",
+  "previewUpdateInstalled": true,
+  "previewUpdateLaunched": true,
+  "userConfirmedLiveObstacleSpeech": true,
+  "noDetectionOverlayUpdate": {
+    "buildPassed": true,
+    "installed": true,
+    "launched": true
+  }
+}

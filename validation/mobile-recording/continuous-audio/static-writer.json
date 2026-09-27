@@ -1,0 +1,24 @@
+{
+  "audioTrackCount" : 1,
+  "decodedFrames" : 2,
+  "deviceInputChannels" : 2,
+  "deviceToneAmplitude" : 0.18295436994660255,
+  "directAudio" : true,
+  "duplicateFinish" : true,
+  "duplicateSourcesSuppressed" : true,
+  "durationSeconds" : 6,
+  "emptyRecording" : true,
+  "height" : 360,
+  "microphoneSampleRates" : [
+    16000,
+    44100
+  ],
+  "microphoneToneAmplitude" : 0.18318253162355208,
+  "orientationChange" : true,
+  "passed" : true,
+  "pauseGapRemoved" : true,
+  "scope" : "Synthetic macOS writer check; not iPhone ReplayKit or Photos validation",
+  "staticScreen" : true,
+  "width" : 640,
+  "writeFailure" : true
+}

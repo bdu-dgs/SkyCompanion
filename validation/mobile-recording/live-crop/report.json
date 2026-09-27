@@ -1,0 +1,17 @@
+{
+  "buildPassed": true,
+  "liveCropDecodedFrameTestPassed": true,
+  "mixedAudioAndTimelinePreserved": true,
+  "onlyAppStopSender": "LocalSessionModel.stopRecordingAndEnd",
+  "sourceAndAssistanceEndDoNotSendStop": true,
+  "previewRequiredToEdit": false,
+  "weightsAndModelManifestEntriesMatch": true,
+  "iPhoneDragAndResizeVerified": false,
+  "longRunningDJIBroadcastVerified": false,
+  "systemCanEndBroadcast": true,
+  "installSucceeded": true,
+  "launchSucceeded": true,
+  "iPhoneRecordingContinuedDuringCropEditUserConfirmed": false,
+  "userConfirmation": "RETRACTED: user reports crash every time Apply video area is tapped.",
+  "applyAreaCrashReported": true
+}

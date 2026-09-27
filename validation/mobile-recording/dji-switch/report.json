@@ -1,0 +1,20 @@
+{
+  "rootCauseInCode": "Every app IPC disconnect called finishBroadcastWithError; authenticated heartbeat deadline was 2.5 seconds.",
+  "historicalDeviceCauseConfirmed": false,
+  "recentSkyCompanionCrashReportsFound": false,
+  "recentMemoryTerminationEvidenceFound": false,
+  "transportChecksPassed": 13,
+  "recordingSurvivesLinkLossByDesign": true,
+  "authenticatedTimeoutSeconds": 8,
+  "observationFreshnessSeconds": 1.5,
+  "reconnectBackoffMaxSeconds": 8,
+  "phoneDJIFlySwitchVerified": false,
+  "phoneBackgroundConversationAudioVerified": false,
+  "shortDescriptionTestsPassed": 10,
+  "removedSpokenSentences": [
+    "User tracking unavailable.",
+    "People are not counted."
+  ],
+  "buildPassed": true,
+  "installSucceeded": true
+}

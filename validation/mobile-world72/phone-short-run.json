@@ -1,0 +1,39 @@
+{
+  "model": "Street72 \u00b7 epoch 15 \u00b7 640 px \u00b7 72 categories \u00b7 boxes only \u00b7 on device",
+  "sessionID": "83667502-355A-4AF5-B3E3-87F9F547EA22",
+  "source": "Local video",
+  "sampleCount": 49,
+  "observedSpanSeconds": 50.0058049583286,
+  "firstFrameID": 1,
+  "lastFrameID": 573,
+  "fps": {
+    "min": 0,
+    "median": 11.38880674417049,
+    "p95": 12.050300212473623,
+    "max": 12.418571041631292
+  },
+  "inferenceMS": {
+    "min": 57.40987499302719,
+    "median": 66.12150000000838,
+    "p95": 72.69174999964889,
+    "max": 76.19399999384768
+  },
+  "ageMS": {
+    "min": 67.04250000417233,
+    "median": 78.37345834076405,
+    "p95": 94.9520833492279,
+    "max": 498.19412499666214
+  },
+  "residentMB": {
+    "min": 200.515625,
+    "median": 201.765625,
+    "p95": 203.46875,
+    "max": 204.796875
+  },
+  "thermalStates": [
+    0
+  ],
+  "videoSHA256": "0be80387aca832d2813a191c60d620022ad132be606ff732cb6bdb5d81ad72f6",
+  "playerContinuouslyPlayingAtSamples": true,
+  "scope": "Short foreground local-video run on plugged-in iPhone 15 Plus; no debugger attached. Does not validate broadcast extension, unplugged run, long-duration stability, audio command concurrency, acoustic delay or recognition accuracy."
+}

@@ -1,0 +1,20 @@
+{
+  "referenceMessageUTC": "2026-09-27T03:14:52.699Z",
+  "scope": "Restore pre-direction-debug application risk selection and speech admission; retain recording, recording audio, editable area with crash fix, walking navigation, current short scene wording, and all listed voice commands.",
+  "model": "SkyWorld72_epoch15_640_FP32",
+  "sourceSHA256": "8789b4d5be50d1a30d8637fad7548e47d90b068dcedf67894f1883941832cf49",
+  "lockedModelAndInferenceFiles": 42,
+  "allLockedHashesMatch": true,
+  "rollbackReplayFrames": 126,
+  "rollbackEventDecisionsMatched": 124,
+  "swiftTestsPassed": 137,
+  "nativeCropSliderCasesPassed": 6,
+  "syntheticSystemAndMicrophoneMixPassed": true,
+  "syntheticDirectAudioMixPassed": true,
+  "releaseBuildPassed": true,
+  "deviceInstallation": "succeeded",
+  "physicalPlaybackRetestPassed": false,
+  "oldRecordingReference": "c8bfc8cd9a5f8b4c940890ca281b66d6.mp4",
+  "referenceLimitation": "Low-resolution screen recording; speech contents were not independently transcribed. User states describe suppressed one automatic obstacle utterance, as intended.",
+  "deviceLaunch": "succeeded"
+}

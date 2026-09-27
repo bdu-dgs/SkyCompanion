@@ -1,0 +1,26 @@
+{
+  "cases" : [
+    {
+      "dx" : 0,
+      "dy" : 0,
+      "errorPixels" : 0.0081266339429194659,
+      "photometricGate" : true
+    },
+    {
+      "dx" : 12,
+      "dy" : 8,
+      "errorPixels" : 0.022138730904263691,
+      "photometricGate" : true
+    },
+    {
+      "dx" : -8,
+      "dy" : -6,
+      "errorPixels" : 0.024396604017716733,
+      "photometricGate" : true
+    }
+  ],
+  "localGroundMismatchRejected" : true,
+  "passed" : true,
+  "scope" : "Actual Apple Vision homography, synthetic translation and changed-scene gate on Mac. Not person identity or aerial field validation.",
+  "unrelatedSceneRejected" : true
+}

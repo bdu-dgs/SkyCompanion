@@ -1,0 +1,15 @@
+{
+  "scope": "Mac CPU actual shipping Swift pipeline, 960 FP16 unchanged; not iPhone FPS or full accuracy acceptance",
+  "frames": 6,
+  "exact_detection_and_contour_equality": true,
+  "before_median_ms": 91.06458333189948,
+  "after_median_ms": 50.077937499736436,
+  "paths": [
+    "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+    "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+    "backend/data/obstacle_dataset/regression-20260926-v1/context/20260926-012139-3adc44e2/00018789-input.png",
+    "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png",
+    "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png",
+    "samples/local/external-streets-20260926/commons-japan-riverside/frame-02.png"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "process",
+      "launch",
+      "--device",
+      "00008120-001A10D002E2201E",
+      "--terminate-existing",
+      "--timeout",
+      "25",
+      "--json-output",
+      "/tmp/sky-area-button-launch.json",
+      "com.stanley.skycompanion.capture"
+    ],
+    "commandType" : "devicectl.device.process.launch",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "success",
+    "version" : "642.16"
+  },
+  "result" : {
+    "deviceIdentifier" : "670B3B1F-A63D-5E92-9B2E-3F5BDF1D6B85",
+    "launchOptions" : {
+      "activatedWhenStarted" : true,
+      "arguments" : [
+
+      ],
+      "environmentVariables" : {
+        "TERM" : "dumb"
+      },
+      "platformSpecificOptions" : {
+
+      },
+      "startStopped" : false,
+      "terminateExistingInstances" : true,
+      "user" : {
+        "active" : true
+      }
+    },
+    "process" : {
+      "auditToken" : [
+        4294967295,
+        501,
+        501,
+        501,
+        501,
+        14102,
+        0,
+        36472
+      ],
+      "executable" : "file:///private/var/containers/Bundle/Application/0CC097C8-0BE3-49B5-8549-8EF1EC9279F4/SkyCompanion.app/SkyCompanion",
+      "processIdentifier" : 14102
+    }
+  }
+}

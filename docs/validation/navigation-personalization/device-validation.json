@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-09-27T06:34:40.210224+00:00",
+  "signed_device_build": "passed",
+  "device_install": "passed",
+  "bundle_identifier": "com.stanley.skycompanion.capture",
+  "swift_tests": 133,
+  "swift_failures": 0,
+  "backend_tests": 25,
+  "backend_typecheck": "passed",
+  "authenticated_https_preferences_get": "HTTP 200 schema 1",
+  "phone_launch_final": "passed",
+  "phone_preferences_applied": true,
+  "field_walk_test": "not performed",
+  "new_live_imessage_dialogue": "not performed",
+  "sources": {
+    "ios/OnDevice/NavigationController.swift": "48ade233d9ebdddd2df50fa944dce31b781631bfabe64046126ac9b2a2489ee2",
+    "ios/OnDevice/NavigationScreen.swift": "4515e07b7275f2f1425745484d39c990dc1f9eae5f7471e91605e2bf091529bf",
+    "ios/OnDevice/LocalSessionModel.swift": "4a6330c35bf2cbe1f86b3529052c58835e35c96b2afdb88a42ee2a3a1abbbcd4",
+    "ios/OnDevice/LocalVoiceController.swift": "371c269644b6f38c9be05cd742ab8300795b173d15f4f9e8db160b78261b5750",
+    "ios/OnDevice/LocalCommandListener.swift": "6bf8be300a9de28ccb1535093faf39e97d90409b02698228943809de4664da6b",
+    "ios/OnDevice/PhotonCompanion.swift": "a4bb8be494ba63647f2f36625c96834da3709d0ee80dfc8985c2f03813178bc2",
+    "ios/CaptureCore/Sources/CaptureCore/AlertPreferences.swift": "2dc601008197f2f2a588a513d53fd1ad19cfdd4478ec6a2aec6e032e1ec38e8d",
+    "ios/CaptureCore/Sources/CaptureCore/NavigationProgress.swift": "c1bb1c391a64131eb0ca800507d6f09e3a50b7673a5ddbf932223c99ebfc0ebe",
+    "ios/CaptureCore/Sources/CaptureCore/NavigationVoiceCommand.swift": "bf40068176313a0b0c936382b8baf5c3200337fca693363b7a2f7f2e30bc9e40",
+    "ios/CaptureCore/Sources/CaptureCore/MobileWalkingPlanner.swift": "fe69c955c15f254b4c536cf20e4ad62c3fc82b913df87f0e07a05bc6942cc5e5"
+  },
+  "phone_applied_revision": 0,
+  "phone_applied_at_ms": 1790490849300,
+  "phone_pending_records_before": 31,
+  "phone_pending_records_after": 0,
+  "phone_inbox_cursor_after": 23
+}

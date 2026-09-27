@@ -1,0 +1,18 @@
+ios/OnDevice/VisionEngine.swift:238:13: warning: 'cblas_sgemv' was deprecated in macOS 13.3: An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [#DeprecatedDeclaration]
+236 |             var coefficients = (0..<32).map { Float(pred.value3(0,4+classes+$0,candidate.anchor)) }
+237 |             var logits = [Float](repeating: 0, count: plane)
+238 |             cblas_sgemv(CblasRowMajor, CblasTrans, 32, Int32(plane), 1, &protoValues, Int32(plane),
+    |             `- warning: 'cblas_sgemv' was deprecated in macOS 13.3: An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [#DeprecatedDeclaration]
+239 |                         &coefficients, 1, 0, &logits, 1)
+240 |             let scale = Double(pw) / Double(geometry.size)
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+scripts/replay_caution_video.swift:24:24: warning: 'copyCGImage(at:actualTime:)' was deprecated in macOS 15.0: Use generateCGImageAsynchronouslyForTime:completionHandler: instead [#DeprecatedDeclaration]
+22 |  for i in 0..<Int(ceil(duration*5)) {
+23 |   let second=Double(i)/5
+24 |   let cg=try generator.copyCGImage(at:CMTime(seconds:second,preferredTimescale:600),actualTime:nil)
+   |                        `- warning: 'copyCGImage(at:actualTime:)' was deprecated in macOS 15.0: Use generateCGImageAsynchronouslyForTime:completionHandler: instead [#DeprecatedDeclaration]
+25 |   let image=CIImage(cgImage:cg)
+26 |   var buffer:CVPixelBuffer?
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

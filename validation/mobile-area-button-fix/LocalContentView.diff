@@ -1,0 +1,28 @@
+--- .skycompanion-live/area-button-fix-20260927/LocalContentView.before.swift	2026-09-27 10:01:16
++++ ios/OnDevice/LocalContentView.swift	2026-09-27 10:03:44
+@@ -261,6 +261,7 @@
+                     Label(model.videoAreaStatus, systemImage: model.regionConfirmed ? "checkmark.circle" : "pencil.circle")
+                         .font(.subheadline)
+                     Text(model.region.summary).font(.caption).foregroundStyle(.secondary)
++                        .accessibilityIdentifier("videoArea.summary")
+                     EditableVideoArea(image: model.source == .drone ? model.preview : nil,
+                                       region: Binding(get: { model.region }, set: { model.region = $0; model.regionConfirmed = false }))
+                     Text("Drag the box to move it. Drag its corner to resize. You can change this while recording.")
+@@ -271,9 +272,15 @@
+                         CropSlider(title:"Width",value:regionBinding(\.width),range:0.06...max(0.06,1-model.region.x))
+                         CropSlider(title:"Height",value:regionBinding(\.height),range:0.06...max(0.06,1-model.region.y))
+                     }
+-                    Button("Use full image") { model.region=CaptureRegion();model.regionConfirmed=false }.frame(minHeight:44)
++                    // These actions share one Form row. Automatic button style makes
++                    // a row tap invoke both actions, resetting the crop before Apply.
++                    Button("Use full image") { model.resetVideoAreaDraft() }
++                        .buttonStyle(.borderless).frame(minHeight:44)
++                        .accessibilityIdentifier("videoArea.reset")
+                     Button("Apply video area") { model.confirmRegion(); if model.regionConfirmed { expandedStep=4 } }
+-                        .font(.headline).frame(minHeight:56).disabled(!model.region.valid || model.source != .drone || model.savingRecording)
++                        .buttonStyle(.borderless).font(.headline).frame(minHeight:56)
++                        .accessibilityIdentifier("videoArea.apply")
++                        .disabled(!model.region.valid || model.source != .drone || model.savingRecording)
+                     Text("Applies to analysis and the saved recording from this point onward. Recording does not restart.")
+                         .font(.footnote).foregroundStyle(.secondary)
+                     if model.source != .drone { Text("Enable drone assistance before applying this area.").font(.footnote) }

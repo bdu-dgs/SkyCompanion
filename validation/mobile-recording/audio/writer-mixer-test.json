@@ -1,0 +1,20 @@
+{
+  "audioTrackCount" : 1,
+  "decodedFrames" : 24,
+  "deviceToneAmplitude" : 0.1832663568575606,
+  "duplicateFinish" : true,
+  "durationSeconds" : 1.9666666666666666,
+  "emptyRecording" : true,
+  "height" : 360,
+  "microphoneSampleRates" : [
+    16000,
+    44100
+  ],
+  "microphoneToneAmplitude" : 0.18230645848402549,
+  "orientationChange" : true,
+  "passed" : true,
+  "pauseGapRemoved" : true,
+  "scope" : "Synthetic macOS writer check; not iPhone ReplayKit or Photos validation",
+  "width" : 640,
+  "writeFailure" : true
+}

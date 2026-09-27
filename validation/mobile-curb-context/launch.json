@@ -1,0 +1,59 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "process",
+      "launch",
+      "--device",
+      "00008120-001A10D002E2201E",
+      "--terminate-existing",
+      "--timeout",
+      "25",
+      "--json-output",
+      "/tmp/sky-curb-launch.json",
+      "com.stanley.skycompanion.capture"
+    ],
+    "commandType" : "devicectl.device.process.launch",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "success",
+    "version" : "642.16"
+  },
+  "result" : {
+    "deviceIdentifier" : "670B3B1F-A63D-5E92-9B2E-3F5BDF1D6B85",
+    "launchOptions" : {
+      "activatedWhenStarted" : true,
+      "arguments" : [
+
+      ],
+      "environmentVariables" : {
+        "TERM" : "dumb"
+      },
+      "platformSpecificOptions" : {
+
+      },
+      "startStopped" : false,
+      "terminateExistingInstances" : true,
+      "user" : {
+        "active" : true
+      }
+    },
+    "process" : {
+      "auditToken" : [
+        4294967295,
+        501,
+        501,
+        501,
+        501,
+        12675,
+        0,
+        32783
+      ],
+      "executable" : "file:///private/var/containers/Bundle/Application/87A652E5-27B6-4639-80C5-B24D7F592C85/SkyCompanion.app/SkyCompanion",
+      "processIdentifier" : 12675
+    }
+  }
+}

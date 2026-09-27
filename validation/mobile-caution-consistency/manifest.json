@@ -1,0 +1,17 @@
+{
+  "source_video": "/Users/stanley/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_so7xpst7h9uq32_f8f1/msg/video/2026-09/a380722e837af6d033950c59b5360f73.mp4",
+  "source_sha256": "667eb9dc0d4ff22ebfbe5d5d6527cb7407d24bb3ebf4235492b611f79ab6e4fa",
+  "duration_seconds": 52.081995,
+  "sample_rate": 5,
+  "samples": 261,
+  "selected_person_first_frame_detection_index": 3,
+  "preview_width": 640,
+  "preview_jpeg_quality": 0.6,
+  "speech_duration_scenarios_ms": [
+    2500,
+    3500
+  ],
+  "model": "SkyWorld72_epoch15_640_FP32",
+  "compute": "Mac CPU-only Core ML; not iPhone live timing",
+  "weights_changed": false
+}

@@ -1,0 +1,8 @@
+python-dotenv==1.0.1
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.17
+google-cloud-aiplatform==1.71.1
+opencv-python-headless==4.10.0.84
+Pillow==11.3.0
+inference-sdk==0.59.1

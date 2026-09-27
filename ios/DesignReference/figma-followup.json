@@ -1,0 +1,178 @@
+{
+  "fileKey": "nbbKLI3KZ3GeQlUDFx24tT",
+  "url": "https://www.figma.com/design/nbbKLI3KZ3GeQlUDFx24tT",
+  "screens": {
+    "Setup": {
+      "id": "6:6",
+      "width": 430,
+      "height": 932
+    },
+    "Home": {
+      "id": "6:29",
+      "width": 430,
+      "height": 932
+    },
+    "Drone": {
+      "id": "6:48",
+      "width": 430,
+      "height": 932
+    },
+    "Session": {
+      "id": "6:68",
+      "width": 430,
+      "height": 932
+    },
+    "Video": {
+      "id": "6:92",
+      "width": 430,
+      "height": 932
+    },
+    "Settings": {
+      "id": "6:110",
+      "width": 430,
+      "height": 932
+    },
+    "Diagnostics": {
+      "id": "6:133",
+      "width": 430,
+      "height": 932
+    },
+    "Dark home": {
+      "id": "6:153",
+      "width": 430,
+      "height": 932
+    }
+  },
+  "pendingLinks": [
+    {
+      "id": "6:8",
+      "dest": "Home"
+    },
+    {
+      "id": "6:15",
+      "dest": "Permission"
+    },
+    {
+      "id": "6:20",
+      "dest": "Permission"
+    },
+    {
+      "id": "6:25",
+      "dest": "Sound"
+    },
+    {
+      "id": "6:27",
+      "dest": "Home"
+    },
+    {
+      "id": "6:39",
+      "dest": "Drone"
+    },
+    {
+      "id": "6:41",
+      "dest": "Description"
+    },
+    {
+      "id": "6:43",
+      "dest": "Video"
+    },
+    {
+      "id": "6:45",
+      "dest": "Settings"
+    },
+    {
+      "id": "6:50",
+      "dest": "Home"
+    },
+    {
+      "id": "6:60",
+      "dest": "ROI"
+    },
+    {
+      "id": "6:65",
+      "dest": "Preparing"
+    },
+    {
+      "id": "6:70",
+      "dest": "Home"
+    },
+    {
+      "id": "6:83",
+      "dest": "Description"
+    },
+    {
+      "id": "6:85",
+      "dest": "Muted"
+    },
+    {
+      "id": "6:87",
+      "dest": "Paused"
+    },
+    {
+      "id": "6:89",
+      "dest": "Home"
+    },
+    {
+      "id": "6:94",
+      "dest": "Home"
+    },
+    {
+      "id": "6:101",
+      "dest": "Playback"
+    },
+    {
+      "id": "6:112",
+      "dest": "Home"
+    },
+    {
+      "id": "6:119",
+      "dest": "Sound"
+    },
+    {
+      "id": "6:124",
+      "dest": "Commands"
+    },
+    {
+      "id": "6:129",
+      "dest": "Delete"
+    },
+    {
+      "id": "6:131",
+      "dest": "Diagnostics"
+    },
+    {
+      "id": "6:135",
+      "dest": "Home"
+    },
+    {
+      "id": "6:148",
+      "dest": "Session"
+    },
+    {
+      "id": "6:163",
+      "dest": "Drone"
+    },
+    {
+      "id": "6:165",
+      "dest": "Description"
+    },
+    {
+      "id": "6:167",
+      "dest": "Settings"
+    }
+  ],
+  "status": "INCOMPLETE: SF Pro renders blank; Starter MCP limit prevents repair and prototype connections.",
+  "observedErrors": [
+    "Official iOS component import not permitted",
+    "SF Pro hasMissingFont despite available font listing",
+    "NAVIGATE destinations must be different top-level frames",
+    "Starter MCP tool call limit reached"
+  ],
+  "committedScreenInstances": 52,
+  "committedComponents": 18,
+  "committedVariables": 43,
+  "committedTextStyles": 5,
+  "desiredBrand": "SkyCompanion",
+  "onlineBrandStatus": "Still SkyCompanion; migration not executed because Starter MCP quota is exhausted.",
+  "supersededConcept": "superseded-skycompanion-home-concept.png"
+}

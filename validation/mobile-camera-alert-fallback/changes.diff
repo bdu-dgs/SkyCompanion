@@ -1,0 +1,328 @@
+--- before/ios/OnDevice/LocalVisionPipeline.swift
++++ after/ios/OnDevice/LocalVisionPipeline.swift
+@@ -23,7 +23,8 @@
+     private var wearerTracker: LocalWearerTracker?
+     private var walkingPlanner = MobileWalkingPlanner()
+     private var lastPathAt = -Double.infinity
+-    private var risk = LocalRiskEngine()
++    private var risk = MobileCameraObstacleMonitor()
++    private var latestPath: MobilePathObservation?
+     private var scene = LocalSceneDescriber()
+     private var frameID: UInt64 = 0
+     private var lastPreviewAt = -Double.infinity
+@@ -38,7 +39,7 @@
+     func configure(_ configuration: LocalCaptureSettings) {
+         lock.lock(); epoch &+= 1; let version = epoch; pending = nil; enabled = configuration.region.valid && (configuration.analyze || configuration.requestPreview); lock.unlock()
+         queue.async { [self] in
+-            walkingPlanner = MobileWalkingPlanner(); depth.reset(); pathEngine = nil; lastPathAt = -Double.infinity
++            walkingPlanner = MobileWalkingPlanner(); depth.reset(); pathEngine = nil; lastPathAt = -Double.infinity; latestPath = nil
+             wearerTracker = nil
+             let wearerConfig = configuration.wearerConfiguration ?? configuration.pathConfiguration.map {
+                 LocalWearerConfiguration(referenceJPEG: $0.referenceJPEG, person: $0.person)
+@@ -59,7 +60,7 @@
+ 
+     func stop() {
+         lock.lock(); enabled = false; epoch &+= 1; pending = nil; lock.unlock()
+-        queue.async { [self] in settings = nil; risk.reset(); scene.reset(); model = nil; depth.reset(); pathEngine = nil; wearerTracker = nil }
++        queue.async { [self] in settings = nil; risk.reset(); scene.reset(); model = nil; depth.reset(); pathEngine = nil; wearerTracker = nil; latestPath = nil }
+     }
+ 
+     func submit(_ pixelBuffer: CVPixelBuffer, orientation: CGImagePropertyOrientation, capturedMS: Double) {
+@@ -159,20 +160,16 @@
+             var walking: MobileWalkingObservation?
+             if item.2-lastPathAt >= 300, settings.pathConfiguration != nil {
+                 lastPathAt = item.2; path = pathEngine?.process(image: cropped, frame: frame, person: wearerIndex.map { frame.detections[$0] })
++                latestPath = path
+                 walking = walkingPlanner.update(frame: environment, path: path, rearFollowing: settings.pathConfiguration?.rearFollowing == true, now: ProcessInfo.processInfo.systemUptime*1_000)
+             }
+             // Registration time must not make an old YOLO result speakable.
+             guard valid(epoch), frame.isFresh(at: ProcessInfo.processInfo.systemUptime*1_000) else { return }
+-            let assessment: MobileRiskAssessment
+-            if hasSelection && wearerIndex == nil {
+-                // Do not turn the user's uncertain identity into an obstacle track
+-                // that survives recovery and can later be spoken or repeated.
+-                risk.reset()
+-                assessment = .init(state: .unconfirmed, health: .limited,
+-                    text: MobileAssistanceStatus.trackingLost.speech())
+-            } else {
+-                assessment = risk.update(frame: environment, nowUptimeMS: now, corridor: settings.corridor)
+-            }
++            let walkingActive = settings.pathConfiguration?.rearFollowing == true && wearerIndex != nil
++                && MobileAssistanceSnapshot.pathAvailable(latestPath, for: frame, at: now)
++            let assessment = risk.update(frame: frame, wearer: wearer,
++                wearerRequired: !settings.recordingContainsLocalVideo || hasSelection,
++                walkingActive: walkingActive, nowUptimeMS: now, corridor: settings.corridor)
+             scene.update(frame: frame, nowUptimeMS: now, wearer: wearer)
+             onPacket?(LocalPacket(type: "result", frame: frame, risk: assessment,
+                                  summary: scene.describe(nowUptimeMS: now),
+--- before/ios/OnDevice/LocalSessionModel.swift
++++ after/ios/OnDevice/LocalSessionModel.swift
+@@ -132,6 +132,7 @@
+     private var lastDiagnosticAt = 0.0
+     private var lastEventID: String?
+     private var guidanceGate = MobileGuidanceGate()
++    private var cameraAlertRetry = MobileCameraAlertRetry()
+     private var startedWaitingAt = 0.0
+     private var lastVideoTime: Double?
+     private var latestEvidence: LocalPacket?
+@@ -506,7 +507,7 @@
+         cancelDescriptionRequest()
+         inspection = nil; wearerObservation = nil; depthResult = nil; pathObservation = nil; walkingObservation = nil; walkingSpeech = nil
+         frame = nil; assessment = nil; summary = nil; latestEvidence = nil; lastEventID = nil
+-        frameTimes.removeAll(); fps = 0; frameAgeMS = 0; guidanceGate = MobileGuidanceGate()
++        frameTimes.removeAll(); fps = 0; frameAgeMS = 0; guidanceGate = MobileGuidanceGate(); cameraAlertRetry.reset()
+     }
+ 
+     private func unavailable(_ text: String, speak: Bool = true, failure: MobileAssistanceStatus = .unavailable) {
+@@ -602,21 +603,37 @@
+             if let assessment = packet.risk { guidanceGate.observe(assessment, nowUptimeMS: now) }
+             if let path = packet.path { pathObservation = path }
+             refreshStatusAnnouncement()
+-            let directionsAvailable = ![MobileAssistanceStatus.trackingLost, .pathUnavailable].contains(assistanceStatus)
++            let capabilities = assistanceSnapshot
++            let directionsAvailable = capabilities.walkingGuidanceAvailable(at: now)
++            let cameraOnly = capabilities.cameraOnlyAlerts(at: now)
++            let cameraRoute = capabilities.cameraAlertsAvailable(at: now)
++                && (settings.pathConfiguration?.rearFollowing != true || !directionsAvailable)
++            if cameraOnly { message = voice.muted ? "Analyzing; spoken alerts are muted." : "Camera obstacle alerts only. Walking guidance paused." }
++            let cameraCandidate = cameraAlertRetry.candidate(frame: incoming, assessment: packet.risk, now: now, enabled: cameraOnly)
++            let candidate = cameraOnly ? cameraCandidate : packet.risk?.event
+             var alerted = false
+-            if directionsAvailable, settings.pathConfiguration?.rearFollowing != true, let event = packet.risk?.event, event.frameID == incoming.frameID,
++            if cameraRoute, let event = candidate, event.frameID == incoming.frameID,
+                event.capturedUptimeMS == incoming.capturedUptimeMS {
+-                let decision = guidanceGate.receive(event, nowUptimeMS: now,
++                let decision: MobileGuidanceGate.Decision
++                if cameraOnly, !voice.muted,
++                   !MobileGuidanceGate.mayStartSpeech(incoming: event.level.rawValue, current: voice.activeSpeechPriority, protectingCommand: voice.protectingCommand) {
++                    // The tracking notice must not consume the first obstacle event.
++                    // Retry only with fresh evidence of the same observed object.
++                    decision = .busy
++                } else {
++                    decision = guidanceGate.receive(event, nowUptimeMS: now,
+                     sessionID: settings.sessionID, revision: settings.revision,
+                     enabled: (vibrationEnabled || !voice.muted) && (!quieter || event.level >= .action)
+                         && photon.preferences.allows(level: event.level, label: event.evidence.detectedLabel),
+                     currentSpeechPriority: voice.activeSpeechPriority, protectingCommand: voice.protectingCommand,
+                     ordinaryIntervalSeconds: photon.preferences.repeatIntervalSeconds, hapticsEnabled: vibrationEnabled)
++                    cameraAlertRetry.reset()
++                }
+                 // Read-only diagnostics: retain the restored admission behavior.
+-                if source == .video, now-lastAlertDiagnosticAt >= 1_000 {
++                if now-lastAlertDiagnosticAt >= 1_000 {
+                     lastAlertDiagnosticAt = now
+                     let seconds = player?.currentTime().seconds ?? -1
+-                    let detail = String(format: "video=%.2fs", seconds)
++                    let detail = "source=\(source.rawValue); cameraOnly=\(cameraOnly); " + String(format: "video=%.2fs", seconds)
+                         + "; frame=\(incoming.frameID); target=\(event.evidence.detectedLabel ?? "uncertain")"
+                         + "; eventSide=\(event.direction.rawValue); displayedSide=\(packet.risk?.direction?.rawValue ?? "none")"
+                         + "; gate=\(decision); commandProtected=\(voice.protectingCommand)"
+@@ -628,11 +645,13 @@
+                         emitVibration(reason: "fresh R\(event.level.rawValue) obstacle")
+                     }
+                     navigationQuietUntil = now + 4_000
+-                    let speech = photon.preferences.speech(direction: event.direction, consequence: event.evidence.hazardConsequence, level: event.level)
++                    let speech = cameraOnly ? MobileAlertSpeech.cameraObstacle(direction: event.direction)
++                        : photon.preferences.speech(direction: event.direction, consequence: event.evidence.hazardConsequence, level: event.level)
+                     let observedAt = Int64((Date().timeIntervalSince1970 * 1_000 - max(0, now - incoming.capturedUptimeMS)).rounded())
+                     let snapshot = alertSnapshot(frame: incoming, assessment: packet.risk)
+-                    alerted = directionsAvailable && voice.speak(speech, priority: event.level.rawValue, expires: deadline,
++                    alerted = voice.speak(speech, priority: event.level.rawValue, expires: deadline,
+                         onStarted: { [weak self] in self?.recordSpokenAlert(event, text: speech, observedAtMS: observedAt, snapshot: snapshot) })
++                    recordPerformance("alert_delivery", frame: incoming, message: "accepted=\(alerted); muted=\(voice.muted); cameraOnly=\(cameraOnly); speech=\(speech)")
+                     if alerted { lastEventID = event.id }
+                     if alerted { appendLog(String.localizedStringWithFormat(String(localized: "Risk R%lld: %@"), event.level.rawValue, event.text)) }
+                 }
+@@ -746,7 +765,7 @@
+         appendLog("Manual vibration test requested; physical delivery not measured.")
+     }
+ 
+-    private var assistanceStatus: MobileAssistanceStatus {
++    private var assistanceSnapshot: MobileAssistanceSnapshot {
+         var snapshot = MobileAssistanceSnapshot()
+         switch phase {
+         case .idle: snapshot.phase = .idle
+@@ -760,23 +779,25 @@
+         snapshot.analyzing = settings.analyze; snapshot.sourceConnected = source == .video || connected
+         snapshot.requiresVoiceSession = source == .drone; snapshot.listening = voice.listening
+         snapshot.muted = voice.muted; snapshot.riskAvailable = assessment?.health == .available
+-        // A drone follows a visible user. Until that identity is selected, do
+-        // not let the user's own person detection generate directional alerts.
++        // Identity gates walking instructions. Camera-only risk independently
++        // removes all person candidates while identity cannot be confirmed.
+         snapshot.wearerRequired = source == .drone || wearerConfigured; snapshot.wearer = wearerObservation
+         snapshot.pathRequired = settings.pathConfiguration?.rearFollowing == true; snapshot.path = pathObservation
+-        return snapshot.status(at: now)
+-    }
++        return snapshot
++    }
++    private var assistanceStatus: MobileAssistanceStatus { assistanceSnapshot.status(at: now) }
+ 
+     private func speakAssistanceStatus() {
+         let state = assistanceStatus
+-        let text = state.speech()
++        let text = assistanceSnapshot.speech(at: now)
++        appendLog("Assistance status: \(state.rawValue); \(text)")
+         // Explicit queries and service-failure notices bypass obstacle mute, not the audio-session guard.
+         if voice.speak(text, priority: 3, control: true) { statusSpeech = (state, text) }
+     }
+ 
+     private func statusSpeechDidStart(_ text: String) {
+         guard let spoken = statusSpeech, spoken.text == text else { return }
+-        guard spoken.state == assistanceStatus else { voice.cancelSpeech(); statusSpeech = nil; return }
++        guard spoken.state == assistanceStatus, spoken.text == assistanceSnapshot.speech(at: now) else { voice.cancelSpeech(); statusSpeech = nil; return }
+         if spoken.state.isFault { statusAnnouncements.didStart(spoken.state) }
+     }
+ 
+@@ -786,7 +807,7 @@
+         lastObservedStatus = state
+         if let spoken = statusSpeech {
+             if voice.activeSpeechText != spoken.text { statusSpeech = nil }
+-            else if spoken.state != state { voice.cancelSpeech(); statusSpeech = nil }
++            else if spoken.state != state || spoken.text != assistanceSnapshot.speech(at: now) { voice.cancelSpeech(); statusSpeech = nil }
+         }
+         if transitioned && (state == .trackingLost || state == .pathUnavailable) {
+             // Never finish a movement instruction after losing the user/path.
+@@ -864,8 +885,9 @@
+             voice.commandPending = true
+             pumpDescription()
+         case .repeatAlert, .explain:
+-            if assistanceStatus.isFault { speakAssistanceStatus(); return }
+-            if settings.pathConfiguration?.rearFollowing == true {
++            let cameraOnly = assistanceSnapshot.cameraOnlyAlerts(at: now)
++            if assistanceStatus.isFault && !cameraOnly { speakAssistanceStatus(); return }
++            if settings.pathConfiguration?.rearFollowing == true && !cameraOnly {
+                 guard let walking = walkingObservation, phase == .running,
+                       walking.confirmed, now >= walking.capturedUptimeMS, now-walking.capturedUptimeMS < 1_500,
+                       walking.action != nil else {
+@@ -883,7 +905,7 @@
+             if command == .explain && assessment.lifecycle != .occludedUnresolved {
+                 text = String(localized: "The object overlaps the selected camera area across several observations. Its distance and direction relative to you are unknown.")
+             } else if command == .repeatAlert, assessment.lifecycle != .occludedUnresolved, let direction = assessment.direction {
+-                text = MobileAlertSpeech.obstacle(direction: direction)
++                text = cameraOnly ? MobileAlertSpeech.cameraObstacle(direction: direction) : MobileAlertSpeech.obstacle(direction: direction)
+             } else {
+                 text = assessment.text
+             }
+@@ -1142,6 +1164,20 @@
+                 "batteryLevel": UIDevice.current.batteryLevel, "batteryState": UIDevice.current.batteryState.rawValue,
+                 "depthEnabled": settings.depthEnabled, "pathEnabled": pathConfigured,
+                 "listening": voice.listening, "voice": voice.voiceDescription, "model": modelDescription]
++            let snapshot = assistanceSnapshot
++            row["assistanceStatus"] = snapshot.status(at: now).rawValue
++            row["cameraAlertsAvailable"] = snapshot.cameraAlertsAvailable(at: now)
++            row["walkingGuidanceAvailable"] = snapshot.walkingGuidanceAvailable(at: now)
++            row["wearerConfigured"] = wearerConfigured
++            row["wearerState"] = wearerObservation?.state.rawValue ?? "none"
++            row["wearerReason"] = wearerObservation?.reason ?? "No current wearer observation"
++            row["riskState"] = assessment?.state.rawValue ?? "none"
++            row["riskHealth"] = assessment?.health.rawValue ?? "none"
++            row["riskLifecycle"] = assessment?.lifecycle.rawValue ?? "none"
++            row["riskLabel"] = assessment?.evidence?.detectedLabel ?? "none"
++            row["muted"] = voice.muted; row["quieter"] = quieter
++            row["commandProtected"] = voice.protectingCommand
++            row["activeSpeechPriority"] = voice.activeSpeechPriority ?? -99
+             if let depthResult { row["depthInferenceMS"] = depthResult.inferenceMS; row["depthStatus"] = depthResult.status }
+             if let walkingObservation { row["walkingAction"] = walkingObservation.action?.rawValue ?? "none"; row["walkingReason"] = walkingObservation.reason }
+             if let pathObservation { row["pathProcessingMS"] = pathObservation.processingMS; row["pathState"] = pathObservation.state.rawValue }
+--- before/ios/CaptureCore/Sources/CaptureCore/MobileAssistanceStatus.swift
++++ after/ios/CaptureCore/Sources/CaptureCore/MobileAssistanceStatus.swift
+@@ -41,6 +41,37 @@
+     public var pathRequired = false
+     public var path: MobilePathObservation?
+     public init() {}
++    /// Camera-relative obstacle evidence does not require user-relative steering.
++    /// Mute remains a delivery preference and does not make visual evidence valid.
++    public func cameraAlertsAvailable(at now: Double) -> Bool {
++        guard phase == .running, analyzing, sourceConnected, riskAvailable,
++              !requiresVoiceSession || listening, let frame,
++              frame.sessionID == sessionID, frame.revision == revision,
++              frame.isFresh(at: now) else { return false }
++        return true
++    }
++    public func walkingGuidanceAvailable(at now: Double) -> Bool {
++        cameraAlertsAvailable(at: now) && (!wearerRequired || wearer?.matchedIndex(in: frame!) != nil)
++            && (!pathRequired || Self.pathAvailable(path, for: frame!, at: now))
++    }
++    public func cameraOnlyAlerts(at now: Double) -> Bool {
++        cameraAlertsAvailable(at: now) && !walkingGuidanceAvailable(at: now)
++    }
++    public static func pathAvailable(_ path: MobilePathObservation?, for frame: MobileFrameResult, at now: Double) -> Bool {
++        guard let path, path.sessionID == frame.sessionID, path.revision == frame.revision,
++              frame.isFresh(at: now), path.capturedUptimeMS <= now, now-path.capturedUptimeMS < 1_500,
++              [.inside, .nearBoundary, .outside].contains(path.state) else { return false }
++        return true
++    }
++    public func speech(at now: Double) -> String {
++        guard cameraOnlyAlerts(at: now) else { return status(at: now).speech() }
++        let userUnknown = wearerRequired && wearer?.matchedIndex(in: frame!) == nil
++        let reason = userUnknown ? "Your position is unconfirmed." : "The path is unconfirmed."
++        if muted { return reason + " Spoken alerts are off. Say SkyCompanion unmute to enable camera alerts." }
++        return reason + (userUnknown
++            ? " Camera alerts remain on; people alerts and walking guidance are paused."
++            : " Camera alerts remain on; walking guidance is paused.")
++    }
+     public func status(at now: Double) -> MobileAssistanceStatus {
+         switch phase {
+         case .idle: return .idle
+@@ -55,9 +86,7 @@
+         guard !requiresVoiceSession || listening else { return .audioUnavailable }
+         if wearerRequired && wearer?.matchedIndex(in: frame) == nil { return .trackingLost }
+         if pathRequired {
+-            guard let path, path.sessionID == sessionID, path.revision == revision,
+-                  path.capturedUptimeMS <= now, now-path.capturedUptimeMS < 1_500,
+-                  [.inside, .nearBoundary, .outside].contains(path.state) else { return .pathUnavailable }
++            guard Self.pathAvailable(path, for: frame, at: now) else { return .pathUnavailable }
+         }
+         guard riskAvailable else { return .unavailable }
+         return muted ? .muted : .active
+--- before/ios/CaptureCore/Sources/CaptureCore/MobileAlertSpeech.swift
++++ after/ios/CaptureCore/Sources/CaptureCore/MobileAlertSpeech.swift
+@@ -13,4 +13,11 @@
+     public static func obstacle(direction: MobileDirection) -> String {
+         caution(direction: direction) + " " + MobileCopy.text("Check your path.")
+     }
++    public static func cameraObstacle(direction: MobileDirection) -> String {
++        switch direction {
++        case .left: return "Caution. Camera left."
++        case .right: return "Caution. Camera right."
++        case .ahead: return "Caution. Camera front."
++        }
++    }
+ }
+--- before/docs/mobile-current-alert-policy.md
++++ after/docs/mobile-current-alert-policy.md
+@@ -6,7 +6,7 @@
+ 
+ - The original risk monitor, image corridor eligibility, confirmation, winner selection and content deduplication.
+ - The original eight-second default alert cadence and speech/command priority behavior. Explicit supported Photon preferences remain intact.
+-- Later candidate retries, followed-user neighborhood ranking, paired-passage events and the four-second default were removed. Followed-user identity fixes are retained as requested below.
++- Later general candidate retries, followed-user neighborhood ranking, paired-passage events and the four-second default were removed. Followed-user identity fixes are retained as requested below. A bounded retry now applies only to degraded camera alerts that wait behind a tracking notice or command response, as described below.
+ - Generic Caution speech and repeat responses. Standard examples: `Caution left. Check your path.`, `Caution right. Check your path.`, `Caution front. Check your path.` No appended detected class names such as Person, Car or Pole.
+ - Walking guidance still uses the existing direction/action phrases, such as `Caution front. Keep left.` It no longer inserts a detected object name.
+ 
+@@ -17,10 +17,22 @@
+ - Direct video-area adjustment, mid-recording crop changes, and the Apply-area slider crash fix.
+ - Walking navigation UI and navigation voice commands.
+ - The current curb-context correction: a curb rectangle alone does not trigger an automatic obstacle caution. Curb hints can still block an unverified walking route; independently confirmed path-boundary warnings remain enabled.
+-- Followed-user exclusion: after explicit selection, the selected person and weaker duplicate detections of the same body are excluded from obstacle alerts, walking obstacle candidates and scene descriptions. Other pedestrians remain eligible. Optical tracking corrections are retained; uncertainty pauses direction speech and haptics, clears risk tracks and never switches automatically to another person.
+-- Drone direction alerts now require that selection before the first directional caution, so an unselected wearer cannot trigger a self-warning. Applying a different crop clears old user/path coordinates; applying the identical crop preserves selection.
++- Followed-user exclusion: after explicit selection, the selected person and weaker duplicate detections of the same body are excluded from obstacle alerts, walking obstacle candidates and scene descriptions. Other pedestrians remain eligible. Optical tracking corrections are retained. Identity uncertainty pauses walking instructions and all people alerts, resets incompatible risk tracks, and never switches automatically to another person. Fresh, confirmed non-person obstacles remain eligible for camera-relative speech and haptics.
++- Drone people alerts and walking guidance require confirmed user identity. Before selection or during tracking loss, all person candidates are excluded from automatic obstacle risk; non-person camera alerts remain available. Applying a different crop clears old user/path coordinates; applying the identical crop preserves selection.
+ - Existing appearance, setup and recording screens, including the accessible followed-user selection link.
+ - All model weights, class order, preprocessing, inference settings and decoder code.
++
++## Camera-only fallback during user/path uncertainty
++
++- The detection model, input/output processing, risk thresholds, confirmation, ranking, curb filter and default eight-second cadence are unchanged.
++- A fresh analyzed view can support camera-relative obstacle warnings even when user tracking or the configured walking path is unavailable. Example: `Caution. Camera left.` Camera left/right/front describes the image; it is not a user-relative movement instruction.
++- While identity is unconfirmed, all people are excluded from automatic obstacle risk. After the selected user is reliably matched again, the selected body stays excluded and other pedestrians become eligible again. Losing path confirmation alone does not exclude other people if user identity remains reliable.
++- Walking instructions remain paused until their identity/path requirements are satisfied. Muting, source loss, stale frames, paused analysis, voice-session failure, and existing alert admission preferences still apply.
++- The first fallback warning can wait behind the tracking notice or a protected command response. It is reconsidered only while the same track, class and direction remain observed in current fresh frames, for at most eight seconds from the original event. Occlusion, a source/revision change or mode change clears it. The original 1.5-second frame validity applies to each delivery; there is no stale speech queue.
++- `status` and the one-time interruption notice explain the remaining camera capability and paused walking/people capability. The existing status area shows camera-only operation without new controls.
++- Diagnostic samples include wearer/risk states and camera/walking capability. Alert decisions include cooldown, mute and speech occupancy; speech admission is recorded separately from the speech-start callback. Neither software event proves acoustic output.
++
++See [the camera fallback report](../validation/mobile-camera-alert-fallback/REPORT.md) for regression evidence and remaining real-drone verification.
+ 
+ ## Commands
+ 

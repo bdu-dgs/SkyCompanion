@@ -1,0 +1,86 @@
+{
+  "sources": [
+    "Local video"
+  ],
+  "samples": 125,
+  "warmup_excluded_seconds_per_revision": 5,
+  "steady_samples": 120,
+  "metrics": {
+    "fps": {
+      "count": 120,
+      "min": 9.89421457282977,
+      "median": 10.028186308727328,
+      "p95": 10.44350929588172,
+      "max": 10.593666105917764
+    },
+    "inferenceMS": {
+      "count": 120,
+      "min": 38.81520833238028,
+      "median": 48.37906250031665,
+      "p95": 55.863083332951646,
+      "max": 58.70320832764264
+    },
+    "preprocessMS": {
+      "count": 120,
+      "min": 1.0127499990630895,
+      "median": 1.8239166638522875,
+      "p95": 2.6431666628923267,
+      "max": 3.026625003258232
+    },
+    "modelMS": {
+      "count": 120,
+      "min": 31.161791666818317,
+      "median": 35.72202083887532,
+      "p95": 40.024958332651295,
+      "max": 42.090833332622424
+    },
+    "decodeMS": {
+      "count": 120,
+      "min": 4.820583330001682,
+      "median": 10.367541664891178,
+      "p95": 15.53050000075018,
+      "max": 20.140958338743076
+    },
+    "ageMS": {
+      "count": 120,
+      "min": 50.52933333069086,
+      "median": 66.69085416570306,
+      "p95": 76.66079166531563,
+      "max": 83.67450000345707
+    },
+    "visionResidentMB": {
+      "count": 120,
+      "min": 160.34375,
+      "median": 171.546875,
+      "p95": 176.171875,
+      "max": 177.875
+    }
+  },
+  "steady_samples_at_least_10fps_fraction": 0.6666666666666666,
+  "thermal_states": [
+    0
+  ],
+  "battery_samples": [
+    {
+      "uptimeMS": 65108776.29050001,
+      "level": 1,
+      "state": 3
+    },
+    {
+      "uptimeMS": 65172437.357541665,
+      "level": 1,
+      "state": 3
+    },
+    {
+      "uptimeMS": 65236243.91820834,
+      "level": 1,
+      "state": 3
+    }
+  ],
+  "long_test": null,
+  "limitations": [
+    "memory is sampled resident memory, not physical peak",
+    "age excludes DJI transmission; no acoustic onset measurement",
+    "no recognition-accuracy conclusion from performance logs"
+  ]
+}
